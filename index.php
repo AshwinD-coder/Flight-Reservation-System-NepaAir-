@@ -3,7 +3,7 @@
 <?php
 
 include('partials/navbar.php');
-include('partials/style.php');
+
 ?>
 
 
