@@ -8,7 +8,7 @@ include('partials/navbar.php');
 
 
 
-
+<link rel="stylesheet" href="partials/style.css" type="">
 <div>
 	<div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
 		<div class="carousel-inner">
