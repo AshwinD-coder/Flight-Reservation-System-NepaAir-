@@ -6,7 +6,7 @@ include('partials/navbar.php');
 
 
 
-<link rel="stylesheet" href="style.css" type="">
+<link rel="stylesheet" href="partials/style.css" type="">
 
     <style type="text/css">
     	.hidden{
