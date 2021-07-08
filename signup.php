@@ -81,6 +81,13 @@ body{
                                 </div>
 
                                 <div class="form-group row">
+                                    <label for="password" class="col-md-4 col-form-label text-md-right">Password</label>
+                                    <div class="col-md-6">
+                                        <input type="password" id="pass_word" class="form-control" name="password">
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
                                     <label for="phone_number" class="col-md-4 col-form-label text-md-right">Phone Number</label>
                                     <div class="col-md-6">
                                         <input type="text" id="phone_number" class="form-control" name="phone">
