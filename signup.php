@@ -97,7 +97,7 @@ body{
         </div>
         
                                     </div>
-                                    <div style="margin-top: 7px; margin-left: 310px;" id="CheckPasswordMatch"></div>
+                                    <div style=" margin-left: 310px;" id="CheckPasswordMatch"></div>
                             
                           
                                 <div class="form-group row">
