@@ -19,7 +19,10 @@ include('partials/navbar.php');
             color:#57606f ;
             body-background:#57606f;
         }
-    	
+         a{
+    	text-decoration:none;
+      color:White;
+        }
     </style>
     
 
