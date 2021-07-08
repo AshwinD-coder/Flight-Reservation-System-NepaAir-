@@ -24,7 +24,7 @@
 }
 
 .booking-form {
-	background:#57606f;
+	background:#005eff;
 	padding: 39px;
 	border-radius: 15px;
     margin-top: 70px;
@@ -48,7 +48,7 @@
 	-webkit-box-shadow: none;
 	box-shadow: none;
 	border-radius: 40px;
-	padding: 0px 25px;
+	padding: 25px 25px;
 }
 
 .booking-form .form-control::-webkit-input-placeholder {
