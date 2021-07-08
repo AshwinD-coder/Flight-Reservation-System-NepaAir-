@@ -3,11 +3,13 @@ include("connection.php");
 if(isset($_POST['submit'])){
     $fullname=$_POST['full-name'];
 	$username = $_POST['username'];
-	$password = $_POST['pass'];
-	$address = $_POST['address'];
-    $address = $_POST['address'];
+	$password = $_POST['password'];
+	$address = $_POST['p_address'];
+    $presentaddress = $_POST['presentaddress'];
+    $country=$_POST['country'];
 	$email = $_POST['email'];
 	$phone = $_POST['phone'];
+    $nid=$_POST['nid-number'];
 
 	$ch="SELECT username FROM signup WHERE username='$username'";
 	$result=mysqli_query($conn,$ch);
@@ -24,7 +26,7 @@ else{
 
 
 	
-	mysqli_query($conn, "INSERT INTO signup (username, password, address, email, phone) VALUES ('$username', '$enc', '$address', '$email', $phone)");
+	mysqli_query($conn, "INSERT INTO users (username, password, presentaddress , email , phone ,fullname,country ,permnentaddress ,NID) VALUES ('$username', '$enc', '$presentaddress', '$email', '$phone' ,'$fullname','$fullname','$address','$nid'");
 	session_start();
             $_SESSION['phone']=$_POST['phone'];
 
