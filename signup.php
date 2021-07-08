@@ -61,7 +61,7 @@ body{
                     <div class="card">
                         <div class="card-header">Register</div>
                         <div class="card-body">
-                            <form name="my-form" onsubmit="return validform()" action="success.php" method="">
+                            <form name="my-form"  action="login_db_cnt.php" method="post">
                                 <div class="form-group row">
                                     <label for="full_name" class="col-md-4 col-form-label text-md-right">Full Name</label>
                                     <div class="col-md-6">
@@ -387,9 +387,9 @@ body{
                                 </div>
 
                                     <div class="col-md-6 offset-md-4">
-                                        <button type="submit" class="btn btn-primary">
-                                        Register
-                                        </button>
+                                        <input type="submit" name="submit" class="btn btn-primary">
+                                        
+                                        </input>
                          </div>
                     </div>
             </div>
