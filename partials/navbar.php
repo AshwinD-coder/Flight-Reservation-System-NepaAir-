@@ -17,7 +17,7 @@
 
 	<link rel="stylesheet" href="style.css" type="">
 
-    <title>Hello, world!</title>
+    <title>Nepaair</title>
 
     <style type="text/css">
     	.hidden{
