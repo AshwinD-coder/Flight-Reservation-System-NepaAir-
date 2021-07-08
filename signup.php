@@ -54,6 +54,10 @@ body{
 
         <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+<form action="login_db_cnt.php" method="POST">
+
+
 <main class="my-form">
     <div class="cotainer">
         <div class="row justify-content-center">
@@ -387,7 +391,7 @@ body{
                                 </div>
 
                                     <div class="col-md-6 offset-md-4">
-                                        <button type="submit" class="btn btn-primary">
+                                        <button type="submit" class="btn btn-primary" name="submit">
                                         Register
                                         </button>
                          </div>
@@ -401,6 +405,8 @@ body{
        
 
 </main>
+
+</form>
 
             <?php
 

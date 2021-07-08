@@ -11,7 +11,7 @@ if(isset($_POST['submit'])){
 	$phone = $_POST['phone'];
     $nid=$_POST['nid-number'];
 
-	$ch="SELECT username FROM signup WHERE username='$username'";
+	$ch="SELECT username FROM users WHERE username='$username'";
 	$result=mysqli_query($conn,$ch);
 
 if(mysqli_num_rows($result)>0)
@@ -24,15 +24,11 @@ else{
 
 	$enc = base64_encode($password);
 
-
+    
 	
-	mysqli_query($conn, "INSERT INTO users (username, password, presentaddress , email , phone ,fullname,country ,permnentaddress ,NID) VALUES ('$username', '$enc', '$presentaddress', '$email', '$phone' ,'$fullname','$fullname','$address','$nid'");
+	mysqli_query($conn, "INSERT INTO users (fullname, email, username, number, presentaddress, country, permnentaddress, NID, password) VALUES ('$fullname','$email','$username',$phone,'$presentaddress','$country','$address',$nid,'$password')");
 	session_start();
-            $_SESSION['phone']=$_POST['phone'];
-
-	$food = mysqli_query($conn, "SELECT * FROM food");
-	while($row = mysqli_fetch_assoc($food)){
-		echo $row["FOODNAME"];
+          
 	}
 header("location:index.php");
 
@@ -43,5 +39,6 @@ header("location:index.php");
 
 
 
-}
+
+
 ?>
