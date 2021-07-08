@@ -3,7 +3,9 @@
 
 include('partials/navbar.php');
 ?>
-
+<title>
+  Login Page
+</title>
 
 
 <link rel="stylesheet" href="partials/style.css" type="">
