@@ -95,7 +95,7 @@ body{
                                 </div>
 
                                 <div class="form-group row">
-                                    <label for="permanent_address" class="col-md-4 col-form-label text-md-right">Permanent Address</label>
+                                    <label for="permanent_address" class="col-md-4 col-form-label text-md-right">Country</label>
                                     <div class="col-md-6">
                                         <input type="text" id="permanent_address" class="form-control" name="permanent-address">
                                     </div>
@@ -125,7 +125,7 @@ body{
 
 </main>
 
-            <?php>
+            <?php
 
 include('partials/footer.php');
 
