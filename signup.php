@@ -54,10 +54,6 @@ body{
 
         <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-
-<form action="login_db_cnt.php" method="POST">
-
-
 <main class="my-form">
     <div class="cotainer">
         <div class="row justify-content-center">
@@ -69,35 +65,35 @@ body{
                                 <div class="form-group row">
                                     <label for="full_name" class="col-md-4 col-form-label text-md-right">Full Name</label>
                                     <div class="col-md-6">
-                                        <input type="text" id="full_name" class="form-control" name="full-name">
+                                        <input type="text" id="full_name" class="form-control" name="full-name" required>
                                     </div>
                                 </div>
 
                                 <div class="form-group row">
                                     <label for="email_address" class="col-md-4 col-form-label text-md-right">E-Mail Address</label>
                                     <div class="col-md-6">
-                                        <input type="text" id="email_address" class="form-control" name="email">
+                                        <input type="text" id="email_address" class="form-control" name="email" required>
                                     </div>
                                 </div>
 
                                 <div class="form-group row">
                                     <label for="user_name" class="col-md-4 col-form-label text-md-right">User Name</label>
                                     <div class="col-md-6">
-                                        <input type="text" id="user_name" class="form-control" name="username">
+                                        <input type="text" id="user_name" class="form-control" name="username" required>
                                     </div>
                                 </div>
 
                                 <div class="form-group row">
                                     <label for="password" class="col-md-4 col-form-label text-md-right">Password</label>
                                     <div class="col-md-6">
-                                        <input type="password" id="pass_word" class="form-control" name="password">
+                                        <input type="password" id="pass_word" class="form-control" name="password" required>
                                     </div>
                                 </div>
 
                                 <div class="form-group row">
                                     <label for="confirmpassword" class="col-md-4 col-form-label text-md-right">Confirm Password</label>
                                     <div class="col-md-6">
-                                        <input type="password" id="Confirmpassword" class="form-control" name="confirmpassword">
+                                        <input type="password" id="Confirmpassword" class="form-control" name="confirmpassword" required>
         </div>
         
                                     </div>
@@ -107,14 +103,14 @@ body{
                                 <div class="form-group row">
                                     <label for="phone_number" class="col-md-4 col-form-label text-md-right">Phone Number</label>
                                     <div class="col-md-6">
-                                        <input type="text" id="phone_number" class="form-control" name="phone">
+                                        <input type="text" id="phone_number" class="form-control" name="phone" required>
                                     </div>
                                 </div>
 
                                 <div class="form-group row">
                                     <label for="present_address" class="col-md-4 col-form-label text-md-right">Present Address</label>
                                     <div class="col-md-6">
-                                        <input type="text" id="present_address" class="form-control" name="presentaddress">
+                                        <input type="text" id="present_address" class="form-control" name="presentaddress" required>
                                     </div>
                                 </div>
 
@@ -391,7 +387,7 @@ body{
                                 </div>
 
                                     <div class="col-md-6 offset-md-4">
-                                        <button type="submit" class="btn btn-primary" name="submit">
+                                        <button type="submit" class="btn btn-primary">
                                         Register
                                         </button>
                          </div>
@@ -405,8 +401,6 @@ body{
        
 
 </main>
-
-</form>
 
             <?php
 
