@@ -69,7 +69,7 @@ body{
                                 <div class="form-group row">
                                     <label for="email_address" class="col-md-4 col-form-label text-md-right">E-Mail Address</label>
                                     <div class="col-md-6">
-                                        <input type="text" id="email_address" class="form-control" name="email-address">
+                                        <input type="text" id="email_address" class="form-control" name="email">
                                     </div>
                                 </div>
 
@@ -83,14 +83,14 @@ body{
                                 <div class="form-group row">
                                     <label for="phone_number" class="col-md-4 col-form-label text-md-right">Phone Number</label>
                                     <div class="col-md-6">
-                                        <input type="text" id="phone_number" class="form-control">
+                                        <input type="text" id="phone_number" class="form-control" name="phone">
                                     </div>
                                 </div>
 
                                 <div class="form-group row">
                                     <label for="present_address" class="col-md-4 col-form-label text-md-right">Present Address</label>
                                     <div class="col-md-6">
-                                        <input type="text" id="present_address" class="form-control">
+                                        <input type="text" id="present_address" class="form-control" name="presentaddress">
                                     </div>
                                 </div>
 
@@ -99,7 +99,7 @@ body{
                                     <label for="EnabledSelect" class="form-label">Country</label>
 </div>
 <div class="col-md-6">
-                                    <select id="EnabledSelect" class="form-select">
+                                    <select id="EnabledSelect" class="form-select" name="country">
                                     <option value="AF">Afghanistan</option>
 <option value="AL">Albania</option>
 <option value="DZ">Algeria</option>

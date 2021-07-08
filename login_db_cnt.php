@@ -1,9 +1,11 @@
 <?php
 include("connection.php");
 if(isset($_POST['submit'])){
+    $fullname=$_POST['full-name'];
 	$username = $_POST['username'];
 	$password = $_POST['pass'];
 	$address = $_POST['address'];
+    $address = $_POST['address'];
 	$email = $_POST['email'];
 	$phone = $_POST['phone'];
 
