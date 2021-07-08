@@ -26,6 +26,10 @@ include('partials/navbar.php');
     	text-decoration:none;
       color:White;
         }
+        a:hover{
+    	
+      color:#f1f2f6;
+        }
     </style>
     
 
