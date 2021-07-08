@@ -55,7 +55,7 @@
   			<div class="collapse navbar-collapse" id="toggleMobileMenu"> 
 
   				<ul class="navbar-nav text-left ms-auto mn" >
-    			<li><a class="nav-link" href="">Home</a></li>
+    			<li><a class="nav-link" href="index.php">Home</a></li>
     			<li><a class="nav-link" href="">Flight Detail</a></li>
     			<li><a class="nav-link" href="">About Us</a></li>
     			<li><a class="nav-link" href="login.php">Log in</a></li>
