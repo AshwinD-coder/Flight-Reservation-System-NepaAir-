@@ -137,7 +137,7 @@ include('partials/navbar.php');
 
 
 <div>
-TESTING GITHUB COMMIT CHANGES
+TESTING GITHUB COMMIT CHANGES change added again
 </div>
 
 <?php
