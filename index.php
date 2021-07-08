@@ -134,12 +134,6 @@ include('partials/navbar.php');
 		</div>
 	</div>
 </div>
-
-
-<div>
-TESTING GITHUB COMMIT CHANGES change added again hello hello 771138
-</div>
-
 <?php
 
 include('partials/footer.php');
