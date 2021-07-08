@@ -51,6 +51,9 @@ body{
     margin-right: 0;
 }
 </style>
+
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <main class="my-form">
     <div class="cotainer">
         <div class="row justify-content-center">
@@ -87,6 +90,16 @@ body{
                                     </div>
                                 </div>
 
+                                <div class="form-group row">
+                                    <label for="confirmpassword" class="col-md-4 col-form-label text-md-right">Confirm Password</label>
+                                    <div class="col-md-6">
+                                        <input type="password" id="Confirmpassword" class="form-control" name="confirmpassword">
+        </div>
+        
+                                    </div>
+                                    <div style="margin-top: 7px; margin-left: 310px;" id="CheckPasswordMatch"></div>
+                            
+                          
                                 <div class="form-group row">
                                     <label for="phone_number" class="col-md-4 col-form-label text-md-right">Phone Number</label>
                                     <div class="col-md-6">
@@ -394,3 +407,15 @@ body{
 include('partials/footer.php');
 
 ?>
+<script>
+$(document).ready(function () {
+   $("#Confirmpassword").on('keyup', function(){
+    var password = $("#pass_word").val();
+    var confirmPassword = $("#Confirmpassword").val();
+    if (password != confirmPassword)
+        $("#CheckPasswordMatch").html("Password does not match !").css("color","red");
+    else
+        $("#CheckPasswordMatch").html("Password match !").css("color","green");
+   });
+});
+</script>
