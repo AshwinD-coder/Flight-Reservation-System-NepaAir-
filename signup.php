@@ -351,13 +351,13 @@ body{
       </select>
 </div>
     </div>
-</div>
+
 <div class="form-group row">
-                                    <label for="nid_number" class="col-md-4 col-form-label text-md-right">Permanent Address
-                                                 </label>
+                                    <label for="p_address" class="col-md-4 col-form-label text-md-right">Permanent Address</label>
                                     <div class="col-md-6">
                                         <input type="text" id="p_address" class="form-control" name="p_address">
                                     </div>
+                                </div>
                                 <div class="form-group row">
                                     <label for="nid_number" class="col-md-4 col-form-label text-md-right"><abbr
                                                 title="National Id Card">NID</abbr> Number</label>
