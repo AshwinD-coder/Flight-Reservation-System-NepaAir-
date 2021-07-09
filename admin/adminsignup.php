@@ -1,6 +1,6 @@
 <?php
 
-include('partials/navbar.php');
+include('../partials/navbar.php');
 
 ?>
 
@@ -151,7 +151,7 @@ body{
 
             <?php
 
-include('partials/footer.php');
+include('../partials/footer.php');
 
 ?>
 <script>
