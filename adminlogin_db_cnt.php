@@ -1,5 +1,5 @@
 <?php
-include("../connection.php");
+include("connection.php");
 if(isset($_POST['submit'])){
     $fullname=$_POST['full-name'];
 	$username = $_POST['username'];
