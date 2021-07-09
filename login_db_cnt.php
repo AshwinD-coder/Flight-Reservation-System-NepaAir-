@@ -16,7 +16,9 @@ if(isset($_POST['submit'])){
 
 if(mysqli_num_rows($result)>0)
 {
-	echo "User already exists!";
+
+	echo '<script>alert("User already exists!")</script>';
+	header("location:index.php");
 }
 
 else{
