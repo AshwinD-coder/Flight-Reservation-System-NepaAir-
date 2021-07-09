@@ -6,19 +6,18 @@ if(isset($_POST['submit'])){
 	$password = $_POST['password'];
 	$address = $_POST['p_address'];
     $presentaddress = $_POST['presentaddress'];
-    $country=$_POST['country'];
+ 
 	$email = $_POST['email'];
 	$phone = $_POST['phone'];
     $nid=$_POST['nid-number'];
+    $eid=$_POST['eid-number'];
 
-	$ch="SELECT username FROM users WHERE username='$username'";
+	$ch="SELECT username FROM adminusers WHERE username='$username'";
 	$result=mysqli_query($conn,$ch);
 
 if(mysqli_num_rows($result)>0)
 {
-
 	echo '<script>alert("User already exists!")</script>';
-	header("location:index.php");
 }
 
 else{
@@ -28,7 +27,7 @@ else{
 
     
 	
-	mysqli_query($conn, "INSERT INTO users (fullname, email, username, number, presentaddress, country, permnentaddress, NID, password) VALUES ('$fullname','$email','$username',$phone,'$presentaddress','$country','$address',$nid,'$enc')");
+	mysqli_query($conn, "INSERT INTO adminusers (fullname, username, password,phonenumber, presentaddress, permnentaddress, NID, EmpID,Email) VALUES ('$fullname','$username','$enc',$phone,'$presentaddress','$address',$nid,$eid,'$email')");
 	session_start();
           
 	}
