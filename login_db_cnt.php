@@ -26,7 +26,7 @@ else{
 
     
 	
-	mysqli_query($conn, "INSERT INTO users (fullname, email, username, number, presentaddress, country, permnentaddress, NID, password) VALUES ('$fullname','$email','$username',$phone,'$presentaddress','$country','$address',$nid,'$password')");
+	mysqli_query($conn, "INSERT INTO users (fullname, email, username, number, presentaddress, country, permnentaddress, NID, password) VALUES ('$fullname','$email','$username',$phone,'$presentaddress','$country','$address',$nid,'$enc')");
 	session_start();
           
 	}
