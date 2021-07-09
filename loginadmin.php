@@ -7,7 +7,7 @@
 "https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<link rel="stylesheet" href="login.css">
+	<link rel="stylesheet" href="partials/adminlogincss.css">
 	<title>Login Page</title>
 </head>
 
@@ -18,7 +18,7 @@
 
 			<div class="textbox">
 				<i class="fa fa-user" aria-hidden="true"></i>
-				<input type="text" placeholder="Adminname"
+				<input type="text" placeholder="Admin Username"
 						name="adminname" value="">
 			</div>
 
