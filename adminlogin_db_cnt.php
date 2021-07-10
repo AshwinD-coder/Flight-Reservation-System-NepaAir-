@@ -1,6 +1,6 @@
 <?php
 include("connection.php");
-if(isset($_POST['submit'])){
+if(isset($_POST['submit1'])){
     $fullname=$_POST['full-name'];
 	$username = $_POST['username'];
 	$password = $_POST['password'];
@@ -27,7 +27,7 @@ else{
 
     
 	
-	mysqli_query($conn, "INSERT INTO adminusers (fullname, username, password,phonenumber, presentaddress, permnentaddress, NID, EmpID,Email) VALUES ('$fullname','$username','$enc',$phone,'$presentaddress','$address',$nid,$eid,'$email')");
+	mysqli_query($conn, "INSERT INTO adminusers (fullname, username, password,phonenumber, presentaddress, permanentaddress, NID, EmpID,Email) VALUES ('$fullname','$username','$enc',$phone,'$presentaddress','$address',$nid,$eid,'$email')");
 	session_start();
           
 	}
