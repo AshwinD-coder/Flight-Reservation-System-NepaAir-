@@ -32,11 +32,7 @@ include('partials/navbar.php');
 		  <span class="visually-hidden">Next</span>
 		</button>
 	  </div>
-</div>
-
-<div>
-	hello
-</div>
+</div><br><br>
 
 
 
