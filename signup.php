@@ -3,7 +3,7 @@
 include('partials/navbar.php');
 
 ?>
-
+<link rel="stylesheet" href="partials/footer.css" />
 <style>
 
 

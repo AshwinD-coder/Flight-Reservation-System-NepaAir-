@@ -25,12 +25,18 @@
     	}
     	
 		a {
+		
+			padding :  10px;
+			color:Grey;
 			text-decoration:none;
-			padding-left : 10px;
-			color: black;
 
 			
 		}
+		a:hover{
+			color:black;
+			
+		}
+	
     </style>
   </head>
 
@@ -77,12 +83,22 @@
 session_start();
 
 if(isset($_SESSION['username'])){
+$_user=$_SESSION['username'];
+echo"
+<div class='collapse navbar-collapse' id='toggleMobileMenu'> 
 
-    echo"<li><a  href='Profile.php'>Profile page</a></li>";
+  				<ul class='navbar-nav text-left ms-auto mn' >
+				  ";
+				  
+    echo"<li><a  href='Profile.php'>"; echo "$_user"; echo"</a></li>";
     echo"<li><a  href='logout.php'>Log Out</a></li>";
 
 }
-else{  
+else{  echo"
+	<div class='collapse navbar-collapse' id='toggleMobileMenu'> 
+	
+					  <ul class='navbar-nav text-left ms-auto mn' >
+					  ";
         echo"<li><a   href='signup.php'>Sign up</a></li>";
 	echo"<li><a  href='login.php'>Log in</a></li>";
 
