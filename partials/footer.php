@@ -4,11 +4,8 @@
 		<h1 class="logo-text"><span>NEPA</span>AIR</h1>
 		<p>This is a online website for the User who is seeking to 
 		Travel from one place to another
-		</p><br><br><br><br>
-		<div class="contact">
-		<span><i class="fas fa-phone"></i>&nbsp; 98603478</span>
-		<span><i class="fas fa-envelope-square"></i>&nbsp; nepaair@gmail.com</span>
-		</div>
+		</p><br>
+		<h3>Follow Us</h3>
 		<div class="socials">
 			<a href="www.facebook.com"><i class="fab fa-facebook-f"></i></a>
 			<a href="www.instagram.com"><i class="fab fa-instagram"></i></a>
@@ -29,9 +26,13 @@
 		</div>
 		<div class="footer-section contact-form">
 		<h2>Contact</h2>
-		<p>nepaair@gmail.com</p>
+		<div class="contact">
+		<span><i class="fas fa-phone"></i>&nbsp; 98603478</span><br>
+		<span><i class="fas fa-envelope-square"></i>&nbsp; nepaair@gmail.com</span><br>
+		</div>
 		</div>
 	<div class="footer-bottom">
 		&copy; nepaair.com.np | Design by nepaair
 	<div>
+	</div>
 	</div>
