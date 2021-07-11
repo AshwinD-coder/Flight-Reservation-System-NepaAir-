@@ -1,17 +1,17 @@
 .footer{
 	background: #303036;
 	color: #d3d3d3;
-	height: 400px;
+	height: 300px;
 	position: relative;
 }
 .footer .footer-content{
 	border: 1px solid red;
-	height: 350px;
+	height: 250px;
 	display: flex;
 }
 .footer .footer-content .footer-section{
 	flex: 1;
-	padding: 25px;
+	padding: 15px;
 	border: 1px solid white;
 }
 .footer .footer-content h1,
@@ -22,9 +22,10 @@
 	color:#05f7ff;
 }
 .footer .footer-content .about .contact span{
-	display: block;
+	display:block;
 	font-size: 1.1em;
 	margin-bottom: 8px;
+	
 }
 .footer .footer-content .about .socials a{
 	border: 1px solid grey;
