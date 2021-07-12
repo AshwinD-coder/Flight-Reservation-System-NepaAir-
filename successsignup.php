@@ -3,6 +3,12 @@
 include('partials/navbar.php');
 
 ?>
+<?php
+
+if(isset($_SESSION['value'])){
+    $_value=$_SESSION['value'];
+}
+?>
 <link rel="stylesheet" href="partials/footer.css" />
 <style>
 
@@ -51,14 +57,29 @@ body{
     margin-right: 0;
 }
 </style>
-
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
         <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <main class="my-form">
     <div class="cotainer">
+  
+
         <div class="row justify-content-center">
+   
             <div class="col-md-8">
+            <?php
+            if($_value=='Account Created Successfully!'){
+           
+  echo "<div class='w3-panel w3-green w3-round-large'><p>$_value</p></div>";
+            }
+            else
+            {
+                echo "<div class='w3-panel w3-red w3-round-large'><p>$_value</p></div>";
+            }
+
+?>
                     <div class="card">
+              
                         <div class="card-header">Register</div>
                         <div class="card-body">
                             <form name="my-form"  action="login_db_cnt.php" method="post">

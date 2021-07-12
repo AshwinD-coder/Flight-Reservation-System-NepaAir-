@@ -116,21 +116,21 @@ body{
 <div class="form-group row">
                                     <label for="p_address" class="col-md-4 col-form-label text-md-right">Permanent Address</label>
                                     <div class="col-md-6">
-                                        <input type="text" id="p_address" class="form-control" name="p_address">
+                                        <input type="text" id="p_address" class="form-control" name="p_address" required>
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label for="nid_number" class="col-md-4 col-form-label text-md-right"><abbr
                                                 title="National Id Card">NID</abbr> Number</label>
                                     <div class="col-md-6">
-                                        <input type="text" id="nid_number" class="form-control" name="nid-number">
+                                        <input type="text" id="nid_number" class="form-control" name="nid-number" required>
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label for="eid_number" class="col-md-4 col-form-label text-md-right"><abbr
                                                 title="Employee Id Card">EID</abbr> Number</label>
                                     <div class="col-md-6">
-                                        <input type="text" id="eid_number" class="form-control" name="eid-number">
+                                        <input type="text" id="eid_number" class="form-control" name="eid-number" required>
                                     </div>
                                 </div>
                                     <div class="col-md-6 offset-md-4">
