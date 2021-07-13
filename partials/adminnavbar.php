@@ -71,7 +71,7 @@
 				  
 
     			<li><a class="nav-link" href="index.php">Home</a></li>
-    			<li><a class="nav-link" href="">Add Flights</a></li>
+    			<li><a class="nav-link" href="addflight.php">Add Flights</a></li>
     		
 				  
 				<?php
