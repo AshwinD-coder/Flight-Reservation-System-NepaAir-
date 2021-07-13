@@ -13,23 +13,27 @@ if(isset($_POST['submit1'])){
 	$phone = $_POST['phone'];
     $nid=$_POST['nid-number'];
     $eid=$_POST['eid-number'];
+	$_usernamenumber="Username Cannot be Number!";
+	$_success="Account Created Successfully!";
+	$_usernametaken="Username already taken!Try another!";
+	$_incorrectpassword="Incorrect Password!";
 	$ch="SELECT username FROM adminusers WHERE username='$username'";
 	$result=mysqli_query($conn,$ch);
 	// if(strlen($password)  < 8){
 	// 	echo "<script>alert('Password must be upto 8 characters'); window.location='signup.php'</script>";    
 	// 	die;
 	// }
-		if(!is_numeric($username))
+if(!is_numeric($username))
 		{
 			$sql=mysqli_query($conn, "select * from adminusers WHERE username='$username'") or die (mysqli_error("Not conn"));
 			$row=mysqli_num_rows($sql);
 			if ($row > 0)
-			{
-				echo "<script>alert('Username already taken!!. Try another!'); window.location='signup.php'</script>";
+			{$_SESSION['value2']=$_usernametaken;
+				echo "<script> window.location='adminsignup.php'</script>";
 			}
 			elseif($password != $password2)
-			{
-				echo "<script>alert('Password do not match!'); window.location='signup.php'</script>";
+			{$_SESSION['value2']=$_incorrectpassword;
+				echo "<script>window.location='adminsignup.php'</script>";
 			
 			}
 			else
@@ -38,16 +42,28 @@ if(isset($_POST['submit1'])){
 
     
 	
-	mysqli_query($conn, "INSERT INTO adminusers (fullname, username, password,phonenumber, presentaddress, permanentaddress, NID, EmpID,Email) VALUES ('$fullname','$username','$enc',$phone,'$presentaddress','$address',$nid,$eid,'$email')");
+				mysqli_query($conn, "INSERT INTO adminusers (fullname, username, password,phonenumber, presentaddress, permanentaddress, NID, EmpID,Email) VALUES ('$fullname','$username','$enc',$phone,'$presentaddress','$address',$nid,$eid,'$email')");
 	
-					  echo "<div class='w3-panel w3-green'>";
-			echo "<script>alert('Account successfully created!'); window.location='index.php'</script>";
-		   echo "</div>";
+				$_SESSION['value2']=$_success;
+				
+			echo " <script>window.location='adminsignup.php'</script>";
+		   
 			}
 		}
 		else
-		{
-			echo "<script>alert('Username cannot be a number'); window.location='signup.php'</script>";
+		{$_SESSION['value2']=$_usernamenumber;
+			echo "<script> window.location='adminsignup.php'</script>";
 		}
+ 
+	
+
+
+	
 }
+
+
+
+
+
+
 ?>
