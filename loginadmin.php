@@ -29,7 +29,7 @@
 			</div>
 
 			<input class="button" type="submit"
-					name="login1" value="Sign In">
+					name="Login" value="Sign In">
 		</div>
 	</form>
 </body>
