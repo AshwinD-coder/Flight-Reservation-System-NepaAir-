@@ -5,6 +5,7 @@ if(isset($_POST['submit1'])){
     $fullname=$_POST['full-name'];
 	$username = $_POST['username'];
 	$password = $_POST['password'];
+	$password2=$_POST['confirmpassword'];
 	$address = $_POST['p_address'];
     $presentaddress = $_POST['presentaddress'];
  
@@ -20,7 +21,7 @@ if(isset($_POST['submit1'])){
 	// }
 		if(!is_numeric($username))
 		{
-			$sql=mysqli_query($conn, "select * from users WHERE username='$username'") or die (mysqli_error("Not conn"));
+			$sql=mysqli_query($conn, "select * from adminusers WHERE username='$username'") or die (mysqli_error("Not conn"));
 			$row=mysqli_num_rows($sql);
 			if ($row > 0)
 			{

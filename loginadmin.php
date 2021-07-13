@@ -12,7 +12,7 @@
 </head>
 
 <body>
-	<form action="validate.php" method="post">
+	<form action="adminlog_db_cnt.php" method="post">
 		<div class="login-box">
 			<h1>Login</h1>
 

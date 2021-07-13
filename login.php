@@ -37,7 +37,7 @@ include('partials/navbar.php');
                     <form class="form-signin">
                       <div class="form-label-group">
                         <input type="text" id="user" name="username" class="form-control" placeholder="user name" required autofocus>
-                        <label for="inputEmail">User name</label>
+                        <label for="inputuser">User name</label>
                       </div>
         
                       <div class="form-label-group">
