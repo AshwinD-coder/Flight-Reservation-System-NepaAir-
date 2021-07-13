@@ -12,7 +12,7 @@
 </head>
 
 <body>
-	<form action="adminlog_db_cnt.php" method="post">
+	<form action="adminlog_db_cnt.php" method="POST">
 		<div class="login-box">
 			<h1>Login</h1>
 
@@ -29,7 +29,7 @@
 			</div>
 
 			<input class="button" type="submit"
-					name="login" value="Sign In">
+					name="login1" value="Sign In">
 		</div>
 	</form>
 </body>
