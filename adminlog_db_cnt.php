@@ -7,11 +7,11 @@ include('connection.php');
 if(isset($_POST['Login']))
 
 
-{ echo"hello";
+{ 
     $dec=base64_encode($_POST['password']);
     $nam=$_POST['adminname'];
     
-
+    echo"hello";
 
     $query="SELECT * FROM `adminusers` WHERE username='$nam' AND password='$dec'";
     $result=mysqli_query($conn,$query);
