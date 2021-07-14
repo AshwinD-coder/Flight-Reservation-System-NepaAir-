@@ -64,7 +64,8 @@ include('partials/navbar.php');
 							<div class="col-md-6">
 								<div class="form-group">
 									<span class="form-label">Flying from</span>
-									<input class="form-control" type="text" placeholder="City or airport">
+									<input class="form-control" type="select" placeholder="City or airport">
+							
 								</div>
 							</div>
 							<div class="col-md-6">

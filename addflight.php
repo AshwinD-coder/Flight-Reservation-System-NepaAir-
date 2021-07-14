@@ -1,8 +1,8 @@
 
 <?php 
   session_start();
-  include("includes/connection.php");
-  include("includes/functions.php");
+  include("connection.php");
+  
 
 if(isset($_POST['submit'])){
 $from=$_POST['from'];
@@ -20,10 +20,10 @@ $rettime=$_POST['returntime'];
 mysqli_query($conn, "INSERT INTO availableflights(Fro_m,t_o,departur_e,retur_n,cabi_n,tri_p,totalseats,Booking,priceperticket,departuretime,returntime)
 			    VALUES ('$from','$to','$departure','$return','$cabin','$trip','$seats','$book','$price','$deptime','$rettime')")
                  or die (mysqli_error("Error"));
-			    echo "<script>alert('added to database'); window.location='admin.php'</script>";
+			    echo "<script>alert('added to database'); window.location='adminindex.php'</script>";
 }
 else{
-    echo "<script>alert('Not added to database'); window.location='admin.php'</script>";
+    echo "<script>alert('Not added to database'); window.location='adminindex.php'</script>";
 }
 ?>
 

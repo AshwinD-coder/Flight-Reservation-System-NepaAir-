@@ -29,11 +29,11 @@ if(!is_numeric($username))
 			$row=mysqli_num_rows($sql);
 			if ($row > 0)
 			{$_SESSION['value2']=$_usernametaken;
-				echo "<script> window.location='adminsignup.php'</script>";
+				echo "<script> window.location='adminsuccesssignup.php'</script>";
 			}
 			elseif($password != $password2)
 			{$_SESSION['value2']=$_incorrectpassword;
-				echo "<script>window.location='adminsignup.php'</script>";
+				echo "<script>window.location='adminsuccesssignup.php'</script>";
 			
 			}
 			else
@@ -46,13 +46,13 @@ if(!is_numeric($username))
 	
 				$_SESSION['value2']=$_success;
 				
-			echo " <script>window.location='adminsignup.php'</script>";
+			echo " <script>window.location='adminsuccesssignup.php'</script>";
 		   
 			}
 		}
 		else
 		{$_SESSION['value2']=$_usernamenumber;
-			echo "<script> window.location='adminsignup.php'</script>";
+			echo "<script> window.location='adminsucesssignup.php'</script>";
 		}
  
 	
