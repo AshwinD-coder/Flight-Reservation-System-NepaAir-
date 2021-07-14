@@ -4,11 +4,12 @@
 include('partials/adminnavbar.php');
 
 ?>
-
+<link rel="stylesheet" href="partials/footer.css" />
+<link rel="stylesheet" href="partials/style.css" type="">
         <div class="fieldset">
                 <center>
                 <h2 text-align="center">Add flights:</h2>
-                <form id="form-submit" action="adminpageaddflights.php" method="POST">
+                <form id="form-submit" action="addflight.php" method="POST">
                         <fieldset>
                                 <label for="from">From:</label>
                                 <select required name='from'>

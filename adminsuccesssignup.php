@@ -3,6 +3,12 @@
 include('partials/navbar.php');
 
 ?>
+<?php
+
+if(isset($_SESSION['value2'])){
+    $_value2=$_SESSION['value2'];
+}
+?>
 <link rel="stylesheet" href="partials/footer.css" />
 
 <style>
@@ -59,6 +65,17 @@ body{
     <div class="cotainer">
         <div class="row justify-content-center">
             <div class="col-md-8">
+            <?php
+            if($_value2=='Account Created Successfully!'){
+           
+  echo "<div class='w3-panel w3-green w3-round-large'><p>$_value2</p></div>";
+            }
+            else
+            {
+                echo "<div class='w3-panel w3-red w3-round-large'><p>$_value2</p></div>";
+            }
+
+?>
                     <div class="card">
                         <div class="card-header">Register an Admin</div>
                         <div class="card-body">
