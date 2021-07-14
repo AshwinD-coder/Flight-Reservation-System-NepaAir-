@@ -43,35 +43,33 @@ include('partials/navbar.php');
 		<div class="container">
 			<div class="row">
 				<div class="booking-form">
-					<form>
+					<form action="searchflights.php" method="POST">
 						<div class="form-group">
 							<div class="form-checkbox">
-								<label for="roundtrip">
-									<input type="radio" id="roundtrip" name="flight-type">
-									<span></span>Roundtrip
+							<label for="round">
+									<input type="radio" id="round" name="trip">
+									<span></span>Round
 								</label>
+								
 								<label for="one-way">
-									<input type="radio" id="one-way" name="flight-type">
+									<input type="radio" id="one-way" name="trip">
 									<span></span>One way
 								</label>
-								<label for="multi-city">
-									<input type="radio" id="multi-city" name="flight-type">
-									<span></span>Multi-City
-								</label>
+								
 							</div>
 						</div>
 						<div class="row">
 							<div class="col-md-6">
 								<div class="form-group">
 									<span class="form-label">Flying from</span>
-									<input class="form-control" type="select" placeholder="City or airport">
+									<input class="form-control" type="select" placeholder="City or airport" name='from'>
 							
 								</div>
 							</div>
 							<div class="col-md-6">
 								<div class="form-group">
 									<span class="form-label">Flyning to</span>
-									<input class="form-control" type="text" placeholder="City or airport">
+									<input class="form-control" type="text" placeholder="City or airport" name='to'>
 								</div>
 							</div>
 						</div>
@@ -79,13 +77,13 @@ include('partials/navbar.php');
 							<div class="col-md-3">
 								<div class="form-group">
 									<span class="form-label">Departing</span>
-									<input class="form-control" type="date" required>
+									<input class="form-control" type="date" required name='departure'>
 								</div>
 							</div>
 							<div class="col-md-3">
 								<div class="form-group">
 									<span class="form-label">Returning</span>
-									<input class="form-control" type="date" required>
+									<input class="form-control" type="date" required name='return'>
 								</div>
 							</div>
 							<div class="col-md-2">
@@ -116,16 +114,16 @@ include('partials/navbar.php');
 								<div class="form-group">
 									<span class="form-label">Travel class</span>
 									<select class="form-control">
-										<option>Economy class</option>
-										<option>Business class</option>
-										<option>First class</option>
+										<option>Economy </option>
+										<option>Business </option>
+										<option>First </option>
 									</select>
 									<span class="select-arrow"></span>
 								</div>
 							</div>
 							<div class="col-md-3">
 								<div class="form-btn">
-									<button class="submit-btn">Show flights</button>
+									<button class="submit-btn" name="submit">Show flights</button>
 								</div>
 							</div>
 						</div>
