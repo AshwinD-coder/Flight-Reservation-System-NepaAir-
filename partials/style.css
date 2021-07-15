@@ -24,7 +24,7 @@
 }
 
 .booking-form {
-	background:#000000;
+	background:#52515183;
 	padding: 39px;
 	border-radius: 15px;
     margin-top: 70px;
@@ -141,7 +141,7 @@
 	width: 0px;
 	height: 20px;
 	border-radius: 50%;
-	background-color: #f23e3e;
+	background-color: #000000;
 	-webkit-transition: 0.2s all;
 	transition: 0.2s all;
 	-webkit-transform: translate(-50%, -50%);
@@ -163,8 +163,8 @@
 }
 
 .booking-form .submit-btn {
-	color: #fff;
-	background-color: #f23e3e;
+	color: rgb(0, 0, 0);
+	background-color: #ffffff;
 	font-weight: 400;
 	height: 50px;
 	font-size: 14px;

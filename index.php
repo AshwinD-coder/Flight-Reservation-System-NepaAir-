@@ -8,7 +8,7 @@ include('partials/navbar.php');
 
 
 
-<link rel="stylesheet" href="partials/style.css" type="">
+<link rel="stylesheet" href="partials/style.css?<?php echo time(); ?>" type="">
 <link rel="stylesheet" href="partials/footer.css" />
 <div>
 	<div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
@@ -59,20 +59,29 @@ include('partials/navbar.php');
 							</div>
 						</div>
 						<div class="row">
-							<div class="col-md-6">
+							<div class="col-md-3">
 								<div class="form-group">
-									<span class="form-label">Flying from</span>
-									<input class="form-control" type="select" placeholder="City or airport" name='from'>
+								<span class="form-label " name="from">Flying from</span>
+								<select class="form-select" aria-label="Default select example"  name="from">
+										<option value="Kathmandu">Kathmandu</option>
+										<option value="Pokhara">Pokhara</option>
+										<option value="Biratngar">Biratnagar</option>
+									</select>
+									<span class="select-arrow"></span>
 							
 								</div>
 							</div>
-							<div class="col-md-6">
+							<div class="col-md-3">
 								<div class="form-group">
-									<span class="form-label">Flyning to</span>
-									<input class="form-control" type="text" placeholder="City or airport" name='to'>
+								<span class="form-label" name="to">Flying to</span>
+								<select class="form-select" aria-label="Default select example" name="to">
+								<option value="Kathmandu">Kathmandu</option>
+										<option value="Pokhara">Pokhara</option>
+										<option value="Biratngar">Biratnagar</option>
+									</select>
+									<span class="select-arrow"></span>
 								</div>
 							</div>
-						</div>
 						<div class="row">
 							<div class="col-md-3">
 								<div class="form-group">
