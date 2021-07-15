@@ -87,9 +87,21 @@ include('partials/navbar.php');
 								</div>
 							</div>
 							<div class="col-md-2">
+								<div class="form-group" >
+									<span class="form-label aria-label="Default select example"">Cabin</span>
+									<select class="form-select" aria-label="Default select example">
+										<option>Economy</option>
+										<option>Business</option>
+										<option>First Class</option>
+									</select>
+									<span class="select-arrow"></span>
+								</div>
+							</div>
+							<div class="col-md-2">
 								<div class="form-group">
-									<span class="form-label">Adults (18+)</span>
-									<select class="form-control">
+									<span class="form-label">Passengers</span>
+									<select class="form-select" aria-label="Default select example">
+
 										<option>1</option>
 										<option>2</option>
 										<option>3</option>
@@ -97,34 +109,12 @@ include('partials/navbar.php');
 									<span class="select-arrow"></span>
 								</div>
 							</div>
-							<div class="col-md-2">
-								<div class="form-group">
-									<span class="form-label">Children (0-17)</span>
-									<select class="form-control">
-										<option>0</option>
-										<option>1</option>
-										<option>2</option>
-									</select>
-									<span class="select-arrow"></span>
-								</div>
-							</div>
 						</div>
-						<div class="row">
-							<div class="col-md-3">
-								<div class="form-group">
-									<span class="form-label">Travel class</span>
-									<select class="form-control">
-										<option>Economy </option>
-										<option>Business </option>
-										<option>First </option>
-									</select>
-									<span class="select-arrow"></span>
-								</div>
-							</div>
+						<center>
 							<div class="col-md-3">
 								<div class="form-btn">
 									<button class="submit-btn" name="submit">Show flights</button>
-								</div>
+								</div></center>
 							</div>
 						</div>
 					</form>
