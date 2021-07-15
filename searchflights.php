@@ -37,7 +37,7 @@ if (isset($_POST['submit'])) {
         echo "<tr>";
         
     echo "<td>" .$row[1] ."</td>";
-    echo "<td>" .$row[2] ."</td>";    echo "<td>" .$row[3] ."</td>"; echo "<td>" .$row[4] ."</td>"; /*echo "<td>" .$row[] ."</td>";*/echo "<td>" .$row[6] ."</td>";  echo "<td>" .$row[8] ."</td>";echo "<td>" .$row[7] ."</td>"; echo "<td>" .$row[10] ."</td>"; echo"<td><a href='login.php?id=$row[0]' style='text-decoration:none; color:white;'>Book Flight</a></td>";
+    echo "<td>" .$row[2] ."</td>";    echo "<td>" .$row[3] ."</td>"; echo "<td>" .$row[4] ."</td>"; /*echo "<td>" .$row[] ."</td>";*/echo "<td>" .$row[6] ."</td>";  echo "<td>" .$row[8] ."</td>";echo "<td>" .$row[7] ."</td>"; echo "<td>" .$row[10] ."</td>"; echo"<td><a href='login.php?id=$row[0]' style='text-decoration:none; color:black;'>Book Flight</a></td>";
     echo "</tr>";
     echo "</table>";   
     
