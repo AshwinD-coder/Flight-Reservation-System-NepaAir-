@@ -16,14 +16,14 @@ include('partials/navbar.php');
 
 if (isset($_POST['submit'])) {
 	
-    $trip = $_POST['trip'];
+    //$trip = $_POST['trip'];
 	$fromAirport = $_POST['from'];
 	$toAirport = $_POST['to'];
     $Depart = $_POST['departure'];
 	$Return = $_POST['return'];
-	$seatclass = $_POST['cabin'];
-    $noofpassenger=$_POST['guests'];
-    $_SESSION['nop']= $noofpassenger;
+//	$seatclass = $_POST['cabin'];
+   // $noofpassenger=$_POST['guests'];
+  //  $_SESSION['nop']= $noofpassenger;
     
     	$query = "SELECT * FROM availableflights WHERE  fro_m='$fromAirport' AND t_o='$toAirport' AND departur_e = '$Depart' AND retur_n='$Return' ";
         $result=mysqli_query($conn,$query);
@@ -39,13 +39,14 @@ if (isset($_POST['submit'])) {
     echo "<td>" .$row[1] ."</td>";
     echo "<td>" .$row[2] ."</td>";    echo "<td>" .$row[3] ."</td>"; echo "<td>" .$row[4] ."</td>"; /*echo "<td>" .$row[] ."</td>";*/echo "<td>" .$row[6] ."</td>";  echo "<td>" .$row[8] ."</td>";echo "<td>" .$row[7] ."</td>"; echo "<td>" .$row[10] ."</td>"; echo"<td><a href='login.php?id=$row[0]' style='text-decoration:none; color:black;'>Book Flight</a></td>";
     echo "</tr>";
-    echo "</table>";   
+    echo "</table>";  
+   
     
     }
 }
 else {
     echo("<b>We are sorry! We do not have any  flights for this route at the moment.</b>");  echo "<br>";
-   
+    
    }
 
 } 
