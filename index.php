@@ -1,13 +1,35 @@
-
-
 <?php
 
 include('partials/navbar.php');
 
 ?>
+<script>
+	function noop(){
+		
+	};
+function showreturningtime() {
+	var check=document.getElementById("round").value;
+
+  var x = document.createElement("INPUT");
+  var y = document.createElement("SPAN");
+  x.setAttribute("type"  , "date");
+  y.setAttribute("class" , "form-label"); 
+  x.setAttribute("class" , "form-control");
+  x.setAttribute("name"  , "return");
+  document.getElementById("main").appendChild(y);
+  document.getElementById("main").appendChild(x);
+  
 
 
+}
 
+function delret(){
+	var myobj =document.getElementById("main");
+	myobj.removeChild(myobj.lastElementChild);
+	myobj.removeChild(myobj.lastElementChild);
+
+}
+</script>
 <link rel="stylesheet" href="partials/style.css?<?php echo time(); ?>" type="">
 <link rel="stylesheet" href="partials/footer.css" />
 <div>
@@ -47,12 +69,12 @@ include('partials/navbar.php');
 						<div class="form-group">
 							<div class="form-checkbox">
 							<label for="round">
-									<input type="radio" id="round" name="trip">
+									<input type="radio" id="round" name="trip"   onChange="showreturningtime()" >
 									<span></span>Round
 								</label>
 								
 								<label for="one-way">
-									<input type="radio" id="one-way" name="trip">
+									<input type="radio" id="one-way" name="trip" onChange="delret()">
 									<span></span>One way
 								</label>
 								
@@ -84,17 +106,15 @@ include('partials/navbar.php');
 							</div>
 						<div class="row">
 							<div class="col-md-3">
-								<div class="form-group">
+								<div class="form-group" >
 									<span class="form-label">Departing</span>
 									<input class="form-control" type="date" required name='departure'>
 								</div>
 							</div>
-							<div class="col-md-3">
-								<div class="form-group">
-									<span class="form-label">Returning</span>
-									<input class="form-control" type="date" required name='return'>
-								</div>
+							<div class=" col-md-3 " id="main">
+								
 							</div>
+</div>
 							<div class="col-md-2">
 								<div class="form-group" >
 									<span class="form-label aria-label="Default select example"">Cabin</span>
