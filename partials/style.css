@@ -1,41 +1,28 @@
 
 
-.bg-light {
-    background-color:#ffffff;
-}
-.section {
-	position: relative;
-	height: 70vh;
-}
 
-.section .section-center {
-	position: absolute;
-	top: 30%;
-	left: 0;
-	right: 0;
-	-webkit-transform: translateY(-50%);
-	transform: translateY(-50%);
-}
 
 #booking {
 	font-family: 'PT Sans', sans-serif;
-	background-image: url('../img/background.jpg');
+	
 
 }
 
 .booking-form {
 	background:#52515183;
-	padding: 39px;
+	
 	border-radius: 15px;
-    margin-top: 70px;
-
+    
+padding: 10px;
+margin-bottom:5px;
+margin-top: 5px;
    
 }
 
 .booking-form .form-group {
-	position: relative;
-	margin-bottom: 10px;
-    
+	position: center;
+	margin-bottom: 5px;
+    margin-left: 20px;
 }
 
 .booking-form .form-control {
@@ -48,7 +35,8 @@
 	-webkit-box-shadow: none;
 	box-shadow: none;
 	border-radius: 40px;
-	padding: 25px 25px;
+	padding: 20px 20px;
+	
 }
 
 .booking-form .form-control::-webkit-input-placeholder {
@@ -95,12 +83,11 @@
 
 .booking-form .form-label {
 	display: block;
-	margin-left: 20px;
-	margin-bottom: 5px;
+	
+	
 	font-weight: 400;
 	text-transform: uppercase;
-	line-height: 24px;
-	height: 24px;
+
 	font-size: 12px;
 	color: #fff;
 }
@@ -158,9 +145,6 @@
 	height: 10px;
 }
 
-.booking-form .form-btn {
-	margin-top: 27px;
-}
 
 .booking-form .submit-btn {
 	color: rgb(0, 0, 0);
@@ -174,6 +158,8 @@
 	text-transform: uppercase;
 	-webkit-transition: 0.2s all;
 	transition: 0.2s all;
+	
+	
 }
 
 .booking-form .submit-btn:hover,

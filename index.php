@@ -4,6 +4,8 @@ include('partials/navbar.php');
 
 ?>
 <script>
+	
+	document.getELementById("demo").innerHTML="Returning";
 	function noop(){
 		
 	};
@@ -11,25 +13,31 @@ function showreturningtime() {
 	var check=document.getElementById("round").value;
 
   var x = document.createElement("INPUT");
-  var y = document.createElement("SPAN");
+
   x.setAttribute("type"  , "date");
-  y.setAttribute("class" , "form-label"); 
+  
+   
+var span=document.getElementById("demo");
   x.setAttribute("class" , "form-control");
   x.setAttribute("name"  , "return");
-  document.getElementById("main").appendChild(y);
+  
+  span.textContent = "Returning";
   document.getElementById("main").appendChild(x);
   
-
 
 }
 
 function delret(){
+	document.getElementById("demo").innerHTML="";
 	var myobj =document.getElementById("main");
 	myobj.removeChild(myobj.lastElementChild);
-	myobj.removeChild(myobj.lastElementChild);
+
 
 }
 </script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="partials/style.css?<?php echo time(); ?>" type="">
 <link rel="stylesheet" href="partials/footer.css" />
 <div>
@@ -54,17 +62,17 @@ function delret(){
 		  <span class="visually-hidden">Next</span>
 		</button>
 	  </div>
-</div><br><br>
+</div>
 
 
 
 
 
-<div id="booking" class="section">
-	<div class="section-center">
+<div id="booking">
+	<div class="justify-content-center">
 		<div class="container">
 			<div class="row">
-				<div class="booking-form">
+				<div class="booking-form ">
 					<form action="searchflights.php" method="POST">
 						<div class="form-group">
 							<div class="form-checkbox">
@@ -74,7 +82,7 @@ function delret(){
 								</label>
 								
 								<label for="one-way">
-									<input type="radio" id="one-way" name="trip" onChange="delret()">
+									<input type="radio" id="one-way" name="trip" onChange="delret()" checked="yes/no">
 									<span></span>One way
 								</label>
 								
@@ -85,6 +93,7 @@ function delret(){
 								<div class="form-group">
 								<span class="form-label " name="from">Flying from</span>
 								<select class="form-select" aria-label="Default select example"  name="from">
+									
 										<option value="Kathmandu">Kathmandu</option>
 										<option value="Pokhara">Pokhara</option>
 										<option value="Biratngar">Biratnagar</option>
@@ -111,8 +120,9 @@ function delret(){
 									<input class="form-control" type="date" required name='departure'>
 								</div>
 							</div>
-							<div class=" col-md-3 " id="main">
-								
+							<div class=" col-md-3 " id="main" style="margin-left:22px;">
+							<span id="demo" class="form-label"></span>
+
 							</div>
 </div>
 							<div class="col-md-2">
@@ -142,18 +152,52 @@ function delret(){
 						<center>
 							<div class="col-md-3">
 								<div class="form-btn">
-									<button class="submit-btn" name="submit">Show flights</button>
+									<button   class="btn btn-secondary btn-lg" name="submit">Show flights</button>
 								</div></center>
 							</div>
-						</div>
 					</form>
-				</div>
-			</div>
-		</div>
-	</div>
 </div>
+</div>
+</div>
+</div>
+</div>
+<div class="container">
+<div class="row  ">
+<div class="col-md-4">
+<div class="card" style="width: 20rem;">
+
+  <img src="img/mountain.jpg" class="card-img-top" alt="...">
+  <div class="card-body">
+    <p class="card-text">Get a beautiful and stunning views of mountains here in Nepal as you fly with us .</p>
+  </div></div>
+</div>
+  <div class="col-md-4">
+  <div class="card" style="width: 20rem; ">
+  <img src="img/khaja.jpg" class="card-img-top" alt="..." style="height:-20px;">
+  <div class="card-body">
+    <p class="card-text">Exclusively,Enjoy various Nepali Dishes and Khaja Sets.</p>
+  </div>
+</div>
+</div>
+<div class="col-md-4">
+  <div class="card" style="width: 20rem; ">
+ 
+  <a  data-bs-toggle="collapse" href="#collapseExample"  aria-expanded="false" aria-controls="collapseExample" style="text-decoration:none;">
+  <img src="img/khaja.jpg" class="card-img-top "  alt="..." style="height:-20px;">
+  </a>
+<div class="collapse" id="collapseExample">
+  
+  <div class="card-body">
+    <p class="card-text">Exclusively,Enjoy various Nepali Dishes and Khaja Sets.</p>
+  </div>
+</div>
+</div>
+</div>
+</div>
+
 <?php
 
 include('partials/footer.php');
 ?>
 
+ 
