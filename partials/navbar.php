@@ -46,7 +46,7 @@
 
   	<div class="container">
   		
-  		<nav class="navbar navbar-expand-md navbar-light bg-light">
+  		<nav class="navbar navbar-expand-md navbar-light bg-light fixed-top">
   			<a href=" " class="navbar-brand"> 
   				<span class=""> NEPA AIR</span>
   				
@@ -73,7 +73,7 @@
     			<li><a class="nav-link" href="index.php">Home</a></li>
     			<li><a class="nav-link" href="">Flight Detail</a></li>
     			<li><a class="nav-link" href="">About Us</a></li>
-				  
+			
 				<?php
 
 
@@ -90,19 +90,17 @@ echo"
   				<ul class='navbar-nav text-left ms-auto mn' >
 				  ";
 				  
-    echo"<li><a  href='Profile.php'>"; echo "$_user"; echo"</a></li>";
-    echo"<li><a  href='logout.php'>Log Out</a></li>";
+    echo"<li><a  class='nav-link' href='Profile.php'>"; echo "$_user"; echo"</a></li>";
+    echo"<li><a class='nav-link' href='logout.php'>Log Out</a></li>";
 
 }
-else{  echo"
-	<div class='collapse navbar-collapse' id='toggleMobileMenu'> 
-	
-					  <ul class='navbar-nav text-left ms-auto mn' >
-					  ";
-        echo"<li><a   href='signup.php'>Sign up</a></li>";
-	echo"<li><a  href='login.php'>Log in</a></li>";
+else{
+	echo "<li><a  class='nav-link' href='signup.php'>Sign up</a></li>";
+	echo "<li><a class='nav-link' href='login.php'>Log in</a></li>";
+}
+      
 
-	}
+
 
 
 

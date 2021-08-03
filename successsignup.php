@@ -70,11 +70,11 @@ body{
             <?php
             if($_value=='Account Created Successfully!'){
            
-  echo "<div class='w3-panel w3-green w3-round-large'><p>$_value</p></div>";
+  echo "<div class='w3-panel w3-green w3-round-large' style='margin-top:50px;'><p>$_value</p></div>";
             }
             else
             {
-                echo "<div class='w3-panel w3-red w3-round-large'><p>$_value</p></div>";
+                echo "<div class='w3-panel w3-red w3-round-large' style='margin-top:50px;'><p>$_value</p></div>";
             }
 
 ?>

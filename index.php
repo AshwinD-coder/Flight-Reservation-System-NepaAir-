@@ -39,6 +39,7 @@ function delret(){
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="partials/style.css?<?php echo time(); ?>" type="">
+
 <link rel="stylesheet" href="partials/footer.css" />
 <div>
 	<div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
@@ -92,14 +93,27 @@ function delret(){
 							<div class="col-md-3">
 								<div class="form-group">
 								<span class="form-label " name="from">Flying from</span>
+								<i data-mdb-animation-start="onClick" name="from" data-mdb-toggle="animation" data-mdb-animation-reset="true" data-mdb-animation="fade-in-down">
+
 								<select class="form-select" aria-label="Default select example"  name="from">
-									
 										<option value="Kathmandu">Kathmandu</option>
 										<option value="Pokhara">Pokhara</option>
 										<option value="Biratngar">Biratnagar</option>
 									</select>
+</i>
 									<span class="select-arrow"></span>
 							
+								</div>
+							</div>
+							<div class="col-md-1">
+								<div class="form-group">
+								<span class="form-label " name="from"> </span>
+								<br>
+								<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left-right" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M1 11.5a.5.5 0 0 0 .5.5h11.793l-3.147 3.146a.5.5 0 0 0 .708.708l4-4a.5.5 0 0 0 0-.708l-4-4a.5.5 0 0 0-.708.708L13.293 11H1.5a.5.5 0 0 0-.5.5zm14-7a.5.5 0 0 1-.5.5H2.707l3.147 3.146a.5.5 0 1 1-.708.708l-4-4a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 4H14.5a.5.5 0 0 1 .5.5z"/>
+</svg>
+								
+<span class="select-arrow"></span>
 								</div>
 							</div>
 							<div class="col-md-3">
@@ -117,7 +131,7 @@ function delret(){
 							<div class="col-md-3">
 								<div class="form-group" >
 									<span class="form-label">Departing</span>
-									<input class="form-control" type="date" required name='departure'>
+									<input class="form-control" type="date" required name='departure' style="color:black;">
 								</div>
 							</div>
 							<div class=" col-md-3 " id="main" style="margin-left:22px;">
@@ -182,19 +196,20 @@ function delret(){
 <div class="col-md-4">
   <div class="card" style="width: 20rem; ">
  
-  <a  data-bs-toggle="collapse" href="#collapseExample"  aria-expanded="false" aria-controls="collapseExample" style="text-decoration:none;">
+  <a  data-bs-toggle="collapse" href="#collapseExample"  aria-expanded="false" aria-controls="collapseExample" style="text-decoration:none;" >
   <img src="img/khaja.jpg" class="card-img-top "  alt="..." style="height:-20px;">
   </a>
 <div class="collapse" id="collapseExample">
   
   <div class="card-body">
     <p class="card-text">Exclusively,Enjoy various Nepali Dishes and Khaja Sets.</p>
+	
   </div>
 </div>
 </div>
 </div>
 </div>
-
+</div>
 <?php
 
 include('partials/footer.php');
