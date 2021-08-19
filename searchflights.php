@@ -50,8 +50,10 @@ if (isset($_POST['submit'])) {
         
         
     echo "<td>" .$row[1] ."</td>";
-    echo "<td>" .$row[2] ."</td>";    echo "<td>" .$row[3] ."</td>"; echo "<td>" .$row[4] ."</td>"; /*echo "<td>" .$row[] ."</td>";*/echo "<td>" .$row[6] ."</td>";  echo "<td>" .$row[8] ."</td>";echo "<td>" .$row[7] ."</td>"; echo "<td>" .$row[10] ."</td>"; echo"<td><a href='login.php?id=$row[0]' style='text-decoration:none; color:Black;'>Book Flight</a></td>";
+    echo "<td>" .$row[2] ."</td>";    echo "<td>" .$row[3] ."</td>"; echo "<td>" .$row[4] ."</td>"; /*echo "<td>" .$row[] ."</td>";*/echo "<td>" .$row[6] ."</td>";  echo "<td>" .$row[8] ."</td>";echo "<td>" .$row[7] ."</td>"; echo "<td>" .$row[10] ."</td>"; echo"<td><form action='esewa/paywith.php'><button type='submit' value='Book Now' class='btn btn-primary'  >Book Now</form></td>";
     echo "</tr>";
+
+    
     
    
     
@@ -78,6 +80,10 @@ else {echo "<br>";
 
 
   ?> 
+
+
+
+
   <?php
 
 include('partials/footer.php');
