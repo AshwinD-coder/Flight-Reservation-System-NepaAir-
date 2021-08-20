@@ -68,7 +68,7 @@ body{
    
             <div class="col-md-8">
             <?php
-            if($_value=='Account Created Successfully!'){
+            if($_value=='Account Created Successfully! Please Verify Your Email Address'){
            
   echo "<div class='w3-panel w3-green w3-round-large' style='margin-top:50px;'><p>$_value</p></div>";
             }
