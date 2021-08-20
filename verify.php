@@ -3,7 +3,7 @@ include("connection.php");
 if(isset($_GET['vkey'])){
 //Process Verification
 $vkey=$_GET['vkey'];
-$resultSet=mysqli_query($conn,"SELECT verified,vkey FROM users WHERE verified 0 AND vkey='$vkey' LIMIT 1");
+$resultSet=mysqli_query($conn,"SELECT verified,vkey FROM users WHERE verified = 0 AND vkey='$vkey' LIMIT 1");
 if(mysqli_num_rows($resultSet) ==1)
 {
     //validate
