@@ -14,24 +14,23 @@ if(isset($_POST['Login']))
     
             
 
-    if(mysqli_num_rows($result)==1) {
-            
-      
-
-            session_start();
-            $_SESSION['username']=$_POST['username'];
-            
-
-
-
-           
-
-            header("location: index.php");
+    if(mysqli_num_rows($result)!=0) {
+$row=mysqli_fetch_assoc($result);
+$verified=$row['verified'];
+$email=$row['email'];
+if($verified=='1'){
+session_start();
+$_SESSION['username']=$_POST['username'];
+header("location: index.php");}
+else{
+echo "<script>alert('This account is not verified yet.Check Your Email($email).'); window.location='login.php';</script>";
+}
         
     }
     else
     {
-        echo "<script>alert('Incorrect Password'); </script>";
+        echo "<script>alert('The username or password you entered is incorrect. '); window.location='login.php'; </script>";
+        
     }
 }
 
