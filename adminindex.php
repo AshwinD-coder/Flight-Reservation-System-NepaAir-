@@ -10,7 +10,7 @@ include('partials/adminnavbar.php');
 <link rel="stylesheet" href="style.css" type="">
               <div class="container ">
                 <h2>Add flights:</h2>
-                <div class="booking-formadmin">
+                <div class="booking-form">
                 <form id="form-submit" action="addflight.php" method="POST">
                 <div class="form-group">
                 <div class="row ">
@@ -116,9 +116,47 @@ include('partials/adminnavbar.php');
 </div></div>
 </div>   </div> 
 </form></div>
-                            
-            
-          
+<br>
+<br>
+<br>
+
+<?php
+echo "<center><h3>
+Flight List :---</center></h3>";
+  include("connection.php");    
+    	$query = "SELECT * FROM availableflights";
+        $result=mysqli_query($conn,$query);
+        if(mysqli_num_rows($result)>0){
+           
+            echo "<div class='container'>";
+       echo "<table class='table table-hover table-bordered'><tr class='table table-primary'><th>From</th><th>To</th><th>Departure Date</th><th>Return Date</th><th>Cabin</th><th>Seats available</th><th>Trip Type</th><th>Price Per Ticket</th><th colspan=2><center>Action</center></th>";
+       
+        	while(($row = mysqli_fetch_row($result))!=null)
+	{   
+       $row[8]=$row[8]-$row[5];
+     
+       echo "<tr class='table table-secondary'>";
+        
+        
+    echo "<td>" .$row[1] ."</td>";
+    echo "<td>" .$row[2] ."</td>";    echo "<td>" .$row[3] ."</td>"; echo "<td>" .$row[4] ."</td>"; /*echo "<td>" .$row[] ."</td>";*/echo "<td>" .$row[6] ."</td>";  echo "<td>" .$row[8] ."</td>";echo "<td>" .$row[7] ."</td>"; echo "<td>" .$row[10] ."</td>"; 
+    echo "<td><a href='adminindex.php?id=$row[0]' class='btn btn-warning'>Edit</a></td><td><a href='confirm.php?id=$row[0]'  class='btn btn-danger'>Delete</a>";
+    echo "</tr>";
+
+    
+    
+   
+    
+    }
+    echo "</table>";
+    echo "</div>";
+    echo "</div>";  
+
+    echo "</div>";  
+
+
+}                     
+          ?>
             <?php
 
 include('partials/footer.php');

@@ -71,15 +71,9 @@
 				  
 
     			<li><a class="nav-link" href="index.php">Home</a></li>
-    			<li><a class="nav-link" href="addflight.php">Add Flights</a></li>
     		
 				  
-				<?php
-
-
-
-
-
+<!-- <?php				
 session_start();
 
 if(isset($_SESSION['username'])){
@@ -107,7 +101,7 @@ else{  echo"
 
 
 
-		?>	
+		?>	 -->
     		</ul>
 
   			</div>
