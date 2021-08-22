@@ -140,7 +140,7 @@ Flight List :---</center></h3>";
         
     echo "<td>" .$row[1] ."</td>";
     echo "<td>" .$row[2] ."</td>";    echo "<td>" .$row[3] ."</td>"; echo "<td>" .$row[4] ."</td>"; /*echo "<td>" .$row[] ."</td>";*/echo "<td>" .$row[6] ."</td>";  echo "<td>" .$row[8] ."</td>";echo "<td>" .$row[7] ."</td>"; echo "<td>" .$row[10] ."</td>"; 
-    echo "<td><a href='adminindex.php?id=$row[0]' class='btn btn-warning'>Edit</a></td><td><a href='confirm.php?id=$row[0]'  class='btn btn-danger'>Delete</a>";
+    echo "<td><a href='edit.php?id=$row[0]' class='btn btn-warning'>Edit</a></td><td><a href='confirm.php?id=$row[0]'  class='btn btn-danger'>Delete</a>";
     echo "</tr>";
 
     
@@ -155,7 +155,8 @@ Flight List :---</center></h3>";
     echo "</div>";  
 
 
-}                     
+}               
+    
           ?>
             <?php
 
