@@ -70,7 +70,7 @@
   				<ul class="navbar-nav text-left ms-auto mn" >
 				  
 
-    			<li><a class="nav-link" href="index.php">Home</a></li>
+    			<li><a class="nav-link" href="adminindex.php">Home</a></li>
     		
 				  
 <!-- <?php				
