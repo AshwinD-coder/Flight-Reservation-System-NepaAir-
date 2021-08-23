@@ -28,7 +28,7 @@ if (isset($_POST['submit'])) {
   
 
     
-    	$query = "SELECT * FROM availableflights WHERE  fro_m='$fromAirport' AND t_o='$toAirport' AND departur_e = '$Depart' AND retur_n='$Return' ";
+    	$query = "SELECT * FROM availableflights WHERE  fro_m='$fromAirport' AND t_o='$toAirport' AND departur_e = '$Depart' OR retur_n='$Return' ";
         $result=mysqli_query($conn,$query);
         if(mysqli_num_rows($result)>0){
             echo "<br>";
