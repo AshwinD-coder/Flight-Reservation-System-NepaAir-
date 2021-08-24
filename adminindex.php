@@ -80,10 +80,10 @@ include('partials/adminnavbar.php');
                 <div class="col-md-3">
                                     <select required name='price' >
                                     <option value="">Price Per Ticket</option>
-                                    <option value="Rs.2000">Rs2000</option>
-                                    <option value="Rs.4000">Rs4000</option>
-                                    <option value="Rs.6000">Rs6000</option>
-                                    <option value="Rs.10000">Rs10000</option>
+                                    <option value="2000">Rs2000</option>
+                                    <option value="4000">Rs4000</option>
+                                    <option value="6000">Rs6000</option>
+                                    <option value="10000">Rs10000</option>
                                     </select>
                                     </div></div>
                                     <div class="row">

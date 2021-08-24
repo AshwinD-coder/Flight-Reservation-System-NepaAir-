@@ -152,7 +152,7 @@ function delret(){
 							<div class="col-md-2">
 								<div class="form-group">
 									<span class="form-label">Passengers</span>
-									<select class="form-select" aria-label="Default select example">
+									<select class="form-select" aria-label="Default select example" name="guests">
 
 										<option>1</option>
 										<option>2</option>

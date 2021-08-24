@@ -13,7 +13,7 @@ include('partials/navbar.php');
 
   include("connection.php");
 
-
+session_start();
 if (isset($_POST['submit'])) {
 	
     //$trip = $_POST['trip'];
@@ -22,8 +22,8 @@ if (isset($_POST['submit'])) {
     $Depart = $_POST['departure'];
 	$Return = $_POST['return'];
 //	$seatclass = $_POST['cabin'];
-   // $noofpassenger=$_POST['guests'];
-  //  $_SESSION['nop']= $noofpassenger;
+   $noofpassenger=$_POST['guests'];
+   $_SESSION['nop']= $noofpassenger;
  
   
 
@@ -50,7 +50,7 @@ if (isset($_POST['submit'])) {
         
         
     echo "<td>" .$row[1] ."</td>";
-    echo "<td>" .$row[2] ."</td>";    echo "<td>" .$row[3] ."</td>"; echo "<td>" .$row[4] ."</td>"; /*echo "<td>" .$row[] ."</td>";*/echo "<td>" .$row[6] ."</td>";  echo "<td>" .$row[8] ."</td>";echo "<td>" .$row[7] ."</td>"; echo "<td>" .$row[10] ."</td>"; echo"<td><form action='esewa/paywith.php'><button type='submit' value='Book Now' class='btn btn-primary'  >Book Now</form></td>";
+    echo "<td>" .$row[2] ."</td>";    echo "<td>" .$row[3] ."</td>"; echo "<td>" .$row[4] ."</td>"; /*echo "<td>" .$row[] ."</td>";*/echo "<td>" .$row[6] ."</td>";  echo "<td>" .$row[8] ."</td>";echo "<td>" .$row[7] ."</td>"; echo "<td>" .$row[10] ."</td>"; echo"<td><a href='esewa/index.php?id=$row[0]'<button type='submit' class='btn btn-primary'  >Book Now</button></a></td>";
     echo "</tr>";
 
     

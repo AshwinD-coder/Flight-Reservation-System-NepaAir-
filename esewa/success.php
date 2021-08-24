@@ -22,7 +22,7 @@ $data =[
     if(strpos(  $response, "Success") !== false){
         header("Location: https://drive.google.com/file/d/1Mab2MK6zmQzCUFrWpC8DVdc_tGqwCUMK/view?usp=drive_open");
     } else{
-         header("Location: https://localhost/fosp/EsewaWeb/");
+         header("Location: https://localhost/fosp/Github/Project5Sem/esewa/thankyou.php");
     }
 
 ?>

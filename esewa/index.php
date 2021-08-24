@@ -1,6 +1,15 @@
 <?php
 include 'setting.php';
+include '../connection.php';
 
+session_start();
+$nop=$_SESSION['nop'];
+$id=$_GET['id'];
+$_SESSION['id']=$id;
+$query="SELECT * FROM availableflights WHERE id='$id'";
+$result=mysqli_query($conn,$query);
+$row=mysqli_fetch_assoc($result);
+$price=$nop*$row['priceperticket'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -22,16 +31,16 @@ include 'setting.php';
     </div>
     <div class="card-text">You can use this software for your tranining center, institute, language class. </div>
     <form action=<?php echo $epay_url?> method="POST">
-    <input value="1000" name="tAmt" type="hidden">
-    <input value="900" name="amt" type="hidden">
-    <input value="50" name="txAmt" type="hidden">
-    <input value="20" name="psc" type="hidden">
-    <input value="30" name="pdc" type="hidden">
+    <input value="<?php echo $price?>" name="tAmt" type="hidden">
+    <input value="<?php echo $price?>" name="amt" type="hidden">
+    <input value="0" name="txAmt" type="hidden">
+    <input value="0" name="psc" type="hidden">
+    <input value="0" name="pdc" type="hidden">
     <input value=<?php echo $merchant_code?>  name="scd" type="hidden">
     <input value="<?php echo $pid?>" name="pid" type="hidden">
     <input value=<?php echo $successurl?> type="hidden" name="su">
     <input value=<?php echo $failedurl?> type="hidden" name="fu">
-    <input value="Pay with Esewa Rs 10,000" type="submit" class="btn btn-primary">
+    <input value="Pay with Esewa <?php echo $price?>" type="submit" class="btn btn-primary">
     </form>
     </div>
     </div>
