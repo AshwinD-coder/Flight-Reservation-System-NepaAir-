@@ -125,10 +125,10 @@ echo "<td>" .$row[10]."<a href='edit2.php?id=$id&value=$row[10]&index=$p'><i cla
 if($value==$row[10]){echo "<form action='saveedit.php?id=$id&value=$row[10]&index=$p' METHOD='POST'>
     <select required name='from' >
     <option value=''>Select Price/Ticket...</option>
-    <option value='Rs.2000'>Rs.2000</option>
-    <option value='Rs.4000'>Rs.4000</option>
-    <option value='Rs.6000'>Rs.6000</option>
-    <option value='Rs.10000'>Rs.10000</option>
+    <option value='2000'>Rs.2000</option>
+    <option value='4000'>Rs.4000</option>
+    <option value='6000'>Rs.6000</option>
+    <option value='10000'>Rs.10000</option>
 
     
     </select>

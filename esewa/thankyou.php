@@ -11,6 +11,14 @@ $pass=$row['passenger_s'];
 $totalseats=$row['Totalseats'];
 $pass=$pass+$nop;
 $totalseats=$totalseats-$nop;
-$que="UPDATE availableflights SET passenger_s=$pass AND Totalseats=$totalseats WHERE id='$id'";
-$res=mysqli_query($conn,$que);
+mysqli_query($conn, "UPDATE availableflights SET passenger_s='$pass' WHERE id='$id'");
+mysqli_query($conn, "UPDATE availableflights SET Totalseats='$totalseats' WHERE id='$id'");
+if($totalseats==0){
+mysqli_query($conn, "UPDATE availableflights SET booking='Booked' WHERE id='$id'");
+}
+if($totalseats>0){
+    mysqli_query($conn, "UPDATE availableflights SET booking='Half-booked' WHERE id='$id'");
+    }
+echo "<br><a href='../index.php'>Go to Homepage</a>";
+
 ?>
