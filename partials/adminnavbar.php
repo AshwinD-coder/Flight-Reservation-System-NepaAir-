@@ -17,7 +17,7 @@
 
 	<link rel="stylesheet" href="style.css" type="">
 
-    <title>Nepaair</title>
+    <title>Nepaair | Admin Index</title>
 
     <style type="text/css">
     	.hidden{
@@ -47,7 +47,7 @@
   	<div class="container">
   		
   		<nav class="navbar navbar-expand-md navbar-light bg-light">
-  			<a href=" " class="navbar-brand"> 
+  			<a href=" adminindex.php" class="navbar-brand"> 
   				<span class=""> NEPA AIR</span>
   				
   				<img src="img/logo.png" alt="bootstrap-5 logo" width="50" height="34" 
@@ -73,11 +73,11 @@
     			<li><a class="nav-link" href="adminindex.php">Home</a></li>
     		
 				  
-<!-- <?php				
+ <?php				
 session_start();
 
-if(isset($_SESSION['username'])){
-$_user=$_SESSION['username'];
+if(isset($_SESSION['name'])){
+$_user=$_SESSION['name'];
 echo"
 <div class='collapse navbar-collapse' id='toggleMobileMenu'> 
 
@@ -85,7 +85,7 @@ echo"
 				  ";
 				  
     echo"<li><a  href='Profile.php'>"; echo "$_user"; echo"</a></li>";
-    echo"<li><a  href='logout.php'>Log Out</a></li>";
+    echo"<li><a  href='logoutadmin.php'>Log Out</a></li>";
 
 }
 else{  echo"
@@ -101,7 +101,7 @@ else{  echo"
 
 
 
-		?>	 -->
+		?>	 
     		</ul>
 
   			</div>

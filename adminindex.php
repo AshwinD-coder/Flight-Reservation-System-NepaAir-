@@ -3,11 +3,13 @@
 
 include('partials/adminnavbar.php');
 
+
 ?>
 
-<link rel="stylesheet" href="partials/footer.css" />
 
-<link rel="stylesheet" href="style.css" type="">
+
+
+
               <div class="container ">
                 <h2>Add flights:</h2>
                 <div class="booking-form">
@@ -51,11 +53,11 @@ include('partials/adminnavbar.php');
 <div class="row">
                 <div class="col-md-3">
                                 <label for="departure" >Departure date:</label>
-                                <input name="departure" type="date" class="form-control date" id="deparure" placeholder="Select date..." required="" onchange='this.form.()'>
+                                <input name="departure" type="date" min="<?php echo date('Y-m-d');?>" class="form-control date" id="deparure" placeholder="Select date..." required="" onchange='this.form.()'>
                                 </div>
                 <div class="col-md-3">
                                 <label for="return">Return date:</label>
-                                <input name="return" type="date" class="form-control date" id="return" placeholder="Select date..." required="" onchange='this.form.()'>
+                                <input name="return" type="date" min="<?php echo date('Y-m-d');?>" class="form-control date" id="return" placeholder="Select date..." required="" onchange='this.form.()'>
                                 </div></div>
                                 <div class="row">
                 <div class="col-md-3">
@@ -158,8 +160,3 @@ Flight List :---</center></h3>";
 }               
     
           ?>
-            <?php
-
-include('partials/footer.php');
-
-?>
