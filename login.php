@@ -4,7 +4,7 @@
 include('partials/navbar.php');
 ?>
 <link rel="stylesheet" href="partials/footer.css" />
-
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
 <link rel="stylesheet" href="partials/style.css" type="">
 
     <style type="text/css">
@@ -49,13 +49,13 @@ include('partials/navbar.php');
                         <input type="checkbox" class="custom-control-input" id="customCheck1">
                         <label class="custom-control-label" for="customCheck1">Remember password</label>
                       </div>
-                      <button class="btn btn-md btn-primary btn-block text-uppercase" type="submit" name="Login">Sign in</button><hr>
+                      <button class="btn btn-md btn-primary btn-block text-uppercase" type="submit" name="Login">Log in</button><hr>
                       <div class="col-6custom-control custom-checkbox mb-3">
-                      <button class="btn btn-md btn-google btn-block text-uppercase" type="submit"> Sign in with Google</button>
+                      <button class="btn btn-md btn-google btn-block text-uppercase" type="submit"><i class="bi bi-google"></i> Log in with Google</button>
   
       </div>
                       <div class="row-4 custom-control custom-checkbox mb-3">
-                      <button class="btn btn-md btn-facebook btn-block text-uppercase" type="submit"><i class="fab fa-facebook-f mr-2"></i> Sign in with Facebook</button>
+                      <button class="btn btn-md btn-facebook btn-block text-uppercase" type="submit"><i class="bi bi-facebook"></i></i> Log in with Facebook</button>
       </div>
                     </form>
                   </div>
