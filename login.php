@@ -25,7 +25,7 @@ include('partials/navbar.php');
       color:#f1f2f6;
         } */
     </style>
-    
+    <br>
     <form action="log_db_cnt.php" method="POST">
 
         <div class="container">

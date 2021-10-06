@@ -59,6 +59,7 @@ body{
     <div class="cotainer">
         <div class="row justify-content-center">
             <div class="col-md-8">
+                <br><br>
                     <div class="card">
                         <div class="card-header">Register</div>
                         <div class="card-body">
@@ -66,14 +67,16 @@ body{
                                 <div class="form-group row">
                                     <label for="full_name" class="col-md-4 col-form-label text-md-right">Full Name</label>
                                     <div class="col-md-6">
-                                        <input type="text" id="full_name" class="form-control" name="full-name" required>
+                                        <input type="text" id="full_name" placeholder="Firstname Lastname" class="form-control" name="full-name" required>
                                     </div>
                                 </div>
 
                                 <div class="form-group row">
                                     <label for="email_address" class="col-md-4 col-form-label text-md-right">E-Mail Address</label>
                                     <div class="col-md-6">
-                                        <input type="text" id="email_address" class="form-control" name="email" required>
+                                        <input type="text" id="email_address" class="form-control" name="email" required >
+                                    <span  id="CheckemailMatch"></span>
+
                                     </div>
                                 </div>
 
@@ -103,7 +106,7 @@ body{
         </div>
         
                                     </div>
-                                    <div style=" margin-left: 310px;" id="CheckPasswordMatch"></div>
+                                    <div style=" margin-left: 370px;" id="CheckPasswordMatch"></div>
                             
                           
                                 <div class="form-group row">
@@ -394,9 +397,9 @@ body{
                                 </div>
 
                                     <div class="col-md-6 offset-md-4">
-                                        <input type="submit" name="submit" class="btn btn-primary">
+
+                                    <input style="margin-left:30px; margin-top:30px;" type="submit" name="submit" class="btn btn-primary">
                                         
-                                        </input>
                          </div>
                     </div>
             </div>
@@ -409,22 +412,41 @@ body{
 
 </main>
 
-            <?php
-
-include('partials/footer.php');
-
-?>
 <script>
 $(document).ready(function () {
    $("#Confirmpassword").on('keyup', function(){
     var password = $("#pass_word").val();
     var confirmPassword = $("#Confirmpassword").val();
+   
     if (password != confirmPassword)
         $("#CheckPasswordMatch").html("Password does not match !").css("color","red");
+        
     else
         $("#CheckPasswordMatch").html("Password match !").css("color","green");
+        
+
    });
 });
+$(document).ready(function () {
+   $("#email_address").on('keyup', function(){
+    var email = $("#email_address").val();
+    
+    var atposition=email.indexOf("@");  
+var dotposition=email.lastIndexOf(".");  
+if (atposition<1 || dotposition<atposition+2 || dotposition+2>=email.length){  
+
+        $("#CheckemailMatch").html("Invalid Email!").css("color","red");
+   
+
+ }else{
+    $("#CheckemailMatch").html("Valid Email!").css("color","green");
+ }
+
+        
+
+   });
+});
+
 function myFunction() {
   var x = document.getElementById("pass_word");
   if (x.type === "password") {
@@ -443,4 +465,10 @@ var y = document.getElementById("Confirmpassword");
 }
 
 </script>
+            <?php
+
+include('partials/footer.php');
+
+?>
+
 

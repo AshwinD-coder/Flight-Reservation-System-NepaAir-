@@ -17,7 +17,7 @@ function showreturningtime() {
   var x = document.createElement("INPUT");
 
   x.setAttribute("type"  , "date");
-  
+  x.setAttribute("min"  , "<?php echo date('Y-m-d');?>");
    
 var span=document.getElementById("demo");
   x.setAttribute("class" , "form-control");

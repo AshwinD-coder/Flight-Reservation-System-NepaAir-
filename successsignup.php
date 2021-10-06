@@ -10,6 +10,8 @@ if(isset($_SESSION['value'])){
 }
 ?>
 <link rel="stylesheet" href="partials/footer.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+
 <style>
 
 
@@ -86,7 +88,7 @@ body{
                                 <div class="form-group row">
                                     <label for="full_name" class="col-md-4 col-form-label text-md-right">Full Name</label>
                                     <div class="col-md-6">
-                                        <input type="text" id="full_name" class="form-control" name="full-name" required>
+                                        <input type="text" id="full_name" placeholder="Firstname Lastname" class="form-control" name="full-name" required>
                                     </div>
                                 </div>
 
@@ -105,20 +107,25 @@ body{
                                 </div>
 
                                 <div class="form-group row">
-                                    <label for="password" class="col-md-4 col-form-label text-md-right">Password</label>
+                                    <label for="password" class="col-md-4 col-form-label text-md-right">Password
+                                    <span toggle="#password-field" class="fa fa-fw fa-eye field_icon toggle-password" style="cursor:pointer;" onclick="myFunction()" title="Show/Hide"></span>
+                                    </label>
                                     <div class="col-md-6">
                                         <input type="password" id="pass_word" class="form-control" name="password" required>
                                     </div>
                                 </div>
 
                                 <div class="form-group row">
-                                    <label for="confirmpassword" class="col-md-4 col-form-label text-md-right">Confirm Password</label>
+                                    <label for="confirmpassword" class="col-md-4 col-form-label text-md-right">Confirm Password
+                                    <span toggle="#password-field" class="fa fa-fw fa-eye field_icon toggle-password" style="cursor:pointer;" onclick="myFunction2()" title="Show/Hide"></span>
+
+                                    </label>
                                     <div class="col-md-6">
                                         <input type="password" id="Confirmpassword" class="form-control" name="confirmpassword" required>
         </div>
         
                                     </div>
-                                    <div style=" margin-left: 310px;" id="CheckPasswordMatch"></div>
+                                    <div style=" margin-left: 370px;" id="CheckPasswordMatch"></div>
                             
                           
                                 <div class="form-group row">
@@ -440,4 +447,21 @@ $(document).ready(function () {
         $("#CheckPasswordMatch").html("Password match !").css("color","green");
    });
 });
+function myFunction() {
+  var x = document.getElementById("pass_word");
+  if (x.type === "password") {
+    x.type = "text";
+  } else {
+    x.type = "password";
+  }
+}
+function myFunction2() {
+var y = document.getElementById("Confirmpassword");
+  if (y.type === "password") {
+    y.type = "text";
+  } else {
+    y.type = "password";
+  }
+}
+
 </script>
