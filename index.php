@@ -130,7 +130,7 @@ function delret(){
 							<div class="col-md-3">
 								<div class="form-group" >
 									<span class="form-label">Departing</span>
-									<input class="form-control" type="date" required name='departure' style="color:black;">
+									<input class="form-control" min="<?php echo date('Y-m-d');?>" type="date" required name='departure' style="color:black;">
 								</div>
 							</div>
 							<div class=" col-md-3 " id="main" style="margin-left:22px;">
