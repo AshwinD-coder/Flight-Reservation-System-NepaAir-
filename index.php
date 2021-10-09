@@ -78,7 +78,7 @@ function delret(){
 				<div class="booking-form ">
 					<form action="searchflights.php" method="POST">
 						<div class="form-group">
-							<div class="form-checkbox">
+							<!-- <div class="form-checkbox">
 							<label for="round">
 									<input type="radio" id="round" name="trip"   onChange="showreturningtime()" >
 									<span></span>Round
@@ -90,7 +90,7 @@ function delret(){
 								</label>
 								
 							</div>
-						</div>
+						</div> -->
 						<div class="row">
 							<div class="col-md-3">
 								<div class="form-group">
