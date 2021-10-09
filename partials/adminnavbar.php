@@ -93,8 +93,8 @@ else{  echo"
 	
 					  <ul class='navbar-nav text-left ms-auto mn' >
 					  ";
-        echo"<li><a   href='signup.php'>Sign up</a></li>";
-	echo"<li><a  href='login.php'>Log in</a></li>";
+        echo"<li><a   href='adminsignup.php'>Sign up</a></li>";
+	echo"<li><a  href='loginadmin.php'>Log in</a></li>";
 
 	}
 
