@@ -1,7 +1,9 @@
+
+ 
 <?php
 session_start();
 include '../connection.php';
-echo "Thank you for purchasing!";
+
 $nop=$_SESSION['nop'];
 $id=$_SESSION['id'];
 $query="SELECT * FROM availableflights WHERE id='$id'";
@@ -19,6 +21,7 @@ mysqli_query($conn, "UPDATE availableflights SET booking='Booked' WHERE id='$id'
 if($totalseats>0){
     mysqli_query($conn, "UPDATE availableflights SET booking='Half-booked' WHERE id='$id'");
     }
-echo "<br><a href='../index.php'>Go to Homepage</a>";
 
+    header('location:thankyou2.php');
 ?>
+
