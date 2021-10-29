@@ -122,6 +122,7 @@ function delret(){
 								<option value="Kathmandu">Kathmandu</option>
 										<option value="Pokhara">Pokhara</option>
 										<option value="Biratngar">Biratnagar</option>
+										
 									</select>
 									<span class="select-arrow"></span>
 								</div>
