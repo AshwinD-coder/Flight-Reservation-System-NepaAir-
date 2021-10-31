@@ -51,7 +51,7 @@ include('partials/navbar.php');
                       </div>
                       <button class="btn btn-md btn-primary btn-block text-uppercase" type="submit" name="Login">Log in</button><hr>
                       <div class="col-6custom-control custom-checkbox mb-3">
-                      <button class="btn btn-md btn-google btn-block text-uppercase" type="submit"><i class="bi bi-google"></i> Log in with Google</button>
+                    
   
       </div>
                       <div class="row-4 custom-control custom-checkbox mb-3">
