@@ -12,12 +12,12 @@ $departure=$_POST['departure'];
 $seats=$_POST['seats'];
 $cabin=$_POST['cabin'];
 
-$book='notbooked';
+$book='Not Booked';
 $price=$_POST['price'];
 $deptime=$_POST['departuretime'];
 
 
-mysqli_query($conn, "INSERT INTO availableflights(Fro_m,t_o,departur_e,cabi_n,totalseats,Booking,priceperticket,departuretime)
+mysqli_query($conn, "INSERT INTO availableflights(Fro_m,t_o,departur_e,cabi_n,totalseats,Status,priceperticket,departuretime)
 			    VALUES ('$from','$to','$departure','$cabin','$seats','$book','$price','$deptime')")
                  or die (mysqli_error("Error"));
 			    echo "<script>alert('added to database'); window.location='adminindex.php'</script>";

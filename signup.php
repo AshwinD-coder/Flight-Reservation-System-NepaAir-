@@ -409,7 +409,15 @@ body{
                                 </div>
                             </form>
        
+                            <?php
+  date_default_timezone_set('Asia/Kathmandu');
 
+$bookingtime=date("H:i");
+$bookingdate=date("Y/m/d ");
+echo $bookingtime;
+echo $bookingdate;
+
+?>
 </main>
 
 <script>

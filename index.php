@@ -1,7 +1,19 @@
 <?php
 
 include('partials/navbar.php');
+date_default_timezone_set('Asia/Kathmandu');
 
+  $bookingtime=date("H:i");
+  $bookingdate=date("Y/m/d ");
+  $query = "SELECT * FROM availableflights";
+        $result=mysqli_query($conn,$query);
+        if(mysqli_num_rows($result)>0){
+        	while(($row = mysqli_fetch_row($result))!=null)
+			if(($bookingtime)>($row[9]) && ($bookingdate)>($row[3]))
+			{
+				$del="DELETE FROM availableflights WHERE Departur_e=$row[3] AND Departuretime=$row[9]";
+				$query=mysqli_query($conn,$del);
+			}}
 ?>
  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
 
@@ -100,7 +112,7 @@ function delret(){
 								<select class="form-select" aria-label="Default select example"  name="from">
 										<option value="Kathmandu">Kathmandu</option>
 										<option value="Pokhara">Pokhara</option>
-										<option value="Biratngar">Biratnagar</option>
+										<option value="Biratnagar">Biratnagar</option>
 									</select>
 </i>
 									<span class="select-arrow"></span>
@@ -121,7 +133,7 @@ function delret(){
 								<select class="form-select" aria-label="Default select example" name="to">
 								<option value="Kathmandu">Kathmandu</option>
 										<option value="Pokhara">Pokhara</option>
-										<option value="Biratngar">Biratnagar</option>
+										<option value="Biratnagar">Biratnagar</option>
 										
 									</select>
 									<span class="select-arrow"></span>
