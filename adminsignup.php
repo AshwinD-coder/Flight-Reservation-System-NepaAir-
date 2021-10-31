@@ -2,7 +2,7 @@
 session_start();
 include("connection.php");
 if(isset($_POST['submit1'])){
-  
+   
 	$username = $_POST['username'];
 	$password = $_POST['password'];
 	$password2=$_POST['confirmpassword'];
@@ -22,7 +22,7 @@ if(!is_numeric($username))
 		{
 			$sql=mysqli_query($conn, "select * from adminusers WHERE username='$username'") or die (mysqli_error("Not conn"));
 			$row=mysqli_num_rows($sql);
-            $sql2=mysqli_query($conn, "select * from adminusers WHERE EmpID='$eid'") or die (mysqli_error("Not conn"));
+            $sql2=mysqli_query($conn, "select * from adminusers WHERE EmpID='$eid' and username=''") or die (mysqli_error("Not conn"));
 			$row2=mysqli_num_rows($sql2);
 			if ($row > 0)
 			{
@@ -37,7 +37,7 @@ if(!is_numeric($username))
                 Incorrect Password.
                </div>";
 			}
-            elseif($row2==0)
+            elseif($row2==0 )
             {
                 echo " <div class='alert alert-danger'role='alert'>
                 Employee ID Invalid.

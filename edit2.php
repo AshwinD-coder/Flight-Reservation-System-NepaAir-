@@ -10,9 +10,9 @@ include('connection.php');
 $f='Fro_m';
 $to='T_o';
 $d='departur_e';
-$r='retur_n';
+$t='Departuretime';
 $c='cabi_n';
-$t='tri_p';
+
 $p='priceperticket';
 if(isset($_GET['value']))
 {
@@ -27,13 +27,13 @@ if(isset($_GET['id']))
  $query="SELECT * FROM availableflights WHERE id='$id'";
  $result=mysqli_query($conn,$query);
  echo "<h1><center>Edit Flight Info</h1></center>";
- echo "<table class='table table-hover table-bordered'><tr class='table table-primary'><th>From</th><th>To</th><th>Departure Date</th><th>Return Date</th><th>Cabin</th><th>Seats available</th><th>Trip Type</th><th>Price Per Ticket</th>";
+ echo "<table class='table table-hover table-bordered'><tr class='table table-primary'><th>From</th><th>To</th><th>Departure Date</th><th>Departure Time</th><th>Cabin</th><th>Price Per Ticket</th>";
        
  while(($row = mysqli_fetch_row($result))!=null)
 {   
-$row[8]=$row[8]-$row[5];
+$row[6]=$row[6]-$row[4];
 
-echo "<tr class='table table-secondary'>";
+echo "<tr class='table-secondary'>";
 
 
 echo "<td>" .$row[1]."<a href='edit2.php?id=$id&value=$row[1]&index=$f'><i class='bi bi-pencil'></i></a>";
@@ -77,26 +77,31 @@ if($value==$row[2]  && $index==$to){echo "<form  action='saveedit.php?id=$id&val
  </form>";
 
 }
+$date=date('Y-m-d');
 echo "</td>";    
 echo "<td>" .$row[3]."<a href='edit2.php?id=$id&value=$row[3]&index=$d'><i class='bi bi-pencil'></i></a>";
 if($value==$row[3] && $index==$d){echo "<form action='saveedit.php?id=$id&value=$row[3]&index=$d' METHOD='POST'>
-    <input name='from' type='date'  id='departure' placeholder='Select date... required=''>
+    <input min=$date name='from' type='date'  id='departure' placeholder='Select date... required=''>
  <button   class='btn btn-primary btn-md' name='submit'>Update</button>
   
  </form>";
 
 }
-echo "</td>";
-echo "<td>" .$row[4]."<a href='edit2.php?id=$id&value=$row[4]&index=$r'><i class='bi bi-pencil'></i></a>" ;
-if($value==$row[4] && $index==$r){echo "<form action='saveedit.php?id=$id&value=$row[4]&index=$r' METHOD='POST'>
-    <input name='from' type='date'  id='departure' placeholder='Select date... required=''>
- <button   class='btn btn-primary btn-md' name='submit'>Update</button>
-    
- </form>";
-}
+
 echo "</td>"; 
-echo "<td>" .$row[6]."<a href='edit2.php?id=$id&value=$row[6]&index=$c'><i class='bi bi-pencil'></i></a>" ;
-if($value==$row[6] && $index==$c){echo "<form action='saveedit.php?id=$id&value=$row[6]&index=$c' METHOD='POST'>
+
+echo "<td>" .$row[9]."<a href='edit2.php?id=$id&value=$row[9]&index=$t'><i class='bi bi-pencil'></i></a>";
+if($value==$row[9] && $index==$t){echo "<form action='saveedit.php?id=$id&value=$row[9]&index=$t' METHOD='POST'>
+    <input  name='from' type='time'  id='departure' placeholder='Select time.... required=''>
+ <button   class='btn btn-primary btn-md' name='submit'>Update</button>
+  
+ </form>";
+
+}
+
+echo "</td>"; 
+echo "<td>" .$row[5]."<a href='edit2.php?id=$id&value=$row[5]&index=$c'><i class='bi bi-pencil'></i></a>" ;
+if($value==$row[5] && $index==$c){echo "<form action='saveedit.php?id=$id&value=$row[5]&index=$c' METHOD='POST'>
     <select required name='from' >
     <option value=''>Select Cabin...</option>
     <option value='Economy'>Economy</option>
@@ -107,22 +112,10 @@ if($value==$row[6] && $index==$c){echo "<form action='saveedit.php?id=$id&value=
  <button   class='btn btn-primary btn-md' name='submit'>Update</button>
  </form>";
 }
-echo "</td>"; 
-echo "<td>" .$row[8]."</td>";
-echo "<td>" .$row[7]."<a href='edit2.php?id=$id&value=$row[7]&index=$t'><i class='bi bi-pencil'></i></a>"  ;
-if($value==$row[7]){echo "<form action='saveedit.php?id=$id&value=$row[7]&index=$t' METHOD='POST'>
-    <select required name='from' >
-    <option value=''>Select Trip-Type...</option>
-    <option value='Round'>Round</option>
-    <option value='One-Way'>One-Way</option>
-    </select>
- <button   class='btn btn-primary btn-md' name='submit'>Update</button>
- </form>";
 
-}
 echo "</td>"; 
-echo "<td>" .$row[10]."<a href='edit2.php?id=$id&value=$row[10]&index=$p'><i class='bi bi-pencil'></i></a>";
-if($value==$row[10]){echo "<form action='saveedit.php?id=$id&value=$row[10]&index=$p' METHOD='POST'>
+echo "<td>" .$row[8]."<a href='edit2.php?id=$id&value=$row[8]&index=$p'><i class='bi bi-pencil'></i></a>";
+if($value==$row[8]){echo "<form action='saveedit.php?id=$id&value=$row[8]&index=$p' METHOD='POST'>
     <select required name='from' >
     <option value=''>Select Price/Ticket...</option>
     <option value='2000'>Rs.2000</option>
