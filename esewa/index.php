@@ -11,12 +11,14 @@ $query="SELECT * FROM availableflights WHERE id='$id'";
 $result=mysqli_query($conn,$query);
 $row=mysqli_fetch_assoc($result);
 $price=$nop*$row['priceperticket'];
+
 ?>
-<?php
-$now = new DateTime(null, new DateTimeZone('Nepal/Kathmandu'));
-$now = new DateTime();
-echo $now->format('Y-m-d H:i:s');
-?>
+
+  
+
+
+ 
+
 <!DOCTYPE html>
 <html lang="en">
 <head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
