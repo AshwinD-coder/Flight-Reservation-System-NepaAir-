@@ -1,11 +1,14 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+
 <?php
 include('partials/navbar.php');
 include('connection.php');
 ?><br><br><br>
 <head>
+<link href="partials/main.css?<?php echo time(); ?>" rel="stylesheet" />
+
     <style>
         .contact-passenger-form{
             margin-left:30px;
@@ -32,6 +35,14 @@ include('connection.php');
         $('.alert').alert()
         </script>
 </head>
+<div class="progress-bar-wrapper">
+<script src="partials/progress-bar.js">
+
+</script>
+<script src="partials/app.js">
+
+</script>
+</div>
 <div class="div"><div class="alert alert-warning alert-dismissible fade show" role="alert">
   <strong>Hey there!</strong>    Please fill the details in the form below to get flight details.
   <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -90,17 +101,62 @@ include('connection.php');
       </label>
     
     </div>
-    </div>
+</div>
+<div class="form-group col-md-12">
+<label for="inputnumber">Mobile No.</label>
+      <input type="phonenumber" class="form-control" id="inputnumber" value="+977" required>
 </div>
 </div>
+
+</div>
+
+
 <hr >
+
 <div class="form-row">
 <div class="label">
     <h3>Passenger Details</h3>
     </div></div>
 <?php
-// for($i=1;$i<=$pass;$i++ )
-// {
-//     echo "<div>"
-// }
+$pass=2;
+for($i=1;$i<=$pass;$i++ )
+{echo "<p style='color:Green; font-weight:bold; style='margin-left:20px;'>$i.Passenger</p>
+   <div class='form-row' '>
+    <div class='col-md-4'>
+      <input type='text' class='form-control' placeholder='First name'>
+    </div>
+    <div class='col-md-4'>
+      <input type='text' class='form-control' placeholder='Last name'>
+    </div>
+    <div class='col-md-4'>
+      <input type='number' class='form-control' placeholder='Age' min=0>
+    </div>
+  </div>
+  <div class='form-row' '>
+  <div class='col-md-4'>
+      <label type='form-control'>Document Type</label>
+      <select class='form-select' name='doctype'>
+      <option value='Citizenship'>Citizenship</option>
+      <option value='Passport'>Passport</option>
+      <option value='ID Card'>ID Card</option>
+</select>
+    </div>
+ 
+    <div class='col-md-4'>
+    <label type='form-control'>Document Number</label>
+      <input type='text' class='form-control' placeholder='eg.136966-2312-3742' >
+    </div>
+   
+    
+    <div class='col-md-4'>
+    <label type='form-control'>Gender</label>
+    <select class='form-select' name='doctype'>
+    <option value='Male'>Male</option>
+    <option value='Female'>Female</option>
+ 
+</select>
+    </div>
+    </div>
+  ";
+}
 ?>
