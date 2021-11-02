@@ -1,9 +1,10 @@
 .footer{
-	top:250px;
+	
 	background: #303036;
 	color: #d3d3d3;
 	height: 300px;
 	position: relative;
+	
 }
 .footer .footer-content{
 	border: 1px solid red;

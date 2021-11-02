@@ -1,72 +1,47 @@
+
 <?php
 
 include('partials/navbar.php');
-date_default_timezone_set('Asia/Kathmandu');
 
-  $bookingtime=date("H:i");
-  $bookingdate=date("Y/m/d ");
-  $query = "SELECT * FROM availableflights";
-        $result=mysqli_query($conn,$query);
-        if(mysqli_num_rows($result)>0){
-        	while(($row = mysqli_fetch_row($result))!=null)
-			if(($bookingtime)>($row[9]) && ($bookingdate)>($row[3]))
-			{
-				$del="DELETE FROM availableflights WHERE Departur_e=$row[3] AND Departuretime=$row[9]";
-				$query=mysqli_query($conn,$del);
-			}}
 ?>
  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
 
-<script>
-	
-	document.getELementById("demo").innerHTML="Returning";
-	function noop(){
-		
-	};
-function showreturningtime() {
-	var check=document.getElementById("round").value;
-
-  var x = document.createElement("INPUT");
-
-  x.setAttribute("type"  , "date");
-  x.setAttribute("min"  , "<?php echo date('Y-m-d');?>");
-   
-var span=document.getElementById("demo");
-  x.setAttribute("class" , "form-control");
-  x.setAttribute("name"  , "return");
-  
-  span.textContent = "Returning";
-  document.getElementById("main").appendChild(x);
-  
-
-}
-
-function delret(){
-	document.getElementById("demo").innerHTML="";
-	var myobj =document.getElementById("main");
-	myobj.removeChild(myobj.lastElementChild);
-
-
-}
-</script>
+ 
+ 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="partials/style.css?<?php echo time(); ?>" type="">
+<head>
+<script src="https://code.jquery.com/jquery-3.1.1.min.js">
+$('select[name=to]').on('change', function() {
+   var self = this;
+   $('select[name=from]').find('option').prop('disabled', function() {
+       return this.value == self.value
+   });
+});
 
+$('select[name=from]').on('change', function() {
+  var self = this;
+  $('select[name=to]').find('option').prop('disabled', function() {
+      return this.value == self.value
+  });
+});
+</script></head>
 <link rel="stylesheet" href="partials/footer.css" />
 <div>
 	<div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
 		<div class="carousel-inner">
-		  <div class="carousel-item active">
-			<img src="img/carousel3.jpg" class="d-block w-100" alt="..." height="350px">
+		<div class="carousel-item active">
+			<img src="img/carousel1.jpg" class="d-block w-100" alt="..." height="300px">
 		  </div>
 		  <div class="carousel-item">
-			<img src="img/carousel2.jpg" class="d-block w-100" alt="..." height="350px">
+			<img src="img/carousel3.jpg" class="d-block w-100" alt="..." height="300px">
 		  </div>
 		  <div class="carousel-item">
-			<img src="img/carousel1.jpg" class="d-block w-100" alt="..." height="350px">
+			<img src="img/carousel2.jpg" class="d-block w-100" alt="..." height="300px">
 		  </div>
+		 
 		</div>
 		<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
 		  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -106,39 +81,57 @@ function delret(){
 						<div class="row">
 							<div class="col-md-3">
 								<div class="form-group">
-								<span class="form-label " name="from">Flying from</span>
-								<i data-mdb-animation-start="onClick" name="from" data-mdb-toggle="animation" data-mdb-animation-reset="true" data-mdb-animation="fade-in-down">
+								<span class="form-label " name="from2">Flying from</span>
 
-								<select class="form-select" aria-label="Default select example"  name="from">
+								<select class="form-select"   name="from" required>
+								<option value="">Select your destination</option>
 										<option value="Kathmandu">Kathmandu</option>
 										<option value="Pokhara">Pokhara</option>
 										<option value="Biratnagar">Biratnagar</option>
-									</select>
+										<option value='Bhairahawa'>Bhairahawa</option>
+                                    <option value='Birgunj'>Birgunj</option>
+                                    <option value='Lukla'>Lukla</option>
+                                    <option value='Taplejung'>Taplejung</option>
+                                    <option value='Nepalgunj'>Nepalgunj</option>
+                                    <option value='Chitwan'>Chitwan</option>
+                                    <option value='Jomsom '>Jomsom</option>
+								</select>
+								
 </i>
-									<span class="select-arrow"></span>
+									
 							
 								</div>
 							</div>
 							<div class="col-md-1">
 								<div class="form-group">
-								<span class="form-label " name="from"> </span>
-								<br><a href="#" style="text-decoration:none;">
-								<i class="bi bi-arrow-left-right"></i></a>
-<span class="select-arrow"></span>
+								<div class="form-label"></div>
+								<br>
+								
+								
+								<i class="bi bi-arrow-right"></i>
+
 								</div>
 							</div>
 							<div class="col-md-3">
 								<div class="form-group">
-								<span class="form-label" name="to">Flying to</span>
-								<select class="form-select" aria-label="Default select example" name="to">
+								<span class="form-label" name="to1" >Flying to</span>
+								<select class="form-select" aria-label="Default select example" name="to" required>
+								<option value="">Select your destination</option>
 								<option value="Kathmandu">Kathmandu</option>
-										<option value="Pokhara">Pokhara</option>
-										<option value="Biratnagar">Biratnagar</option>
-										
-									</select>
-									<span class="select-arrow"></span>
+								<option value="Pokhara">Pokhara</option>
+								<option value="Biratnagar">Biratnagar</option>
+								<option value='Bhairahawa'>Bhairahawa</option>
+                                    <option value='Birgunj'>Birgunj</option>
+                                    <option value='Lukla'>Lukla</option>
+                                    <option value='Taplejung'>Taplejung</option>
+                                    <option value='Nepalgunj'>Nepalgunj</option>
+                                    <option value='Chitwan'>Chitwan</option>
+                                    <option value='Jomsom '>Jomsom</option>
+								</select>
+									
 								</div>
 							</div>
+							
 						<div class="row">
 							<div class="col-md-3">
 								<div class="form-group" >
@@ -151,6 +144,8 @@ function delret(){
 
 							</div>
 </div>
+
+
 							<div class="col-md-2">
 								<div class="form-group" >
 									<span class="form-label aria-label="Default select example"">Cabin</span>
@@ -178,7 +173,7 @@ function delret(){
 						<center>
 							<div class="col-md-3">
 								<div class="form-btn">
-									<button   class="btn btn-secondary btn-lg" name="submit">Show flights</button>
+									<button   class="btn btn-success btn-lg" name="submit"><span style="font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">Show flights</span></button>
 								</div></center>
 							</div>
 					</form>
@@ -187,7 +182,7 @@ function delret(){
 </div>
 </div>
 </div>
-<div class="container">
+<!-- <div class="container">
 <div class="row  ">
 <div class="col-md-4">
 <div class="card" style="width: 20rem;">
@@ -220,11 +215,66 @@ function delret(){
 </div>
 </div>
 </div>
-</div>
+</div> -->
 </div>
 <?php
 
 include('partials/footer.php');
 ?>
 
- 
+<script src="jquery-3.5.1.min.js">
+$(document).ready(function(){
+ $("#from").change(function(){
+   var anotherTeam = $("#to").val();
+   var team = $(this).val();
+   if(team !='' && team==anotherTeam){
+     alert("This team already selected.");
+     $('option:selected',this).removeAttr('selected');
+     $("option:first",this).attr('selected','selected');
+   }
+ });
+     
+ $("#to").change(function(){
+   var anotherTeam = $("#from").val();
+   var team = $(this).val();
+   if(team !='' && team==anotherTeam){
+     alert("This team already selected.");
+     $('option:selected',this).removeAttr('selected');
+     $("option:first",this).attr('selected','selected');
+     
+   }
+ });
+  
+
+});
+
+	document.getELementById("demo").innerHTML="Returning";
+	function noop(){
+		
+	};
+function showreturningtime() {
+	var check=document.getElementById("round").value;
+
+  var x = document.createElement("INPUT");
+
+  x.setAttribute("type"  , "date");
+  x.setAttribute("min"  , "<?php echo date('Y-m-d');?>");
+   
+var span=document.getElementById("demo");
+  x.setAttribute("class" , "form-control");
+  x.setAttribute("name"  , "return");
+  
+  span.textContent = "Returning";
+  document.getElementById("main").appendChild(x);
+  
+
+}
+
+function delret(){
+	document.getElementById("demo").innerHTML="";
+	var myobj =document.getElementById("main");
+	myobj.removeChild(myobj.lastElementChild);
+
+
+}
+</script>

@@ -27,13 +27,14 @@
 		a {
 		
 			padding :  10px;
-			color:Grey;
+			color:Black;
 			text-decoration:none;
 
 			
 		}
 		a:hover{
-			color:black;
+			color:Black;
+			font-weight:bold;
 			
 		}
 	
