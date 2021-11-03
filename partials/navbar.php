@@ -16,7 +16,7 @@
 
     <link rel="stylesheet" href="bootstrap-5.0.2-dist/css/bootstrap.min.css"/>
 
-	<link rel="stylesheet" href="style.css" type="">
+	<!-- <link rel="stylesheet" href="style.css" type=""> -->
 
     <title>Nepaair</title>
 

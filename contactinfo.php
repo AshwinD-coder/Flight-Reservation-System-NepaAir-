@@ -5,61 +5,36 @@
 <?php
 include('partials/navbar.php');
 include('connection.php');
+$nop=$_SESSION['nop'];
+$pass=$nop;
 ?><br><br><br>
-<head>
-    <style>
-        .contact-passenger-form{
-            margin-left:30px;
-        }
-    </style>
-</head>
-<div class="contact-passenger-form">
-        <form action="database.php" method="POST">
-    
-        <div class="label">
-    <h3>Contact Information</h3>
-  <div class="form-row">
-    <div class="form-group col-sm-4">
-      <label for="fullname">Full Name</label>
-      <input type="text" class="form-control" id="fullname" placeholder="First Name Last Name" required>
-    </div>
-    <div class="form-group col-sm-4">
-      <label for="email">Email</label>
-      <input type="email" class="form-control" id="email" placeholder="example@gmail.com">
-    </div>
-  </div>
-  <div class="form-group">
-    <label for="inputAddress">Address</label>
-    <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
-  </div>
-  <div class="form-group">
 <link href="partials/main.css?<?php echo time(); ?>" rel="stylesheet" />
 
-    <style>
-        .contact-passenger-form{
-            margin-left:30px;
-            background-color:#C0C0C0;
-            border-radius:15px;
-            border: 0px solid ;
-            margin:50px;
-        }
-       .form-row{
-           padding:20px 20px;
-       }
-       .form-group{
-           margin:10px;
-       }
-       hr {
-    border: 10px solid 	#fff8dc;
-    height: 10px;
-    /* Set the hr color */
-    color: #000000; /* old IE */
-    background-color: #333; /* Modern Browsers */
+<style>
+    .contact-passenger-form{
+        margin-left:30px;
+        background-color:#C0C0C0;
+        border-radius:15px;
+        border: 0px solid ;
+        margin:50px;
+    }
+   .form-row{
+       padding:20px 20px;
+   }
+   .form-group{
+       margin:10px;
+   }
+   hr {
+border: 10px solid 	#fff8dc;
+height: 10px;
+/* Set the hr color */
+color: #000000; /* old IE */
+background-color: #333; /* Modern Browsers */
 }
-    </style>
-    <script>
-        $('.alert').alert()
-        </script>
+</style>
+<script>
+    $('.alert').alert()
+    </script>
 </head>
 <div class="progress-bar-wrapper">
 <script src="partials/progress-bar.js">
@@ -68,7 +43,6 @@ include('connection.php');
 <script src="partials/app.js">
 
 </script>
-</div>
 <div class="div"><div class="alert alert-warning alert-dismissible fade show" role="alert">
   <strong>Hey there!</strong>    Please fill the details in the form below to get flight details.
   <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -76,86 +50,48 @@ include('connection.php');
   </button>
 </div></div>
 <div class="contact-passenger-form">
-        <form action="database.php" method="POST">
-    
-     
-  <div class="form-row">
-  <div class="label">
+        <form id="form-submit" action="database.php" method="POST">
+        <div class="label">
     <h3>Contact Information</h3></div>
-    </div>
-    <div class="form-row">
-    <div class="form-group col-md-4">
+  <div class="form-row">
+    <div class="form-group col-sm-4">
       <label for="fullname">Full Name</label>
-      <input type="text" class="form-control" id="fullname" placeholder="First Name Last Name" required>
+      <input name="fullname" type="text" class="form-control" id="fullname" placeholder="First Name Last Name" required>
     </div>
-    <div class="form-group col-md-4">
+    <div class="form-group col-sm-4">
       <label for="email">Email</label>
-      <input type="email" class="form-control" id="email" placeholder="example@gmail.com">
+      <input name="email" type="email" class="form-control" id="email" placeholder="example@gmail.com">
     </div>
-    </div>
-    <div class="form-row">
-  <div class="form-group col-md-4">
-    <label for="inputAddress">Address</label>
-    <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
   </div>
-    
+  <div class="form-row">
+  <div class="form-group">
+    <label for="inputAddress">Address</label>
+    <input name="address1" type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+  </div>
   <div class="form-group col-md-4">
     <label for="inputAddress2">Address 2</label>
-    <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
-  </div>
-  <div class="form-row">
-    <div class="form-group col-md-6">
+    <input name="address2" type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+  </div></div>
+  
+    <div class="form-row">
+    <div class="form-group col-md-4">
       <label for="inputCity">City</label>
-      <input type="text" class="form-control" id="inputCity">
+      <input  name="city" type="text" class="form-control" id="inputCity" required>
     </div>
     <div class="form-group col-md-4">
       <label for="inputState">State</label>
-      <select id="inputState" class="form-control">
-        <option selected>Choose...</option>
-        <option>...</option>
-      </select>
-    </div>
-    <div class="form-group col-md-2">
-      <label for="inputZip">Zip</label>
-      <input type="text" class="form-control" id="inputZip">
-    </div>
-  </div>
-  <div class="form-group">
-    <div class="form-check">
-      <input class="form-check-input" type="checkbox" id="gridCheck">
-      <label class="form-check-label" for="gridCheck">
-        Check me out
-      </label>
-    </div>
-  </div>
-  <button type="submit" class="btn btn-primary">Sign in</button>
-</form>
-    </div>
-</div>
-<?php
-// for($i=1;$i<=$pass;$i++ )
-// {
-//     echo "<div>"
-// }
-?>
-    <div class="form-group col-md-4">
-      <label for="inputCity">City</label>
-      <input type="text" class="form-control" id="inputCity" required>
-    </div>
-    <div class="form-group col-md-4">
-      <label for="inputState">State</label>
-      <input type="text" class="form-control" id="inputState" required>
+      <input name="state" type="text" class="form-control" id="inputState" required>
     
     </div>
     <div class="form-group col-md-4">
       <label for="inputZip">Zip</label>
-      <input type="text" class="form-control" id="inputZip" required>
+      <input  name="zip" type="text" class="form-control" id="inputZip" required>
     </div>
-  </div><br>
+  </div>
 <div class="form-row">
 <div class="form-group col-md-12">
     <div class="form-check">
-      <input class="form-check-input" type="checkbox" id="gridCheck">
+      <input name="check" class="form-check-input" type="checkbox" id="gridCheck">
       <label class="form-check-label" for="gridCheck">
         Are you the passenger going on this flight?
       </label>
@@ -164,11 +100,10 @@ include('connection.php');
 </div>
 <div class="form-group col-md-12">
 <label for="inputnumber">Mobile No.</label>
-      <input type="phonenumber" class="form-control" id="inputnumber" value="+977" required>
+      <input name="mn" type="phonenumber" class="form-control" id="inputnumber" value="+977" required>
 </div>
 </div>
 
-</div>
 
 
 <hr >
@@ -178,24 +113,24 @@ include('connection.php');
     <h3>Passenger Details</h3>
     </div></div>
 <?php
-$pass=2;
+
 for($i=1;$i<=$pass;$i++ )
 {echo "<p style='color:Green; font-weight:bold; style='margin-left:20px;'>$i.Passenger</p>
    <div class='form-row' '>
     <div class='col-md-4'>
-      <input type='text' class='form-control' placeholder='First name'>
+      <input type='text' class='form-control' placeholder='First name' name='$i.fname'>
     </div>
     <div class='col-md-4'>
-      <input type='text' class='form-control' placeholder='Last name'>
+      <input type='text' class='form-control' placeholder='Last name' name='$i.lname'>
     </div>
     <div class='col-md-4'>
-      <input type='number' class='form-control' placeholder='Age' min=0>
+      <input type='number' class='form-control' placeholder='Age' min=0 name='$i.name'>
     </div>
   </div>
   <div class='form-row' '>
   <div class='col-md-4'>
       <label type='form-control'>Document Type</label>
-      <select class='form-select' name='doctype'>
+      <select class='form-select' name='$i.doctype'>
       <option value='Citizenship'>Citizenship</option>
       <option value='Passport'>Passport</option>
       <option value='ID Card'>ID Card</option>
@@ -204,19 +139,27 @@ for($i=1;$i<=$pass;$i++ )
  
     <div class='col-md-4'>
     <label type='form-control'>Document Number</label>
-      <input type='text' class='form-control' placeholder='eg.136966-2312-3742' >
+      <input type='text' class='form-control' placeholder='eg.136966-2312-3742' name='$i.docnum'>
     </div>
    
     
     <div class='col-md-4'>
     <label type='form-control'>Gender</label>
-    <select class='form-select' name='doctype'>
+    <select class='form-select' name='$i.gender'>
     <option value='Male'>Male</option>
     <option value='Female'>Female</option>
  
 </select>
     </div>
     </div>
+  
   ";
 }
 ?>
+  <center>
+    <div class='col-md-3'>
+      <div class='form-btn'>
+        <button  type="submit" class='btn btn-primary btn-lg' name='submit'>Submit</button>
+      </div></center>
+    </div>
+</form>

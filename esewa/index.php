@@ -5,8 +5,8 @@ include '../connection.php';
 
 session_start();
 $nop=$_SESSION['nop'];
-$id=$_GET['id'];
-$_SESSION['id']=$id;
+$id=$_SESSION['id'];
+
 $query="SELECT * FROM availableflights WHERE id='$id'";
 $result=mysqli_query($conn,$query);
 $row=mysqli_fetch_assoc($result);
