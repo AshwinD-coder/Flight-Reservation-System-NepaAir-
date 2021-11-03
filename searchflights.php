@@ -57,7 +57,7 @@ if (isset($_POST['submit'])) {
         
         
     echo "<td>" .$row[1] ."</td>";
-    echo "<td>" .$row[2] ."</td>";    echo "<td>" .$row[3] ."</td>"; echo "<td>" .$row[9] ."</td>";  echo "<td>NA-" .$row[0] ."</td>"; /*echo "<td>" .$row[] ."</td>";*/echo "<td>" .$row[5] ."</td>";  echo "<td>" .$row[8] ."</td>"; echo"<td><a href='esewa/index.php?id=$row[0]' <button type='submit' class='btn btn-primary'  >Book Now</button></a></td>";
+    echo "<td>" .$row[2] ."</td>";    echo "<td>" .$row[3] ."</td>"; echo "<td>" .$row[9] ."</td>";  echo "<td>NA-" .$row[0] ."</td>"; /*echo "<td>" .$row[] ."</td>";*/echo "<td>" .$row[5] ."</td>";  echo "<td>" .$row[8] ."</td>"; echo"<td><a href='checking.php?id=$row[0]' <button type='submit' class='btn btn-primary'  >Book Now</button></a></td>";
     echo "</tr>";
 
     
