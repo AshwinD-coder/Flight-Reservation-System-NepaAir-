@@ -36,12 +36,12 @@ include('partials/navbar.php');
                     <h5 class="card-title text-center">Log In</h5>
                     <form class="form-signin">
                       <div class="form-label-group">
-                        <input type="text" id="user" name="username" class="form-control" placeholder="user name" required autofocus>
+                        <input type="text" id="user" name="username" class="form-control" placeholder="user name" >
                         <label for="inputuser">User name</label>
                       </div>
         
                       <div class="form-label-group">
-                        <input type="password" id="inputPassword" name="password" class="form-control" placeholder="Password" required>
+                        <input type="password" id="inputPassword" name="password" class="form-control" placeholder="Password">
                         <label for="inputPassword">Password</label>
                       </div>
         
@@ -55,7 +55,7 @@ include('partials/navbar.php');
   
       </div>
                       <div class="row-4 custom-control custom-checkbox mb-3">
-                      <button class="btn btn-md btn-facebook btn-block text-uppercase" type="submit"><i class="bi bi-facebook"></i></i> Log in with Facebook</button>
+                      <button class="btn btn-md btn-facebook btn-block text-uppercase" type="submit"><i class="bi bi-facebook"></i></i> <a href="http://localhost/loginfb">Log in with Facebook</button>
       </div>
                     </form>
                   </div>
