@@ -118,19 +118,19 @@ for($i=1;$i<=$pass;$i++ )
 {echo "<p style='color:Green; font-weight:bold; style='margin-left:20px;'>$i.Passenger</p>
    <div class='form-row' '>
     <div class='col-md-4'>
-      <input type='text' class='form-control' placeholder='First name' name='$i.fname'>
+      <input type='text' class='form-control' placeholder='First name' name='fname$i'>
     </div>
     <div class='col-md-4'>
-      <input type='text' class='form-control' placeholder='Last name' name='$i.lname'>
+      <input type='text' class='form-control' placeholder='Last name' name='lname$i'>
     </div>
     <div class='col-md-4'>
-      <input type='number' class='form-control' placeholder='Age' min=0 name='$i.name'>
+      <input type='number' class='form-control' placeholder='Age' min=0 name='age$i'>
     </div>
   </div>
   <div class='form-row' '>
   <div class='col-md-4'>
       <label type='form-control'>Document Type</label>
-      <select class='form-select' name='$i.doctype'>
+      <select class='form-select' name='doctype$i'>
       <option value='Citizenship'>Citizenship</option>
       <option value='Passport'>Passport</option>
       <option value='ID Card'>ID Card</option>
@@ -139,27 +139,27 @@ for($i=1;$i<=$pass;$i++ )
  
     <div class='col-md-4'>
     <label type='form-control'>Document Number</label>
-      <input type='text' class='form-control' placeholder='eg.136966-2312-3742' name='$i.docnum'>
+      <input type='text' class='form-control' placeholder='eg.136966-2312-3742' name='docnum$i'>
     </div>
    
     
     <div class='col-md-4'>
     <label type='form-control'>Gender</label>
-    <select class='form-select' name='$i.gender'>
+    <select class='form-select' name='gender$i'>
     <option value='Male'>Male</option>
     <option value='Female'>Female</option>
  
 </select>
     </div>
     </div>
-  
+    
   ";
 }
 ?>
-  <center>
+ <center>
     <div class='col-md-3'>
       <div class='form-btn'>
-        <button  type="submit" class='btn btn-primary btn-lg' name='submit'>Submit</button>
+        <button  type='submit' class='btn btn-primary btn-lg' name='submit'>Submit</button>
       </div></center>
     </div>
 </form>

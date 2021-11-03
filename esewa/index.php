@@ -1,9 +1,9 @@
 <?php
 include 'setting.php';
 include '../connection.php';
+include('partials/navbar.php');
 
 
-session_start();
 $nop=$_SESSION['nop'];
 $id=$_SESSION['id'];
 
