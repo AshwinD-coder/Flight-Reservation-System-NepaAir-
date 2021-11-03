@@ -24,6 +24,9 @@ $pass=$nop;
    .form-group{
        margin:10px;
    }
+   .form-btn{
+     padding:20px 20px;
+   }
    hr {
 border: 10px solid 	#fff8dc;
 height: 10px;
@@ -51,8 +54,9 @@ background-color: #333; /* Modern Browsers */
 </div></div>
 <div class="contact-passenger-form">
         <form id="form-submit" action="database.php" method="POST">
+        <div class="form-row">
         <div class="label">
-    <h3>Contact Information</h3></div>
+    <h3>Contact Information</h3></div></div>
   <div class="form-row">
     <div class="form-group col-sm-4">
       <label for="fullname">Full Name</label>
@@ -115,22 +119,22 @@ background-color: #333; /* Modern Browsers */
 <?php
 
 for($i=1;$i<=$pass;$i++ )
-{echo "<p style='color:Green; font-weight:bold; style='margin-left:20px;'>$i.Passenger</p>
+{;echo "<p style='color:Green; font-weight:bold; style='margin-left:20px;'>$i.Passenger</p>
    <div class='form-row' '>
     <div class='col-md-4'>
-      <input type='text' class='form-control' placeholder='First name' name='fname$i'>
+      <input type='text' class='form-control' placeholder='First name' name='fname$i' required>
     </div>
     <div class='col-md-4'>
-      <input type='text' class='form-control' placeholder='Last name' name='lname$i'>
+      <input type='text' class='form-control' placeholder='Last name' name='lname$i'required>
     </div>
     <div class='col-md-4'>
-      <input type='number' class='form-control' placeholder='Age' min=0 name='age$i'>
+      <input type='number' class='form-control' placeholder='Age' min=0 name='age$i' required>
     </div>
   </div>
   <div class='form-row' '>
   <div class='col-md-4'>
       <label type='form-control'>Document Type</label>
-      <select class='form-select' name='doctype$i'>
+      <select class='form-select' name='doctype$i' required>
       <option value='Citizenship'>Citizenship</option>
       <option value='Passport'>Passport</option>
       <option value='ID Card'>ID Card</option>
@@ -139,16 +143,24 @@ for($i=1;$i<=$pass;$i++ )
  
     <div class='col-md-4'>
     <label type='form-control'>Document Number</label>
-      <input type='text' class='form-control' placeholder='eg.136966-2312-3742' name='docnum$i'>
+      <input required type='text' class='form-control' placeholder='eg.136966-2312-3742' name='docnum$i'>
     </div>
    
     
     <div class='col-md-4'>
     <label type='form-control'>Gender</label>
-    <select class='form-select' name='gender$i'>
-    <option value='Male'>Male</option>
-    <option value='Female'>Female</option>
- 
+    <div class='form-check'>
+  <input class='form-check-input' type='radio' value='male' id='flexRadioDefault1' name='gender$i'>
+  <label class='form-check-label' for='flexRadioDefault1'>
+    Male
+  </label>
+</div>
+<div class='form-check'>
+  <input class='form-check-input' type='radio' value='female'  id='flexRadioDefault2' name='gender$i'>
+  <label class='form-check-label' for='flexRadioDefault2'>
+   Female
+  </label>
+</div>
 </select>
     </div>
     </div>
@@ -159,7 +171,7 @@ for($i=1;$i<=$pass;$i++ )
  <center>
     <div class='col-md-3'>
       <div class='form-btn'>
-        <button  type='submit' class='btn btn-primary btn-lg' name='submit'>Submit</button>
+        <button  type='submit' class='btn btn-success btn-lg' name='submit'>Submit</button>
       </div></center>
     </div>
 </form>
