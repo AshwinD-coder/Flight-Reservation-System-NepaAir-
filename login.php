@@ -55,7 +55,7 @@ include('partials/navbar.php');
   
       </div>
                       <div class="row-4 custom-control custom-checkbox mb-3">
-                      <button class="btn btn-md btn-facebook btn-block text-uppercase" type="submit"><i class="bi bi-facebook"></i></i> <a href="http://localhost/loginfb">Log in with Facebook</button>
+                      <button class="btn btn-md btn-facebook btn-block text-uppercase" type="submit"><i class="bi bi-facebook"></i></i> <a href="http://localhost/Fosp/Github/Project5Sem/loginfb">Log in with Facebook</button>
       </div>
                     </form>
                   </div>

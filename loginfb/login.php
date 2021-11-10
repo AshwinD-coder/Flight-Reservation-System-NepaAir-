@@ -7,7 +7,7 @@ if(isset($_SESSION['access_token'])){
 }
 
 
-$redirectTo = "http://localhost/loginfb/callback.php";
+$redirectTo = "http://localhost/Fosp/Github/Project5Sem/loginfb/callback.php";
 $data = ['email'];
 $fullURL = $handler->getLoginUrl($redirectTo, $data);
 ?>
