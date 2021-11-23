@@ -3,12 +3,34 @@
 
 include('partials/navbar.php');
 ?>
+<head><script>
+  let counter=0;
+    
+  function count(){
+    // var count=document.getElementsByTagName('input');
+   
 
+    counter++;
+   if(counter==2)
+   {
+    var x=document.getElementsByTagName('input');
+  //  x.disabled=false;
+  for(var i=3;i<x.length;i++){
+   x[i].setAttribute("disabled", true);
+  }
+   }
+   console.log("in");
+    console.log(counter);
+
+  }
+</script></head>
 <link rel="stylesheet/less" type="text/css" href="partials/seat.scss" />
 <script src="https://cdn.jsdelivr.net/npm/less@4.1.1" ></script>
 <link rel="stylesheet" href="partials/footer.css" />
 
 <br><br><br>
+<?php $p=1;
+ ?>
 <div class="plane">
   <div class="cockpit">
     <h1>NEPAAIR</h1>
@@ -18,25 +40,26 @@ include('partials/navbar.php');
   </div>
   <ol class="cabin fuselage">
     <li class="row row--1">
+
       <ol class="seats" type="A">
         <li class="seat">
-          <input type="checkbox" id="1A" />
+          <input type="checkbox" id="1A" disabled/ >
           <label for="1A">1A</label>
         </li>
         <li class="seat">
-          <input type="checkbox" id="1B" />
+          <input type="checkbox" id="1B" onClick="count()" />
           <label for="1B">1B</label>
         </li>
         <li class="seat">
-          <input type="checkbox" id="1C" />
+          <input type="checkbox" id="1C" onClick="count()" />
           <label for="1C">1C</label>
         </li>
         <li class="seat">
-          <input type="checkbox"  id="1D" />
+          <input type="checkbox"  id="1D" class="dis" />
           <label for="1D">1D</label>
         </li>
         <li class="seat">
-          <input type="checkbox" id="1E" />
+          <input type="checkbox" id="1E" class="dis"/>
           <label for="1E">1E</label>
         </li>
         <li class="seat">
@@ -306,5 +329,6 @@ include('partials/navbar.php');
 <?php
 
 include('partials/footer.php');
+
 ?>
 

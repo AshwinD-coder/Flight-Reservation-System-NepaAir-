@@ -6,7 +6,7 @@ $ref = $_GET['refId'];
 $data =[
     'amt'=>$actualamount,
     'rid'=> $ref,
-    'pid'=>'ThuloTech9',
+    'pid'=>$pid,
     'scd'=> $merchant_code
 ];
 
