@@ -8,25 +8,32 @@ $pass=$_SESSION['nop'];
   let counter=<?php echo $pass;?>;
     
   function count(){  
-    var checkedValue = document.querySelectorAll('.seats:checked').value;
+ 
+    if(counter>0)
+    {
     counter--;
-   
+    }
+    if(counter==0)
+    {
+    alert("Seat Selection Limit Reached");
+    }
+    var c=document.querySelector('');
+    console.log(c.value);
    if(counter==0)
    {
    
 
     var x=document.getElementsByTagName('input');
+   
   //  x.disabled=false;
   for(var i=0;i<60;i++){
-   x[i].setAttribute("disabled", false);
+   x[i].setAttribute("checked", false);
    
   }
+  
 
    }
 
-   console.log(checkedValue);
-   console.log("in");
-    console.log(counter);
 
   }
 </script></head>
@@ -49,7 +56,7 @@ $pass=$_SESSION['nop'];
 
       <ol class="seats" type="A">
         <li class="seat">
-          <input type="checkbox" id="1A" onClick="count()" value="1A" class="seats" >
+          <input type="checkbox" id="1A" onClick="count()" value="1A" class="seats" s>
           <label for="1A">1A</label>
         </li>
         <li class="seat">
