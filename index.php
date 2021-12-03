@@ -28,7 +28,7 @@ $('select[name=from]').on('change', function() {
   });
 });
 </script></head>
-<link rel="stylesheet" href="partials/footer.css" />
+<link rel="stylesheet" href="partials/footer.css ?<?php echo time(); ?>" />
 <div>
 	<div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
 		<div class="carousel-inner">

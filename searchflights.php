@@ -12,8 +12,8 @@
   </symbol>
 </svg>
 
-<link rel="stylesheet" href="partials/style.css" type="">
-<link rel="stylesheet" href="partials/footer.css" />
+<link rel="stylesheet" href="partials/style.css?<?php echo time();?>" type="">
+<link rel="stylesheet" href="partials/footer.css?<?php echo time();?>" />
 <div>
                 <?php
 

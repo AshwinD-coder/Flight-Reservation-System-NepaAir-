@@ -3,7 +3,7 @@
 include('partials/navbar.php');
 
 ?>
-<link rel="stylesheet" href="partials/footer.css" />
+<link rel="stylesheet" href="partials/footer.css?<?php echo time();?>" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
 <style>
 
@@ -92,7 +92,7 @@ body{
                                         <span toggle="#password-field" class="fa fa-fw fa-eye field_icon toggle-password" style="cursor:pointer;" onclick="myFunction()" title="Show/Hide"></span>
                                     </label>
                                     <div class="col-md-6">
-                                        <input type="password" id="pass_word" class="form-control" name="password" required>
+                                    <input type="password" id="inputValidationEx2" class="form-control validate">
                                     </div>
                                 </div>
 

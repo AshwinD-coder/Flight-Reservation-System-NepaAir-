@@ -9,7 +9,7 @@ if(isset($_SESSION['value'])){
     $_value=$_SESSION['value'];
 }
 ?>
-<link rel="stylesheet" href="partials/footer.css" />
+<link rel="stylesheet" href="partials/footer.css?<?php echo time();?>" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
 
 <style>
@@ -142,11 +142,11 @@ body{
                                     </div>
                                 </div>
 
-                                <div class="form-group row">
-                                <div class="col-md-4">
-                                    <label for="EnabledSelect" class="form-label">Country</label>
-</div>
+                               <div class="form-group row">
+                                    <label  for="EnabledSelect"  class="col-md-4 col-form-label text-md-right">Country</label>
+
 <div class="col-md-6">
+
                                     <select id="EnabledSelect" class="form-select" name="country">
                                     <option value="AF">Afghanistan</option>
 <option value="AL">Albania</option>
@@ -400,18 +400,19 @@ body{
 </div>
     </div>
     
+    
 
 <div class="form-group row">
                                     <label for="p_address" class="col-md-4 col-form-label text-md-right">Permanent Address</label>
                                     <div class="col-md-6">
-                                        <input type="text" id="p_address" class="form-control" name="p_address" required>
+                                        <input type="text" id="p_address" class="form-control" name="p_address" >
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label for="nid_number" class="col-md-4 col-form-label text-md-right"><abbr
                                                 title="National Id Card">NID</abbr> Number</label>
                                     <div class="col-md-6">
-                                        <input type="text" id="nid_number" class="form-control" name="nid-number" required>
+                                        <input type="text" id="nid_number" class="form-control" name="nid-number"  >
                                     </div>
                                 </div>
 
