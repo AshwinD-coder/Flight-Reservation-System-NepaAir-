@@ -83,7 +83,7 @@ $('select[name=from]').on('change', function() {
 								<div class="form-group">
 								<span class="form-label " name="from2">Flying from</span>
 
-								<select class="form-select"   name="from" required>
+								<select class="form-select"   name="from" required data-placeholder="destination">
 								<option value="">Select your destination</option>
 										<option value="Kathmandu">Kathmandu</option>
 										<option value="Pokhara">Pokhara</option>
@@ -223,6 +223,7 @@ include('partials/footer.php');
 ?>
 
 <script src="jquery-3.5.1.min.js">
+
 $(document).ready(function(){
  $("#from").change(function(){
    var anotherTeam = $("#to").val();

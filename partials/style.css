@@ -66,6 +66,9 @@ margin-top: 5px;
 	-moz-appearance: none;
 	appearance: none;
 }
+.booking-form select.form-control {
+	transition: step-start,3s;
+}
 
 .booking-form select.form-control+.select-arrow {
 	position: absolute;
