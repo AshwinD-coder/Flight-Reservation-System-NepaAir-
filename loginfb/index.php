@@ -51,11 +51,26 @@ if(!isset($_SESSION['access_token'])){
 <?php
 
 $_SESSION['username']=$_SESSION['userData']['first_name'];
+
+$fullname=$_SESSION['userData']['first_name'].' '.$_SESSION['userData']['last_name'];
+
 $_SESSION['Email']=$_SESSION['userData']['email'];
-echo "<script>window.location='../index.php'</script>";
+$email=$_SESSION['Email'];
+include('../connection.php');
+$query="INSERT INTO users(fullname,email) VALUES('$fullname','$email')";
+$update=mysqli_query($conn,"UPDATE users SET verified='1' WHERE email='$email' ");
+$insert=mysqli_query($conn,$query);
+
+if(isset($_SESSION['id'])){
+echo "<script>window.location='../contactinfo.php'</script>";
+}
+else{
+echo 	"<script>window.location='../index.php'</script>";
+
+}
 ?>
 
-<a href="logout.php">logout</a>
+
 
 </body>
 </html>

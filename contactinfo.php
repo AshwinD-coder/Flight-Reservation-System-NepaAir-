@@ -13,7 +13,7 @@ $pass=$nop;
 <style>
     .contact-passenger-form{
         margin-left:30px;
-        background-color:#C0C0C0;
+        background-color:#c2c1c19d;;
         border-radius:15px;
         border: 0px solid ;
         margin:50px;
@@ -154,7 +154,7 @@ for($i=1;$i<=$pass;$i++ )
   <label class='form-check-label' for='flexRadioDefault1'>
     Male
   </label>
-</div>
+</div> 
 <div class='form-check'>
   <input class='form-check-input' type='radio' value='female'  id='flexRadioDefault2' name='gender$i'>
   <label class='form-check-label' for='flexRadioDefault2'>
