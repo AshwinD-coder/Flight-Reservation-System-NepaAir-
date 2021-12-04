@@ -92,7 +92,7 @@ body{
                                         <span toggle="#password-field" class="fa fa-fw fa-eye field_icon toggle-password" style="cursor:pointer;" onclick="myFunction()" title="Show/Hide"></span>
                                     </label>
                                     <div class="col-md-6">
-                                    <input type="password" id="inputValidationEx2" class="form-control validate">
+                                    <input type="password" id="pass_word" class="form-control" name="password" required  >
                                     </div>
                                 </div>
 
