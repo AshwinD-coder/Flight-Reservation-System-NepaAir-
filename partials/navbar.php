@@ -92,7 +92,18 @@ echo"
   				<ul class='navbar-nav text-left ms-auto mn' >
 				  ";
 				  
-    echo"<li><a  class='nav-link' href='Profile.php'>"; echo "$_user"; echo"</a></li>";
+    echo"<li>";  echo"</a>
+	<a class='nav-link dropdown-toggle' href='#' id='navbarDropdown' role='button' data-bs-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>";
+	echo "$_user";
+          echo"</a>
+          <div class='dropdown-menu dropdown-menu-end animate slideIn' aria-labelledby='navbarDropdown'>
+            <a class='dropdown-item' href='flightinfo.php'>Flight info</a>
+			<div class='dropdown-divider'></div>
+            
+			<a class='dropdown-item' href='profile.php'>Profile</a>
+            
+          </div>";
+
     echo"<li><a class='nav-link' href='logout.php'>Log Out</a></li>";
 
 }

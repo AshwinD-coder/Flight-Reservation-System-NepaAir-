@@ -93,23 +93,28 @@ else {echo "<br>";
     echo "<br>";
     echo "<br>";
     echo "<center>";
-    echo "<div class='alert alert-danger d-flex align-items-center' role='alert'>
-    <svg class='bi flex-shrink-0 me-2' width='24' height='24' role='img' aria-label='Danger:'><use xlink:href='#exclamation-triangle-fill'/></svg>
-    <div>
-      We are Sorry! \t We do not have flights for this choice at the moment. \t \t \t \t  \t \t<a href='index.php'><button type='button' class='btn btn-outline-danger'>Search Again</button></a>
-    </div>
-  </div>";
-   
-    
+    echo "<br>";
     echo "<br>";
     echo "<br>";
     echo "<div class='alert alert-primary d-flex align-items-center' role='alert' style='width:50%;'>
     <svg class='bi flex-shrink-0 me-2' width='24' height='24' role='img' aria-label='Info:'><use xlink:href='#info-fill'/></svg>
     <div>
-      <i>Try searching the flights for upcoming dates or next destination.</i>
+      <i><b><h5>Try searching the flights for upcoming dates or next destination.</h5></b></i>
     </div>
-  </div>
-    ";
+  </div>";
+  echo "</center>";
+  echo "<br>";
+    echo "<br>";
+    echo "<div class='alert alert-danger d-flex align-items-center' role='alert'>
+    <svg class='bi flex-shrink-0 me-2' width='24' height='24' role='img' aria-label='Danger:'><use xlink:href='#exclamation-triangle-fill'/></svg>
+    <div><h5><b><i>
+      We are Sorry! \t We do not have flights for this choice at the moment. \t \t \t \t  \t \t<a href='index.php'><button type='button' class='btn-lg btn-outline-danger'>Search Again</button></a>
+    </h5></div></b></i>
+  </div>";
+   
+    
+    
+    
     echo "<br>";
     echo "<br>";
     
