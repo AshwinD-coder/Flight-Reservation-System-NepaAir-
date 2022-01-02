@@ -68,9 +68,9 @@ $result=mysqli_query($conn,$query);
   </button></a></td>";
 }
    if($row[0]=='Cancelled'){
-  echo "<td><button type='success' class='btn btn-success' data-toggle='modal' data-target='#exampleModalCenter'>
+  echo "<td><a href='index.php'><button type='success' class='btn btn-success' data-toggle='modal' data-target='#exampleModalCenter'>
   Reschedule flight
- </button></td>";
+ </button></a></td>";
     }
 
 }}}}

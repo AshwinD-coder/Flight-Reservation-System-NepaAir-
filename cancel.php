@@ -10,18 +10,14 @@ if(isset($_GET['id']))
 if(isset($_GET['cancel']))
 {
     $id=$_GET['cancel'];
-    echo "<br>";
-    echo "<br>";
-    echo "<br>";
-    echo "<br>";
+   
     
     $query="UPDATE contact set BookingStatus='Cancelled' WHERE user_name='$user' AND FLightNO='$id'";
-   if(mysqli_query($conn,$query))
-   {
+
     date_default_timezone_set("Asia/Kathmandu");
     $sDate=date("Y-m-d H:i:s");
     $query2="UPDATE contact set CancelledTime='$sDate' WHERE user_name='$user' AND FLightNO='$id'";
-    $y=mysqli_query($conn,$query2);
+   
     $trim= trim($id,'NA-');
     $query3="SELECT priceperticket FROM availableflights WHERE id='$trim'";
     $price=mysqli_query($conn,$query3);
@@ -29,37 +25,63 @@ if(isset($_GET['cancel']))
     $row = mysqli_fetch_row($result);
     $dt=$row[3].' '.$row[9].':00';
     $dt2=mysqli_query($conn,"SELECT CancelledTime FROM contact WHERE user_name='$user' AND FlightNO='$id'");
+    $pass=mysqli_query($conn,"SELECT Passengercount FROM contact WHERE user_name='$user' AND FlightNO='$id'");
+    $pass = $pass -> fetch_assoc();
+    $pass=$pass['Passengercount'];
 $dt2 = $dt2 -> fetch_assoc();
 $price = $price -> fetch_assoc();
-    echo "<br>";
-    echo "<br>";
-    echo "<br>";
-    echo $dt;
-    echo "<br>";
-    
     $dt=strtotime($dt);
     $dt2=strtotime($dt2['CancelledTime']);
     $try=$dt-$dt2;
-    echo $try;
-    
+    $p=$price['priceperticket'];
+  
     
     if($try<=7200)
     {
-       echo "<script> alert('Flight cannot be cancelled before 2 hrs of the flight.');</script>;";
+       echo "<script> alert('Flight cannot be cancelled before 2 hrs of the flight.');
+       window.location='flightinfo.php';
+       </script>;";
+       
     }
-    if($try<39600){
-        echo "<script> alert('Flight  cancelled within 11 hrs of the flight.33% fare is levied.');</script>;";
+    if($try<39600 && $try>7200){
+        mysqli_query($conn,$query);
+    $getpass=mysqli_query($conn,"SELECT passenger_s FROM availableflights WHERE  id='$trim'");
+    $getpass=$getpass -> fetch_assoc();
+    $getpass=$getpass['passenger_s'];
+    $newpass=$getpass-$pass;
+
+        $removepass=mysqli_query($conn,"UPDATE availableflights SET passenger_s='$newpass' WHERE id='$trim'");
+        $y=mysqli_query($conn,$query2);
+        
+        $p=$pass*($p-(0.33*$p));
+        if(mysqli_query($conn,"UPDATE contact SET Refundcash='$p' WHERE user_name='$user' AND FlightNO='$id'"))
+        {
+        echo "<script> alert('Flight  cancelled within 11 hrs of the flight.33% fare is levied.');
+        window.location='flightinfo.php';</script>;";}
+       
 
     }
     if($try>39600){
-        echo "<script> alert('Flight  cancelled before 11 hrs of the flight.11% fare is levied.');</script>;";
+        mysqli_query($conn,$query);
+        $getpass=mysqli_query($conn,"SELECT passenger_s FROM availableflights WHERE  id='$trim'");
+        $getpass=$getpass -> fetch_assoc();
+        $getpass=$getpass['passenger_s'];
+        $newpass=$getpass-$pass;
+    
+            $removepass=mysqli_query($conn,"UPDATE availableflights SET passenger_s='$newpass' WHERE id='$trim'");
+        $y=mysqli_query($conn,$query2);
+
+        $p=$pass*($p-(0.11*$p));
+        mysqli_query($conn,"UPDATE contact SET Refundcash='$p' WHERE user_name='$user' AND FlightNO='$id'");
+        echo "<script> alert('Flight  cancelled before 11 hrs of the flight.11% fare is levied.');
+        window.location='flightinfo.php';</script>;";
 
     }
   
   
 
   
-}}
+}
 ?>
  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
 
