@@ -1,10 +1,21 @@
 <?php
 
 include('partials/navbar.php');
+$id=$_SESSION['id'];
 
+$result=mysqli_query($conn,"SELECT Seatsbooked FROM availableflights WHERE id='$id'");
+    $result=$result->fetch_assoc();
+    $result=$result['Seatsbooked'];
+    
+
+
+    $result=trim($result,'0');
+   
 ?>
 <head><script>
-  
+  <?php echo "var disable='$result';"; ?>
+
+ print.ln(disable);
     let size=0;
     var id,kekl;
     const idarray=[];
