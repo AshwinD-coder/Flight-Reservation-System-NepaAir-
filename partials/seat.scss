@@ -13,7 +13,7 @@ html {
 }
 
 .cockpit {
-  height: 250px;
+  height: 220px;
   position: relative;
   overflow: hidden;
   text-align: center;
@@ -33,7 +33,7 @@ html {
   h1 {
     width: 60%;
     margin: 100px auto 35px auto;
-    color:green;
+    color:rgb(28, 177, 28);
   }
 }
 
@@ -49,7 +49,7 @@ html {
     font-family: "Arial Narrow", Arial, sans-serif;
     display: block;
     position: absolute;
-    background: green;
+    background: rgb(28, 177, 28);
     color: white;
     top: 50%;
     transform: translate(0, -50%);
@@ -97,7 +97,7 @@ ol {
   }
   input[type="checkbox"]:checked {
     + label {
-      background: #bada55;
+      background: #00a738;
       -webkit-animation-name: rubberBand;
       animation-name: rubberBand;
       animation-duration: 300ms;
