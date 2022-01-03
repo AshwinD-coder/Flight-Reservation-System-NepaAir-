@@ -10,15 +10,42 @@ $result=mysqli_query($conn,"SELECT Seatsbooked FROM availableflights WHERE id='$
 
 
     $result=trim($result,'0');
-   
+    $result=trim($result,' ');
+
+ 
 ?>
 <head><script>
-  <?php echo "var disable='$result';"; ?>
-
- print.ln(disable);
-    let size=0;
+  
+  window.onload = function() {
+  disablebox();
+};
+  let size=0;
     var id,kekl;
     const idarray=[];
+  <?php echo "var disable='$result';"; ?>
+  console.log(disable);
+  const myArray = disable.split(" ");
+  console.log(myArray);
+  var l=myArray.length;
+  var k=0;
+  console.log(l);
+  var lol;
+  
+  function disablebox(){
+do{
+ lol=myArray[k];
+ console.log(lol);
+ 
+ var x= document.getElementById(lol);
+ x.disabled=true;
+
+k=k+1;
+}
+while(k<l);
+}
+
+  
+    
   function count(ele){  
   id=ele.id;
   kekl=ele.checked;
@@ -50,6 +77,7 @@ document.getElementById('demo').value=x;
   }
   document.getElementById('demo2').innerHTML=x;
   }
+ 
 </script></head>
 <link rel="stylesheet/less" type="text/css" href="partials/seat.scss?<?php echo time();?>" />
 <script src="https://cdn.jsdelivr.net/npm/less@4.1.1" ></script>
@@ -79,7 +107,7 @@ document.getElementById('demo').value=x;
 
       <ol class="seats" type="A">
         <li class="seat">
-          <input type="checkbox" id="1A" onClick="count(this)" value="1A" class="seats" s>
+          <input type="checkbox" id="1A" onClick="count(this)" value="1A" class="seats" />
           <label for="1A">1A</label>
         </li>
         <li class="seat">
