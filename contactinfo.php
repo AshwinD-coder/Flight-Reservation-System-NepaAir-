@@ -114,9 +114,12 @@ background-color: #333; /* Modern Browsers */
 
 <div class="form-row">
 <div class="label">
-    <h3>Passenger Details</h3>
-    </div></div>
 <?php
+if($pass<=3){
+  echo"
+    <h3>Passenger Details</h3>
+    </div></div>";
+
 
 for($i=1;$i<=$pass;$i++ )
 {;echo "<p style='color:Green; font-weight:bold; style='margin-left:20px;'>$i.Passenger</p>
@@ -166,6 +169,7 @@ for($i=1;$i<=$pass;$i++ )
     </div>
     
   ";
+}
 }
 ?>
  <center>

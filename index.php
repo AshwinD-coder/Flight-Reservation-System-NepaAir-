@@ -151,6 +151,7 @@ $('select[name=from]').on('change', function() {
 									<span class="form-label aria-label="Default select example"">Cabin</span>
 									<select class="form-select" aria-label="Default select example">
 										<option>Economy</option>
+										<option>Premium Economy</option>
 										<option>Business</option>
 										<option>First Class</option>
 									</select>
@@ -165,6 +166,9 @@ $('select[name=from]').on('change', function() {
 										<option>1</option>
 										<option>2</option>
 										<option>3</option>
+										<option>4</option>
+										<option>5</option>
+										<option>6</option>
 									</select>
 									<span class="select-arrow"></span>
 								</div>

@@ -36,7 +36,7 @@ $col=mysqli_fetch_assoc($res);
 $email=$col['Email'];
         mail($email,'Test Subject','Thank you for booking.','From: nepairltd@gmail.com');
         
-    header('location:../seat.php');
+    header('location:thankyou2.php');
 
 ?>
 

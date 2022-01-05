@@ -6,15 +6,18 @@ $pass=$_SESSION['nop'];
 $user=$_SESSION['username'];
 $id= $_SESSION['id'];
 $k="NA-";
-echo $id;
 $id=$k.$id;
 $trim= trim($id,'NA-');
+echo "<br>";
+echo "<br>";
+echo "<br>";
+echo "<br>";
+echo "<Center><b>Completing final entries and finalizing booking....................</b></center>";
+
 if(isset($_POST['form']));
 {$select= $_POST['seat'];
 }
-echo $select;
 $string_length = strlen($select) - substr_count($select, ' ');
-echo $string_length;
 $length=$string_length/2;
 if($length>$pass)
 {
@@ -33,7 +36,7 @@ if($length==$pass)
     $result=$result.' '.$select;
     mysqli_query($conn,"UPDATE availableflights SET Seatsbooked='$result' WHERE  id='$trim'");
     
-    echo "<script>window.location='esewa/thankyou2.php';</script>";
+    echo "<script>window.location='esewa/thankyou.php';</script>";
 
 }
 

@@ -35,6 +35,28 @@ $price = $price -> fetch_assoc();
     $try=$dt-$dt2;
     $p=$price['priceperticket'];
   
+    $seat=mysqli_query($conn,"SELECT Seats FROM contact WHERE user_name='$user' AND FlightNO='$id'");
+    $bookedseat=mysqli_query($conn,"SELECT Seatsbooked FROM availableflights WHERE  id='$trim'");
+    $bookedseat=$bookedseat->fetch_assoc();
+    $seat=$seat->fetch_assoc();
+    $seat=$seat['Seats'];
+    $bookedseat=$bookedseat['Seatsbooked'];
+    // $newseat=trim($bookedseat,$seat);
+    $newseat= str_replace($seat,"",$bookedseat);
+    // $newseat=$bookedseat-$seat;
+
+    // echo "<br>";
+    // echo "<br>";
+    // echo "<br>";
+    // echo "<br>";
+    // echo "<br>";
+    //  echo $seat;
+    // echo "<br>";
+
+    //  echo $bookedseat;
+    // echo "<br>";
+
+    //  echo $newseat;
     
     if($try<=7200)
     {
@@ -51,6 +73,8 @@ $price = $price -> fetch_assoc();
     $newpass=$getpass-$pass;
 
         $removepass=mysqli_query($conn,"UPDATE availableflights SET passenger_s='$newpass' WHERE id='$trim'");
+        $removeseat=mysqli_query($conn,"UPDATE availableflights SET Seatsbooked='$newseat' WHERE id='$trim'");
+
         $y=mysqli_query($conn,$query2);
         
         $p=$pass*($p-(0.33*$p));
@@ -69,6 +93,8 @@ $price = $price -> fetch_assoc();
         $newpass=$getpass-$pass;
     
             $removepass=mysqli_query($conn,"UPDATE availableflights SET passenger_s='$newpass' WHERE id='$trim'");
+        $removeseat=mysqli_query($conn,"UPDATE availableflights SET Seatsbooked='$newseat' WHERE id='$trim'");
+
         $y=mysqli_query($conn,$query2);
 
         $p=$pass*($p-(0.11*$p));

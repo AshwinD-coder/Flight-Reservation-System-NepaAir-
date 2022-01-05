@@ -57,10 +57,15 @@ $fullname=$_SESSION['userData']['first_name'].' '.$_SESSION['userData']['last_na
 $_SESSION['Email']=$_SESSION['userData']['email'];
 $email=$_SESSION['Email'];
 include('../connection.php');
+
+$result=mysqli_query($conn,"SELECT * FROM users WHERE fullname='$fullname' AND email='$email'");
+$result=mysqli_fetch_row($result);
+if($result==null)
+{
 $query="INSERT INTO users(fullname,email) VALUES('$fullname','$email')";
 $update=mysqli_query($conn,"UPDATE users SET verified='1' WHERE email='$email' ");
 $insert=mysqli_query($conn,$query);
-
+}
 if(isset($_SESSION['id'])){
 echo "<script>window.location='../contactinfo.php'</script>";
 }
