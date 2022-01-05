@@ -11,10 +11,13 @@ $result=mysqli_query($conn,"SELECT Seatsbooked FROM availableflights WHERE id='$
 
     $result=trim($result,"0");
 
-    $result=trim($result,"  ");
+    $result=trim($result," ");
+    // $result=trim($result,"");
 
-    
-   
+
+
+
+
 
 
 
@@ -22,9 +25,7 @@ $result=mysqli_query($conn,"SELECT Seatsbooked FROM availableflights WHERE id='$
 ?>
 <head><script>
   
-  window.onload = function() {
-  disablebox();
-};
+  
   let size=0;
     var id,kekl;
     const idarray=[];
@@ -36,18 +37,30 @@ $result=mysqli_query($conn,"SELECT Seatsbooked FROM availableflights WHERE id='$
   var k=0;
   console.log(l);
   var lol;
-  
+  // lol=myArray.filter(function (el) {
+  //               return el != null;
+  //           });
+
+  //           console.log(lol);
+  window.onload = function() {
+  disablebox();
+};
   function disablebox(){
+
+
 do{
  lol=myArray[k];
  console.log(lol);
- 
+ if(lol !=''){
  var x= document.getElementById(lol);
+ 
  x.disabled=true;
-
+ }
 k=k+1;
-}
-while(k<l);
+
+}while(k<l);
+
+
 }
 
   
@@ -61,7 +74,8 @@ if ( kekl =="1")
 idarray[size]=id;
 size=size+1;
 var x= idarray.join(' ');
-document.getElementById('demo').value=x;
+
+
 
 }
 var loc;
@@ -77,11 +91,18 @@ for(index=0;index<size;index++)
 
 idarray.splice(loc , 1 );
 var x= idarray.join(' ');
-document.getElementById('demo').value=x;
+
+
 
 
   }
+  x=idarray.filter(function (el) {
+                return el != null;
+            });
+            document.getElementById('demo').value=x;
   document.getElementById('demo2').innerHTML=x;
+  console.log(x);
+
   }
  
 </script></head>
