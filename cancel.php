@@ -135,7 +135,7 @@ $price = $price -> fetch_assoc();
     <h3>Cancellation rules</h3>
     <ul>
 <li>
-A cancellation charge of 10% of the fare is levied if the cancellation of the ticket is done before 11 hours from flight time.</li>
+A cancellation charge of 11% of the fare is levied if the cancellation of the ticket is done before 11 hours from flight time.</li>
 <li>
 A cancellation charge of 33.33% of the fare is levied if the cancellation of the ticket is done within 11 hours from flight time.</li>
 <li>
