@@ -24,15 +24,18 @@ if(isset($_GET['cancel']))
     $result=mysqli_query($conn,"SELECT * FROM availableflights WHERE id='$trim'");
     $row = mysqli_fetch_row($result);
     $dt=$row[3].' '.$row[9].':00';
-    $dt2=mysqli_query($conn,"SELECT CancelledTime FROM contact WHERE user_name='$user' AND FlightNO='$id'");
+    // $dt2=mysqli_query($conn,"SELECT CancelledTime FROM contact WHERE user_name='$user' AND FlightNO='$id'");
     $pass=mysqli_query($conn,"SELECT Passengercount FROM contact WHERE user_name='$user' AND FlightNO='$id'");
     $pass = $pass -> fetch_assoc();
     $pass=$pass['Passengercount'];
-$dt2 = $dt2 -> fetch_assoc();
+// $dt2 = $dt2 -> fetch_assoc();
 $price = $price -> fetch_assoc();
     $dt=strtotime($dt);
-    $dt2=strtotime($dt2['CancelledTime']);
+    $dt2=strtotime($sDate);
+    
+   
     $try=$dt-$dt2;
+   
     $p=$price['priceperticket'];
   
     $seat=mysqli_query($conn,"SELECT Seats FROM contact WHERE user_name='$user' AND FlightNO='$id'");
@@ -60,7 +63,7 @@ $price = $price -> fetch_assoc();
     
     if($try<=7200)
     {
-       echo "<script> alert('Flight cannot be cancelled before 2 hrs of the flight.');
+       echo "<script> alert('Flight cannot be cancelled before 2 hrs of the flight. ');
        window.location='flightinfo.php';
        </script>;";
        
@@ -80,7 +83,7 @@ $price = $price -> fetch_assoc();
         $p=$pass*($p-(0.33*$p));
         if(mysqli_query($conn,"UPDATE contact SET Refundcash='$p' WHERE user_name='$user' AND FlightNO='$id'"))
         {
-        echo "<script> alert('Flight  cancelled within 11 hrs of the flight.33% fare is levied.');
+        echo "<script> alert('Flight  cancelled within 11 hrs of the flight.33% fare is levied. ');
         window.location='flightinfo.php';</script>;";}
        
 
@@ -99,7 +102,7 @@ $price = $price -> fetch_assoc();
 
         $p=$pass*($p-(0.11*$p));
         mysqli_query($conn,"UPDATE contact SET Refundcash='$p' WHERE user_name='$user' AND FlightNO='$id'");
-        echo "<script> alert('Flight  cancelled before 11 hrs of the flight.11% fare is levied.');
+        echo "<script> alert('Flight  cancelled before 11 hrs of the flight.11% fare is levied. ');
         window.location='flightinfo.php';</script>;";
 
     }

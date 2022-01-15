@@ -75,7 +75,7 @@ $result=mysqli_query($conn,$query);
 
 }}}}
 else{
-    echo "Please book a flight to view you flight information.";
+    echo "Please book a flight to view your flight information.";
 }
 ?>
 

@@ -16,6 +16,7 @@ echo "<Center><b>Completing final entries and finalizing booking................
 
 if(isset($_POST['form']));
 {$select= $_POST['seat'];
+    $select = str_replace(',', ' ', $select);
 }
 $string_length = strlen($select) - substr_count($select, ' ');
 $length=$string_length/2;

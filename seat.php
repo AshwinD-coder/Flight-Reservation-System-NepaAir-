@@ -23,7 +23,7 @@ $result=mysqli_query($conn,"SELECT Seatsbooked FROM availableflights WHERE id='$
 
  
 ?>
-<br><br><br><br>
+
 <head><script>
   
   

@@ -6,28 +6,66 @@ include('partials/delectflight.php');
 
 ?>
  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-
- 
- 
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+ <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 <link rel="stylesheet" href="partials/style.css?<?php echo time(); ?>" type="">
 <head>
-<script src="https://code.jquery.com/jquery-3.1.1.min.js">
-$('select[name=to]').on('change', function() {
-   var self = this;
-   $('select[name=from]').find('option').prop('disabled', function() {
-       return this.value == self.value
-   });
-});
+<script src="
+https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js">
+</script>
+<script>
+function getSelect(select1){
+	if(select1!='')
+	{
+		$("#select2 option[value='"+select1+"']").hide();
+		$("#select2 option[value!='"+select1+"']").show();
 
-$('select[name=from]').on('change', function() {
-  var self = this;
-  $('select[name=to]').find('option').prop('disabled', function() {
-      return this.value == self.value
-  });
-});
+	}
+}
+function getSelect2(select1){
+	if(select1!='')
+	{
+		$("#select1 option[value='"+select1+"']").hide();
+		$("#select1 option[value!='"+select1+"']").show();
+
+	}
+}
+
+
+
+	// document.getELementById("demo").innerHTML="Returning";
+	function noop(){
+		
+	};
+function showreturningtime() {
+	var check=document.getElementById("round").value;
+
+  var x = document.createElement("INPUT");
+
+  x.setAttribute("type"  , "date");
+  x.setAttribute("min"  , "<?php echo date('Y-m-d');?>");
+   
+var span=document.getElementById("demo");
+  x.setAttribute("class" , "form-control");
+  x.setAttribute("name"  , "return");
+  
+  span.textContent = "Returning";
+  document.getElementById("main").appendChild(x);
+  
+
+}
+
+function delret(){
+	document.getElementById("demo").innerHTML="";
+	var myobj =document.getElementById("main");
+	myobj.removeChild(myobj.lastElementChild);
+
+
+}
+
+
+
+
+
 </script></head>
 <link rel="stylesheet" href="partials/footer.css ?<?php echo time(); ?>" />
 <div>
@@ -84,7 +122,7 @@ $('select[name=from]').on('change', function() {
 								<div class="form-group">
 								<span class="form-label " name="from2">Flying from</span>
 
-								<select class="form-select"   name="from" required data-placeholder="destination">
+								<select class="form-select"   name="from" required data-placeholder="destination" id="select1" onChange="getSelect(this.value);">
 								<option value="">Select your destination</option>
 										<option value="Kathmandu">Kathmandu</option>
 										<option value="Pokhara">Pokhara</option>
@@ -116,7 +154,7 @@ $('select[name=from]').on('change', function() {
 							<div class="col-md-3">
 								<div class="form-group">
 								<span class="form-label" name="to1" >Flying to</span>
-								<select class="form-select" aria-label="Default select example" name="to" required>
+								<select class="form-select" aria-label="Default select example" name="to" required id="select2" onChange="getSelect2(this.value);">
 								<option value="">Select your destination</option>
 								<option value="Kathmandu">Kathmandu</option>
 								<option value="Pokhara">Pokhara</option>
@@ -227,60 +265,4 @@ $('select[name=from]').on('change', function() {
 include('partials/footer.php');
 ?>
 
-<script src="jquery-3.5.1.min.js">
-
-$(document).ready(function(){
- $("#from").change(function(){
-   var anotherTeam = $("#to").val();
-   var team = $(this).val();
-   if(team !='' && team==anotherTeam){
-     alert("This team already selected.");
-     $('option:selected',this).removeAttr('selected');
-     $("option:first",this).attr('selected','selected');
-   }
- });
-     
- $("#to").change(function(){
-   var anotherTeam = $("#from").val();
-   var team = $(this).val();
-   if(team !='' && team==anotherTeam){
-     alert("This team already selected.");
-     $('option:selected',this).removeAttr('selected');
-     $("option:first",this).attr('selected','selected');
-     
-   }
- });
-  
-
-});
-
-	document.getELementById("demo").innerHTML="Returning";
-	function noop(){
-		
-	};
-function showreturningtime() {
-	var check=document.getElementById("round").value;
-
-  var x = document.createElement("INPUT");
-
-  x.setAttribute("type"  , "date");
-  x.setAttribute("min"  , "<?php echo date('Y-m-d');?>");
-   
-var span=document.getElementById("demo");
-  x.setAttribute("class" , "form-control");
-  x.setAttribute("name"  , "return");
-  
-  span.textContent = "Returning";
-  document.getElementById("main").appendChild(x);
-  
-
-}
-
-function delret(){
-	document.getElementById("demo").innerHTML="";
-	var myobj =document.getElementById("main");
-	myobj.removeChild(myobj.lastElementChild);
-
-
-}
-</script>
+ 

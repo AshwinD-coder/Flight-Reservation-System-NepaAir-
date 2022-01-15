@@ -17,7 +17,7 @@
 <div>
                 <?php
 
-  include("connection.php");
+  
 
   include('partials/navbar.php');
 
