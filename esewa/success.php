@@ -20,7 +20,7 @@ $data =[
     curl_close($curl);
     
     if(strpos(  $response, "Success") !== false){
-        header("Location: https://drive.google.com/file/d/1Mab2MK6zmQzCUFrWpC8DVdc_tGqwCUMK/view?usp=drive_open");
+        header("Location: failed.php");
     } else{
          header("Location: https://localhost/fosp/Github/Project5Sem/seat.php");
     }
