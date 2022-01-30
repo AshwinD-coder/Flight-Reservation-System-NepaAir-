@@ -21,9 +21,12 @@ while(($row = mysqli_fetch_row($result))!=null){
     $dt22=strtotime($dt2);
     if($dt22 <$dt){
 
-
-        $q="DELETE FROM availableflights WHERE id='$a'";
+$status="Departed";
+$flightn='NA-'+$a;
+        $q="UPDATE availableflights SET Status='$status' WHERE id='$a'";
         mysqli_query($conn,$q);
+        $query="UPDATE contact SET BookingStatus='$status' WHERE FlightNO='$flightn'";
+        mysqli_query($conn,$query);
 
     }
     

@@ -14,6 +14,7 @@ if(isset($_POST['submit'])){
     $check=$_POST['check'];
     $mobile=$_POST['mn'];
     $f=$_SESSION['id'];
+    if($pass<=3){
 if($pass==1)
 {
     $_11=$_POST['fname1'];
@@ -74,6 +75,7 @@ mysqli_query($conn,$query)
 or die (mysqli_error("Error"));
     
 }
+    }
     $query="INSERT INTO contact(user_name,Fullname,Email,Address,Address2,City,State,Zip,Passenger,Mobile,FlightNO)
     VALUES ('$user','$fullname','$email','$address1','$address2','$city','$state','$zip','$check','$mobile','NA-$f')";
    mysqli_query($conn,$query)
@@ -84,4 +86,5 @@ or die (mysqli_error("Error"));
 else{
     echo "<script>alert('Error'); window.location='index.php'</script>";
 }
+
 ?>
