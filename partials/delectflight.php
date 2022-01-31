@@ -1,4 +1,4 @@
-
+<br><br><br>
 <?php
 
 
@@ -19,10 +19,11 @@ while(($row = mysqli_fetch_row($result))!=null){
     $a=$row[0];
     $dt2=$row[3].' '.$row[9].':00';
     $dt22=strtotime($dt2);
-    if($dt22 <$dt){
+    $status="Departed";
+$flightn="NA-".''.$a;
+    if($dt22<$dt){
 
-$status="Departed";
-$flightn='NA-'+$a;
+
         $q="UPDATE availableflights SET Status='$status' WHERE id='$a'";
         mysqli_query($conn,$q);
         $query="UPDATE contact SET BookingStatus='$status' WHERE FlightNO='$flightn'";
