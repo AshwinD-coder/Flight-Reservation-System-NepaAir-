@@ -2,6 +2,10 @@
 <?php
 
 include('partials/navbar.php');
+if(!isset($_SESSION['username']))
+{
+    header('Location:index.php');
+}
 $pass=$_SESSION['nop'];
 $user=$_SESSION['username'];
 $id= $_SESSION['id'];

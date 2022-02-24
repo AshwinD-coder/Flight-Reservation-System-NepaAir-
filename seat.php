@@ -1,9 +1,11 @@
 <?php
 
 include('partials/navbar.php');
-$id=$_SESSION['id'];
-$pass=$_SESSION['nop'];
 
+if(isset($_SESSION['username']))
+{
+  $id=$_SESSION['id'];
+  $pass=$_SESSION['nop'];
 $result=mysqli_query($conn,"SELECT Seatsbooked FROM availableflights WHERE id='$id'");
     $result=$result->fetch_assoc();
     $result=$result['Seatsbooked'];
@@ -14,7 +16,10 @@ $result=mysqli_query($conn,"SELECT Seatsbooked FROM availableflights WHERE id='$
     $result=trim($result," ");
     // $result=trim($result,"");
 
-
+}
+else{
+  header('Location:index.php');
+}
 
 
 
@@ -403,7 +408,7 @@ var x= idarray.join(' ');
           <label for="10D">10D</label>
         </li>
         <li class="seat">
-          <input type="checkbox" id="10E" value="10E" onClick="count(this)" />
+          <input type="checkbox" id="10E" value="10E"  onClick="count(this)" />
           <label for="10E">10E</label>
         </li>
         <li class="seat">

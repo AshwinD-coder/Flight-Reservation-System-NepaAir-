@@ -35,7 +35,7 @@ $res=mysqli_query($conn,$pop);
 $col=mysqli_fetch_assoc($res);
 $email=$col['Email'];
         mail($email,'Test Subject','Thank you for booking.','From: nepairltd@gmail.com');
-        
+        session_destroy();
     header('location:thankyou2.php');
 
 ?>
