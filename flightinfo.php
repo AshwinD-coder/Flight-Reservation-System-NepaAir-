@@ -46,7 +46,7 @@ $result=mysqli_query($conn,$query);
         <th>Cabin</th>
         <th>Booked(Date/Time)</th>
 
-        <th>Seats</th>
+        
         
         
 </tr>";
@@ -59,11 +59,11 @@ $result=mysqli_query($conn,$query);
     $result2=mysqli_query($conn,$query2);
     if(mysqli_num_rows($result2)>0){
         while(($row2 = mysqli_fetch_row($result2))!=null)
-{   echo "<td> $row2[1] </td><td> $row2[2] </td><td> $row2[3] </td><td> $row2[9] </td><td> $row[12] </td><td> $row2[5] </td><td>$row[13]</td><td>$row[16]</td>";
+{   echo "<td> $row2[1] </td><td> $row2[2] </td><td> $row2[3] </td><td> $row2[9] </td><td> $row[12] </td><td> $row2[5] </td><td>$row[13]</td>";
     $id=$row[11];
-  
+  $bookeddatetime=$row[13];
     if($row[0]=='Booked')
-    {echo "<td><a href='cancel.php?id=$id'><button type='button' class='btn btn-danger' data-toggle='modal' data-target='#exampleModalCenter'>
+    {echo "<td><a href='cancel.php?id=$id&bookeddatetime=$bookeddatetime'><button type='button' class='btn btn-danger' data-toggle='modal' data-target='#exampleModalCenter'>
    Cancel Flight
   </button></a></td>";
 }

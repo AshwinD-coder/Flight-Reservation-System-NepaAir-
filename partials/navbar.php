@@ -80,7 +80,7 @@
 				  
 
     			<li><a class="nav-link" href="index.php">Home</a></li>
-    			<li><a class="nav-link" href="">Flight Detail</a></li>
+    			
     			<li><a class="nav-link" href="">About Us</a></li>
 			
 				<?php
@@ -106,8 +106,6 @@ echo"
           <div class='dropdown-menu dropdown-menu-end animate slideIn' aria-labelledby='navbarDropdown'>
             <a class='dropdown-item' href='flightinfo.php'>Flight info</a>
 			<div class='dropdown-divider'></div>
-            
-			<a class='dropdown-item' href='profile.php'>Profile</a>
             
           </div>";
 

@@ -4,9 +4,11 @@
 
 
 <?php
+
 echo "<div class='alert alert-success' role='alert'>
 Thank you ! Please check your contact email for ticket details.
 </div>";
 
 
 echo "<br><a href='../index.php' style='text-decoration:none; margin-left:20px;'>Go to Homepage</a>";
+?>

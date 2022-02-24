@@ -2,7 +2,7 @@
 
 include('partials/navbar.php');
 
-if(isset($_SESSION['username']))
+if(isset($_SESSION['username']) && isset($_SESSION['id']))
 {
   $id=$_SESSION['id'];
   $pass=$_SESSION['nop'];

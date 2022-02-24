@@ -9,10 +9,17 @@ $id=$_SESSION['id'];
 $query="SELECT * FROM availableflights WHERE id='$id'";
 $result=mysqli_query($conn,$query);
 $row=mysqli_fetch_assoc($result);
+$from=$row['Fro_m'];
+$to=$row['T_o'];
+$departure=$row['Departur_e'];
+$time=$row['Departuretime'];
 $pass=$row['passenger_s'];
+$cabin=$row['cabi_n'];
+
+$price=$row['priceperticket'];
 $totalseats=$row['Totalseats'];
 $user=$_SESSION['username'];
-    
+    $price=$price*$nop;
 $pass=$pass+$nop;
 if($pass>0){
     mysqli_query($conn, "UPDATE availableflights SET status='Booking In Progress' WHERE id='$id'");
@@ -34,7 +41,31 @@ $pop="SELECT * FROM contact WHERE user_name='$user'";
 $res=mysqli_query($conn,$pop); 
 $col=mysqli_fetch_assoc($res);
 $email=$col['Email'];
-        mail($email,'Test Subject','Thank you for booking.','From: nepairltd@gmail.com');
+$query2="SELECT * FROM contact WHERE user_name='$user' AND Bookeddatetime='$sDate'";
+$result2=mysqli_query($conn,$query2);
+$row2=mysqli_fetch_assoc($result2);
+$seats=$row2['Seats'];
+
+
+$flightinfo="Greetings $user,
+                                Here is your flight details.
+                                FlightNo-NA-$id
+                                Booked time-$sDate
+                                Passengers-$nop
+                                From-$from
+                                To-$to
+                                Departure-$departure
+                                Time-$time
+                                Cabin-$cabin
+                                Seats-$seats
+                                Total amount charged-$price
+
+                                Please bring a hard copy of this mail for ticket access at the airport.
+                                
+             Have a nice flight.
+             NEPAAIR 
+";
+        mail($email,'NEPAAIR FLIGHT DETAILS',$flightinfo,'From: nepairltd@gmail.com');
         session_destroy();
     header('location:thankyou2.php');
 

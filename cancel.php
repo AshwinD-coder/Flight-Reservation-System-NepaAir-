@@ -1,22 +1,24 @@
+
 <?php
 
 include('partials/navbar.php');
 $user=$_SESSION['username'];
-if(isset($_GET['id']))
+if(isset($_GET['id']) && isset($_GET['bookeddatetime']))
 {
   $id=$_GET['id'];
+  $b=$_GET['bookeddatetime'];
   
 }
-if(isset($_GET['cancel']))
+if(isset($_GET['cancel']) && isset($_GET['bookeddatetime']))
 {
     $id=$_GET['cancel'];
-   
+    $b=$_GET['bookeddatetime'];
     
-    $query="UPDATE contact set BookingStatus='Cancelled' WHERE user_name='$user' AND FLightNO='$id'";
+    $query="UPDATE contact set BookingStatus='Cancelled' WHERE user_name='$user' AND FLightNO='$id' AND Bookeddatetime='$b'";
 
     date_default_timezone_set("Asia/Kathmandu");
     $sDate=date("Y-m-d H:i:s");
-    $query2="UPDATE contact set CancelledTime='$sDate' WHERE user_name='$user' AND FLightNO='$id'";
+    $query2="UPDATE contact set CancelledTime='$sDate' WHERE user_name='$user' AND FLightNO='$id' AND Bookeddatetime='$b'";
    
     $trim= trim($id,'NA-');
     $query3="SELECT priceperticket FROM availableflights WHERE id='$trim'";
@@ -81,9 +83,9 @@ $price = $price -> fetch_assoc();
         $y=mysqli_query($conn,$query2);
         
         $p=$pass*($p-(0.33*$p));
-        if(mysqli_query($conn,"UPDATE contact SET Refundcash='$p' WHERE user_name='$user' AND FlightNO='$id'"))
+        if(mysqli_query($conn,"UPDATE contact SET Refundcash='$p' WHERE user_name='$user' AND FlightNO='$id' AND Bookeddatetime='$b'"))
         {
-        echo "<script> alert('Flight  cancelled within 11 hrs of the flight.33% fare is levied. ');
+        echo "<script> alert('Flight  cancelled within 11 hrs of the flight.33% fare is levied.Please mail us your Esewa ID and Flight No at nepairltd@gmail.com for refund cash.!! ');
         window.location='flightinfo.php';</script>;";}
        
 
@@ -101,8 +103,8 @@ $price = $price -> fetch_assoc();
         $y=mysqli_query($conn,$query2);
 
         $p=$pass*($p-(0.11*$p));
-        mysqli_query($conn,"UPDATE contact SET Refundcash='$p' WHERE user_name='$user' AND FlightNO='$id'");
-        echo "<script> alert('Flight  cancelled before 11 hrs of the flight.11% fare is levied. ');
+        mysqli_query($conn,"UPDATE contact SET Refundcash='$p' WHERE user_name='$user' AND FlightNO='$id' AND Bookeddatetime='$b'");
+        echo "<script> alert('Flight  cancelled before 11 hrs of the flight.11% fare is levied.Please mail us your Esewa ID and Flight No at nepaairltd@gmail.com for refund cash.!! ');
         window.location='flightinfo.php';</script>;";
 
     }
@@ -137,14 +139,16 @@ $price = $price -> fetch_assoc();
 <div class="container">
     <h3>Cancellation rules</h3>
     <ul>
+    <li>
+Rescheduling of any flight can be before two hours of flight time.</li>
 <li>
+<li>
+Cancellation is prohibited within two (2) hours of flight time.</li>
+
 A cancellation charge of 11% of the fare is levied if the cancellation of the ticket is done before 11 hours from flight time.</li>
 <li>
 A cancellation charge of 33.33% of the fare is levied if the cancellation of the ticket is done within 11 hours from flight time.</li>
-<li>
-Cancellation is prohibited within two (2) hours of flight time.</li>
-<li>
-Rescheduling of any flight can be before two hours of flight time.</li>
+
 <li>
 Passenger(s) will be treated as ‘No-Show’ if they do not Check-In within the stated reporting time. NEPA Air is not liable to refund the ticket if the passenger(s) fall under this category.</li>
 <li>
@@ -157,13 +161,13 @@ Refunds are made from the point of issue.</li>
 <div class="container">
     <h2>Do you want to cancel the flight?</h2>
     <div class=" btn col-md-1">
-    <a href="cancel.php?cancel=<?php echo $id?>"><button type='button' class='btn btn-danger' >
+    <a href="cancel.php?cancel=<?php echo $id?>&bookeddatetime=<?php echo $b?>"><button type='button' class='btn btn-success' >
   Proceed 
     </button></a>
 </div>
     
 <div class="btn col-md-1">
-    <a href="flightinfo.php"><button type='button' class='btn btn-success' >
+    <a href="flightinfo.php"><button type='button' class='btn btn-danger' >
   Skip 
     </button></a>
 </div>
