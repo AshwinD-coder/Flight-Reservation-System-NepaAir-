@@ -5,124 +5,147 @@
 <?php
 include('partials/navbar.php');
 include('connection.php');
-$nop=$_SESSION['nop'];
-$pass=$nop;
+$nop = $_SESSION['nop'];
+$pass = $nop;
 ?><br><br><br>
 <link href="partials/main.css?<?php echo time(); ?>" rel="stylesheet" />
 
 <style>
-    .contact-passenger-form{
-        margin-left:30px;
-        background-color:#c2c1c19d;;
-        border-radius:15px;
-        border: 0px solid ;
-        margin:50px;
-    }
-   .form-row{
-       padding:20px 20px;
-   }
-   .form-group{
-       margin:10px;
-   }
-   .form-btn{
-     padding:20px 20px;
-   }
-   hr {
-border: 10px solid 	#fff8dc;
-height: 10px;
-/* Set the hr color */
-color: #000000; /* old IE */
-background-color: #333; /* Modern Browsers */
-}
+  .div{
+    text-align: center;
+  }
+  .contact-passenger-form {
+  
+    background-color: #c2c1c19d;
+    ;
+    border-radius: 15px;
+    border: 0px solid;
+    margin-left: 250px;
+ 
+    width: 75%;
+  }
+
+  .contact-passenger-form h3 {
+    font-family: apple-system;
+    text-align: center;
+    padding: 20px;
+   
+  }
+
+  .form-row {
+    padding: 20px 20px;
+  padding-left: 200px;
+  }
+
+  .form-group {
+    margin: 10px;
+  }
+
+  .form-btn {
+    padding: 30px 20px;
+  }
+
+  hr {
+    border: 10px solid ;
+    height: 5px;
+    /* Set the hr color */
+    /* old IE */
+    color: azure;
+    background-color: #333;
+    /* Modern Browsers */
+  }
 </style>
 <script>
-    $('.alert').alert()
-    </script>
+  $('.alert').alert()
+</script>
 </head>
 <div class="progress-bar-wrapper">
-<script src="partials/progress-bar.js">
+  <script src="partials/progress-bar.js">
 
-</script>
-<script src="partials/app.js">
+  </script>
+  <script src="partials/app.js">
 
-</script>
-<div class="div"><div class="alert alert-warning alert-dismissible fade show" role="alert">
-  <strong>Hey there!</strong>    Please fill the details in the form below to get flight details.
-  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-    <span aria-hidden="true">&times;</span>
-  </button>
-</div></div>
-<div class="contact-passenger-form">
-        <form id="form-submit" action="database.php" method="POST">
-        <div class="form-row">
+  </script>
+  <div class="div">
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+      <strong>Hey there!</strong> Please fill the details in the form below to get <b>flight details</b>.
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+  </div>
+  <div class="contact-passenger-form">
+    <form id="form-submit" action="database.php" method="POST">
+      
+          <h3>Contact Information</h3>
+       
+      <div class="form-row">
+        <div class="form-group col-sm-4">
+          <label for="fullname">Full Name</label>
+          <input name="fullname" type="text" class="form-control" id="fullname" placeholder="First Name Last Name" required>
+        </div>
+        <div class="form-group col-sm-4">
+          <label for="email">Email</label>
+          <input name="email" type="email" class="form-control" id="email" placeholder="example@gmail.com">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="inputAddress">Address</label>
+          <input name="address1" type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+        </div>
+        <div class="form-group col-md-4">
+          <label for="inputAddress2">Address 2</label>
+          <input name="address2" type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group col-md-4">
+          <label for="inputCity">City</label>
+          <input name="city" type="text" class="form-control" id="inputCity" required>
+        </div>
+        <div class="form-group col-md-4">
+          <label for="inputState">State</label>
+          <input name="state" type="text" class="form-control" id="inputState" required>
+
+        </div>
+        <div class="form-group col-md-4">
+          <label for="inputZip">Zip</label>
+          <input name="zip" type="text" class="form-control" id="inputZip" required>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-12">
+          <div class="form-check">
+            <input name="check" class="form-check-input" type="checkbox" id="gridCheck">
+            <label class="form-check-label" for="gridCheck">
+              Are you the passenger going on this flight?
+            </label>
+
+          </div>
+        </div>
+        <div class="form-group col-md-4">
+          <label for="inputnumber">Mobile No.</label>
+          <input name="mn" type="phonenumber" class="form-control" id="inputnumber" value="+977" required>
+        </div>
+      </div>
+
+
+
+      <hr>
+
+      <div class="form-row">
         <div class="label">
-    <h3>Contact Information</h3></div></div>
-  <div class="form-row">
-    <div class="form-group col-sm-4">
-      <label for="fullname">Full Name</label>
-      <input name="fullname" type="text" class="form-control" id="fullname" placeholder="First Name Last Name" required>
-    </div>
-    <div class="form-group col-sm-4">
-      <label for="email">Email</label>
-      <input name="email" type="email" class="form-control" id="email" placeholder="example@gmail.com">
-    </div>
-  </div>
-  <div class="form-row">
-  <div class="form-group">
-    <label for="inputAddress">Address</label>
-    <input name="address1" type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
-  </div>
-  <div class="form-group col-md-4">
-    <label for="inputAddress2">Address 2</label>
-    <input name="address2" type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
-  </div></div>
-  
-    <div class="form-row">
-    <div class="form-group col-md-4">
-      <label for="inputCity">City</label>
-      <input  name="city" type="text" class="form-control" id="inputCity" required>
-    </div>
-    <div class="form-group col-md-4">
-      <label for="inputState">State</label>
-      <input name="state" type="text" class="form-control" id="inputState" required>
-    
-    </div>
-    <div class="form-group col-md-4">
-      <label for="inputZip">Zip</label>
-      <input  name="zip" type="text" class="form-control" id="inputZip" required>
-    </div>
-  </div>
-<div class="form-row">
-<div class="form-group col-md-12">
-    <div class="form-check">
-      <input name="check" class="form-check-input" type="checkbox" id="gridCheck">
-      <label class="form-check-label" for="gridCheck">
-        Are you the passenger going on this flight?
-      </label>
-    
-    </div>
-</div>
-<div class="form-group col-md-12">
-<label for="inputnumber">Mobile No.</label>
-      <input name="mn" type="phonenumber" class="form-control" id="inputnumber" value="+977" required>
-</div>
-</div>
-
-
-
-<hr >
-
-<div class="form-row">
-<div class="label">
-<?php
-if($pass<=3){
-  echo"
-    <h3>Passenger Details</h3>
+          <?php
+          if ($pass <= 3) {
+            echo "
+    <h3 style='font-family:apple-system; text-align:center;'>Passenger Details</h3>
     </div></div>";
 
 
-for($i=1;$i<=$pass;$i++ )
-{;echo "<p style='color:Green; font-weight:bold; style='margin-left:20px;'>$i.Passenger</p>
+            for ($i = 1; $i <= $pass; $i++) {;
+              echo "<p style='color:Green;  margin-left:60px; font-family:arial;'><b>Passenger $i</b></p>
    <div class='form-row' '>
     <div class='col-md-4'>
       <input type='text' class='form-control' placeholder='First name' name='fname$i' required>
@@ -130,7 +153,7 @@ for($i=1;$i<=$pass;$i++ )
     <div class='col-md-4'>
       <input type='text' class='form-control' placeholder='Last name' name='lname$i'required>
     </div>
-    <div class='col-md-4'>
+    <div class='col-md-1'>
       <input type='number' class='form-control' placeholder='Age' min=0 name='age$i' required>
     </div>
   </div>
@@ -169,13 +192,14 @@ for($i=1;$i<=$pass;$i++ )
     </div>
     
   ";
-}
-}
-?>
- <center>
-    <div class='col-md-3'>
-      <div class='form-btn'>
-        <button  type='submit' class='btn btn-success btn-lg' name='submit'>Submit</button>
-      </div></center>
-    </div>
-</form>
+            }
+          }
+          ?>
+          <center>
+            <div class='col-md-3'>
+              <div class='form-btn'>
+                <button type='submit' class='btn btn-success btn-lg' name='submit'>Submit</button>
+              </div>
+          </center>
+        </div>
+    </form>

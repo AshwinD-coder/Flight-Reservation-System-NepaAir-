@@ -56,7 +56,7 @@
   	<div class="container">
   		
   		<nav class="navbar navbar-expand-md navbar-light bg-light fixed-top">
-  			<a href=" " class="navbar-brand"> 
+  			<a href="https:\\localhost\fosp\github\project5sem\index.php " class="navbar-brand"> 
   				<span class=""> NEPA AIR</span>
   				
   				<img src="img/logo.png" alt="bootstrap-5 logo" width="50" height="34" 
@@ -81,7 +81,7 @@
 
     			<li><a class="nav-link" href="index.php">Home</a></li>
     			
-    			<li><a class="nav-link" href="">About Us</a></li>
+    			<li><a class="nav-link" href="aboutus.php">About Us</a></li>
 			
 				<?php
 

@@ -15,10 +15,8 @@
 <link rel="stylesheet" href="partials/style.css?<?php echo time();?>" type="">
 <link rel="stylesheet" href="partials/footer.css?<?php echo time();?>" />
 <div>
-                <?php
 
-  
-
+ <?php
   include('partials/navbar.php');
 
 if (isset($_POST['submit'])) {
@@ -32,8 +30,6 @@ if (isset($_POST['submit'])) {
    $noofpassenger=$_POST['guests'];
    $_SESSION['nop']= $noofpassenger;
  
-  
-
     
     	$query = "SELECT * FROM availableflights WHERE  fro_m='$fromAirport' AND t_o='$toAirport' AND departur_e = '$Depart' AND Totalseats!=passenger_s AND Totalseats>=$noofpassenger+passenger_s";
         $result=mysqli_query($conn,$query);
@@ -102,16 +98,16 @@ else {echo "<br>";
       <i><b><h5>Try searching the flights for upcoming dates or next destination.</h5></b></i>
     </div>
   </div>";
-  echo "</center>";
-  echo "<br>";
-    echo "<br>";
-    echo "<div class='alert alert-danger d-flex align-items-center' role='alert'>
+
+
+    echo "<div class='alert alert-danger d-flex align-items-center' role='alert' style='width:60%;'>
     <svg class='bi flex-shrink-0 me-2' width='24' height='24' role='img' aria-label='Danger:'><use xlink:href='#exclamation-triangle-fill'/></svg>
     <div><h5><b><i>
       We are Sorry! \t We do not have flights for this choice at the moment. \t \t \t \t  \t \t<a href='index.php'><button type='button' class='btn-lg btn-outline-danger'>Search Again</button></a>
     </h5></div></b></i>
+    
   </div>";
-   
+  echo "</center>";
     
     
     
@@ -146,9 +142,5 @@ else {echo "<br>";
   ?> 
 
 
-  <?php
 
-include('partials/footer.php');
-
-?>
 <!--  -->

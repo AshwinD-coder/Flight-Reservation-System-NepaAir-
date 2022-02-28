@@ -20,17 +20,17 @@ if(isset($_POST['form']));
 
 $string_length = strlen($select) - substr_count($select, ' ');
 $length=$string_length/2;
-}
+
 if($length>$pass)
 {
     echo "<script>alert('Please Select seats for $pass passengers!');
     window.location='seat.php';</script>";
 }
-else if($length<$pass)
+if($length<$pass)
 {
     echo "<script>alert('Please select seats for $pass passengers!');window.location='seat.php';</script>";
 }
-else if($length==$pass)
+if($length==$pass)
 {
     mysqli_query($conn,"UPDATE contact SET seats='$select' WHERE user_name='$user' AND FlightNO='$id'");
     $result=mysqli_query($conn,"SELECT Seatsbooked FROM availableflights WHERE id='$trim'");
@@ -42,13 +42,9 @@ else if($length==$pass)
     echo "<script>
     setTimeout(function(){
         window.location.href = 'esewa/thankyou.php';;
-     }, 2000);</script>";
+     }, 5000);</script>";
 
 }
-
-else
-{
-    die(mysqli_error($_POST['form']));
 }
 
 ?>

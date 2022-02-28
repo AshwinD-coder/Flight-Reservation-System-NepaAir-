@@ -5,6 +5,7 @@ ProgressBar.init(
   [ 'Search','Select Flight',
   'Passenger Details',
   'Payment Method',
+  'Seat Selection',
   'Confirmation'
 ],
 'Payment Method',

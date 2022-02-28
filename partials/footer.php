@@ -25,7 +25,7 @@
 		<h2>Quick links</h2>
 		<br>
 		<ul type="none">
-		<a href="#">
+		<a href="./aboutus.php">
 		<li>About Us</li></a>
 		<a href="www.facebook.com/">
 		<li>Facbook</li></a>
