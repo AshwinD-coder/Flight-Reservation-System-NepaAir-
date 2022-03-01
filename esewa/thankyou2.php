@@ -7,6 +7,7 @@
 
 echo "<div class='alert alert-success' role='alert'>
 Thank you ! Please check your contact email for ticket details.
+
 </div>";
 
 

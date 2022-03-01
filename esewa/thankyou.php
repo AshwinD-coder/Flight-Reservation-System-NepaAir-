@@ -1,5 +1,4 @@
 
- 
 <?php
 session_start();
 include '../connection.php';
@@ -29,13 +28,13 @@ date_default_timezone_set("Asia/Kathmandu");
 $sDate=date("Y-m-d H:i:s");
 $up="UPDATE contact SET Bookeddatetime ='$sDate' WHERE  user_name='$user' AND BookingStatus='' ";
 mysqli_query($conn,$up)
-or die (mysqli_error("Error"));
+or die (mysqli_error($conn));
 $query="UPDATE contact SET BookingStatus='Booked' where user_name='$user' AND Passengercount='$nop'";
 $query2="UPDATE contact SET Passengercount='$nop' where user_name='$user' AND BookingStatus=''";
 mysqli_query($conn,$query2)
-or die (mysqli_error("Error"));
+or die (mysqli_error($conn));
    mysqli_query($conn,$query)
-              or die (mysqli_error("Error"));
+              or die (mysqli_error($conn));
             
 $pop="SELECT * FROM contact WHERE user_name='$user'";
 $res=mysqli_query($conn,$pop); 
@@ -66,8 +65,20 @@ $flightinfo="Greetings $user,
              NEPAAIR 
 ";
         mail($email,'NEPAAIR FLIGHT DETAILS',$flightinfo,'From: nepairltd@gmail.com');
-        session_destroy();
-    header('location:thankyou2.php');
+        echo "
+<script type='text/javascript'>
+function load()
+{
+window.open('https://localhost/fosp/github/project5sem/esewa/thankyou2.php','_blank');
+}
+</script>
+</head>
+<body onload='load()'>";
+        echo "<script>window.location='https://localhost/fosp/github/project5sem/toPDF.php';
+       </script> 
+
+ ";
+;
 
 ?>
 

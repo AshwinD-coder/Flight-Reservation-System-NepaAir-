@@ -40,7 +40,7 @@ $vkey=md5(time().$username);
 
 		if(!is_numeric($username))
 		{
-			$sql=mysqli_query($conn, "select * from users WHERE username='$username'") or die (mysqli_error("Not conn"));
+			$sql=mysqli_query($conn, "select * from users WHERE username='$username'") or die (mysqli_error($conn));
 			$row=mysqli_num_rows($sql);
 			if ($row > 0)
 			{$_SESSION['value']=$_usernametaken;
