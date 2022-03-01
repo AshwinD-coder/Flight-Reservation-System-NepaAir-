@@ -4,8 +4,10 @@
 <?php
 
 include('partials/navbar.php');
-echo "<br>";
+
 echo "<hr>";
+echo "<img src=https://content.presspage.com/uploads/2431/1920_intnlairline-7381-966174.jpg?10000 /height=\"500\" width=\"1200\">";
+echo"<br>";
 echo "Introduction
 Nepa Air, a household name in the Nepali aviation sector has becoame the trademark of trust and safety in 23 years of its service. Our journey had humbly begun on October 11, 1997, with a single aircraft. Today we fly to at least 15 national and international destinations a day with our 15 state-of-art aircraft.  
 
@@ -22,6 +24,19 @@ His elder son, Mr. Birendra Bahadur Basnet, who was always intrigued by entrepre
 
 Our Journey
 On 11 October 1997, Captain RK Sharma and American Pilot Captain Kevin St. Germain in an unprecedented flight, flew Buddha Air’s first batch of 16 passengers on flight BHA 100 onboard the Beech craft 1900 D. With the call sign 9N-AEE from Kathmandu’s domestic airport, flight BHA 100 took its hour-long flight to Mt Everest and back – an achievement no airlines had done in its maiden flight. This helped to set confidence in Buddha Air in motion and the rest is history.";
+echo "<br>";
+echo "<br>";
+echo "<br>";
+echo "<br>";
+echo "<br>";
+echo "<br>";
+echo "<br>";
+echo "<br>";
+echo "<br>";
+echo "<br>";
+echo "<br>";
+echo "<br>";
+
 ?>
 
 <?php
