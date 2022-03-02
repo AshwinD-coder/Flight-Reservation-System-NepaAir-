@@ -18,6 +18,9 @@ include('partials/navbar.php');
         padding: 20px;
         text-align: center;
         }
+        a{
+            padding: 0px;
+        }
     </style>
 </head>
 <body>
@@ -46,7 +49,7 @@ $result=mysqli_query($conn,$query);
         <th>Passengers</th>
         <th>Cabin</th>
         <th>Booked(Date/Time)</th>
-        <th colspan=2>Manage Flight</th>
+        <th colspan=2'>Manage Flight</th>
 
 
         
@@ -62,18 +65,22 @@ $result=mysqli_query($conn,$query);
     $result2=mysqli_query($conn,$query2);
     if(mysqli_num_rows($result2)>0){
         while(($row2 = mysqli_fetch_row($result2))!=null)
-{   echo "<td> $row2[1] </td><td> $row2[2] </td><td> $row2[3] </td><td> $row2[9] </td><td> $row[12] </td><td> $row2[5] </td><td>$row[13]</td><td>a</td>";
+{   echo "<td> $row2[1] </td><td> $row2[2] </td><td> $row2[3] </td><td> $row2[9] </td><td> $row[12] </td><td> $row2[5] </td><td>$row[13]</td>";
     $id=$row[11];
   $bookeddatetime=$row[13];
     if($row[0]=='Booked')
     {echo "<td><a href='cancel.php?id=$id&bookeddatetime=$bookeddatetime'><button type='button' class='btn btn-danger' data-toggle='modal' data-target='#exampleModalCenter'>
    Cancel Flight
-  </button></a></td>";
+  </button></a></td>
+  <td><a href='toPDF.php'><button type='button' class='btn btn-success' >
+  E-ticket
+ </button></a></td>
+  ";
 }
    if($row[0]=='Cancelled'){
   echo "<td><a href='index.php'><button type='success' class='btn btn-success' data-toggle='modal' data-target='#exampleModalCenter'>
   Reschedule flight
- </button></a></td>";
+ </button></a></td><td></td> ";
     }
 
 }}}}

@@ -1,20 +1,11 @@
 
-<head>
-    <script type='text/javascript'>
-    function load()
-    {
-    window.open('https://localhost/fosp/github/project5sem/esewa/thankyou2.php','_blank');
-    }
-    </script>
-    </head>
-    <body onload='load()'></body>
 <?php
 session_start();
 include '../connection.php';
 
 if(isset($_SESSION['username']) && isset($_SESSION['id']))
 {
-   
+
 $nop=$_SESSION['nop'];
 $id=$_SESSION['id'];
 $query="SELECT * FROM availableflights WHERE id='$id'";
@@ -26,7 +17,6 @@ $departure=$row['Departur_e'];
 $time=$row['Departuretime'];
 $pass=$row['passenger_s'];
 $cabin=$row['cabi_n'];
-
 $price=$row['priceperticket'];
 $totalseats=$row['Totalseats'];
 $user=$_SESSION['username'];
@@ -41,8 +31,8 @@ $sDate=date("Y-m-d H:i:s");
 $up="UPDATE contact SET Bookeddatetime ='$sDate' WHERE  user_name='$user' AND BookingStatus='' ";
 mysqli_query($conn,$up)
 or die (mysqli_error($conn));
-$query="UPDATE contact SET BookingStatus='Booked' where user_name='$user' AND Passengercount='$nop' AND  Bookeddatetime ='$sDate'";
-$query2="UPDATE contact SET Passengercount='$nop' where user_name='$user' AND BookingStatus='Booked' AND  Bookeddatetime ='$sDate'";
+$query="UPDATE contact SET BookingStatus='Booked' where user_name='$user' AND Passengercount='$nop'";
+$query2="UPDATE contact SET Passengercount='$nop' where user_name='$user' AND BookingStatus=''";
 mysqli_query($conn,$query2)
 or die (mysqli_error($conn));
    mysqli_query($conn,$query)
@@ -78,7 +68,15 @@ $flightinfo="Greetings $user,
 ";
         mail($email,'NEPAAIR FLIGHT DETAILS',$flightinfo,'From: nepairltd@gmail.com');
         $_SESSION['bookeddatetime']=$sDate;
-       
+        echo "
+<script type='text/javascript'>
+function load()
+{
+window.open('https://localhost/fosp/github/project5sem/esewa/thankyou2.php','_blank');
+}
+</script>
+</head>
+<body onload='load()'>";
         echo "<script>window.location='https://localhost/fosp/github/project5sem/toPDF.php';
        </script> 
 
