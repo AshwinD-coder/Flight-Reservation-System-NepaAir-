@@ -17,6 +17,7 @@ include('partials/navbar.php');
 echo "<br>";
 echo "<br>";
 echo "<br>";
+echo"<h3 align=center>Available Flights</h3>";
 
 echo "<tr class='table table-secondary'>";
 echo "<div class='container'>";
