@@ -14,8 +14,9 @@ include('partials/navbar.php');
 
     <style>
         .heading{
-            font-family: "Garamond", serif;
-            text-align: center;
+            font-family:'Times New Roman', Times, serif;
+        padding: 20px;
+        text-align: center;
         }
     </style>
 </head>
@@ -25,7 +26,7 @@ $user=$_SESSION['username'];
 ?>
 
 <div class="heading">
-<h2><?php echo "$user";?>'s Flight Information</h2><hr>
+<h3><?php echo "$user";?>'s Flight Information</h3><hr>
 </div><br><br><br>
 
 
@@ -34,7 +35,7 @@ $query="SELECT * FROM contact WHERE user_name='$user'";
 $result=mysqli_query($conn,$query);
         if(mysqli_num_rows($result)>0){
             echo "<div class='container'>
-    <table class='table table-dark'>
+    <table class='table table-light'>
        <tr>
         <th>Flight NO</th>
         <th>Status</th>
@@ -45,6 +46,8 @@ $result=mysqli_query($conn,$query);
         <th>Passengers</th>
         <th>Cabin</th>
         <th>Booked(Date/Time)</th>
+        <th colspan=2>Manage Flight</th>
+
 
         
         
@@ -59,7 +62,7 @@ $result=mysqli_query($conn,$query);
     $result2=mysqli_query($conn,$query2);
     if(mysqli_num_rows($result2)>0){
         while(($row2 = mysqli_fetch_row($result2))!=null)
-{   echo "<td> $row2[1] </td><td> $row2[2] </td><td> $row2[3] </td><td> $row2[9] </td><td> $row[12] </td><td> $row2[5] </td><td>$row[13]</td>";
+{   echo "<td> $row2[1] </td><td> $row2[2] </td><td> $row2[3] </td><td> $row2[9] </td><td> $row[12] </td><td> $row2[5] </td><td>$row[13]</td><td>a</td>";
     $id=$row[11];
   $bookeddatetime=$row[13];
     if($row[0]=='Booked')

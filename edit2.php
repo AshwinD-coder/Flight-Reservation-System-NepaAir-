@@ -12,7 +12,7 @@ $to='T_o';
 $d='departur_e';
 $t='Departuretime';
 $c='cabi_n';
-
+$status='Status';
 $p='priceperticket';
 if(isset($_GET['value']))
 {
@@ -27,7 +27,7 @@ if(isset($_GET['id']))
  $query="SELECT * FROM availableflights WHERE id='$id'";
  $result=mysqli_query($conn,$query);
  echo "<h1><center>Edit Flight Info</h1></center>";
- echo "<table class='table table-hover table-bordered'><tr class='table table-primary'><th>From</th><th>To</th><th>Departure Date</th><th>Departure Time</th><th>Cabin</th><th>Price Per Ticket</th>";
+ echo "<table class='table table-hover table-bordered'><tr class='table table-primary'><th>From</th><th>To</th><th>Departure Date</th><th>Departure Time</th><th>Cabin</th><th>Price Per Ticket</th><th>Status</th>";
        
  while(($row = mysqli_fetch_row($result))!=null)
 {   
@@ -122,6 +122,23 @@ if($value==$row[8]){echo "<form action='saveedit.php?id=$id&value=$row[8]&index=
     <option value='4000'>Rs.4000</option>
     <option value='6000'>Rs.6000</option>
     <option value='10000'>Rs.10000</option>
+
+    
+    </select>
+ <button   class='btn btn-primary btn-md' name='submit'>Update</button>
+
+    </form>";
+
+}
+echo "</td>"; 
+echo "<td>" .$row[7]."<a href='edit2.php?id=$id&value=$row[7]&index=$status'><i class='bi bi-pencil'></i></a>";
+if($value==$row[7]){echo "<form action='saveedit.php?id=$id&value=$row[7]&index=$status' METHOD='POST'>
+    <select required name='from' >
+    <option value=''>Select status</option>
+    <option value=' '>empty</option>
+    <option value='Booking in Progress'>Booking in Progress</option>
+    <option value='Departed'>Departed</option>
+    
 
     
     </select>

@@ -78,7 +78,7 @@ if (isset($_GET['cancel']) && isset($_GET['bookeddatetime'])) {
 
         $p = $pass * ($p - (0.33 * $p));
         if (mysqli_query($conn, "UPDATE contact SET Refundcash='$p' WHERE user_name='$user' AND FlightNO='$id' AND Bookeddatetime='$b'")) {
-            echo "<script> alert('Flight  cancelled within 11 hrs of the flight.33% fare is levied.Please mail us your Esewa ID and Flight No at nepairltd@gmail.com for refund cash.!! ');
+            echo "<script> alert('Flight  cancelled within 11 hrs of the flight.33% fare is levied.Please mail us your Esewa ID and FlightNo at nepairltd@gmail.com for refund cash.!! ');
         window.location='flightinfo.php';</script>;";
         }
     }
@@ -96,7 +96,8 @@ if (isset($_GET['cancel']) && isset($_GET['bookeddatetime'])) {
 
         $p = $pass * ($p - (0.11 * $p));
         mysqli_query($conn, "UPDATE contact SET Refundcash='$p' WHERE user_name='$user' AND FlightNO='$id' AND Bookeddatetime='$b'");
-        echo "<script> alert('Flight  cancelled before 11 hrs of the flight.11% fare is levied.Please mail us your Esewa ID and Flight No at nepaairltd@gmail.com for refund cash.!! ');
+        echo "<script> alert('Flight  cancelled before 11 hrs of the flight.11% fare is levied.
+        Please mail us your Esewa ID and FlightNo at nepaairltd@gmail.com for refund cash.!! ');
         window.location='flightinfo.php';</script>;";
     }
 }
@@ -120,15 +121,17 @@ if (isset($_GET['cancel']) && isset($_GET['bookeddatetime'])) {
     <style>
         .container h3{
 font-family: 'Times New Roman', Times, serif;
+font-style: oblique;
         }
         .container li {
-            font-size: large;
+            font-size: larger;
             font-style: bold;
             font-family: 'Times New Roman', Times, serif;
         }
         .canceltab{
             text-align: center;
-            font-family: 'Courier New', Courier, monospace;
+            font-family: 'Times New Roman', Times, serif;
+            font-style: oblique;
         }
     </style>
 </head>

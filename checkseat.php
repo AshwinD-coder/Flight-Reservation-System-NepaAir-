@@ -3,7 +3,8 @@
 <?php
 
 include('partials/navbar.php');
-
+if(isset($_SESSION['username']) && isset($_SESSION['id']))
+{
 $pass = $_SESSION['nop'];
 $user = $_SESSION['username'];
 $id = $_SESSION['id'];
@@ -42,5 +43,8 @@ if (isset($_POST['form'])); {
      </script>";
     }
 }
-
+}
+else{
+    header('Location:index.php');
+}
 ?>

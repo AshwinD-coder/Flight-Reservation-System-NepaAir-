@@ -2,10 +2,11 @@
 <?php  include_once 'connection.php';
  require('fpdf/fpdf.php');
  session_start();
-  
-
+ 
 class PDF extends FPDF {
-  
+   
+ 
+ 
   // Page header
   function Header() {
         
@@ -28,7 +29,8 @@ class PDF extends FPDF {
       $this->SetFont('Arial','B',6); 
       $this->Cell(0,0.4,'Flight Ticket',0,0,'C');
       $this->Ln(0.1);
-      $this->Cell(0,0.6,'This E-ticket is not tranferable. ',0,0,'C');
+
+      $this->Cell(0,0.6,'This E-ticket is not transferable and required at the airport. ',0,0,'C');
       $this->Ln(0.1);
       $this->Cell(0,0.7,'"Please bring ID card and all necessary travel documents." ',0,0,'C');
       $this->Ln(0.4);
@@ -60,6 +62,7 @@ $pdf->AddPage();
 $flightid=$_SESSION['id'];
 $user=$_SESSION['username'];
 $nop=$_SESSION['nop'];
+$bookeddatetime=$_SESSION['bookeddatetime'];
 $query="SELECT * FROM availableflights WHERE id='$flightid'";
 $result=mysqli_query($conn,$query);
 $row=$result->fetch_assoc();
@@ -71,7 +74,7 @@ $cabin=$row['cabi_n'];
 $ppt=$row['priceperticket'];
 $fare=$nop*$ppt;
 $id='NA-'.$flightid;
-$query2="SELECT * FROM contact WHERE user_name='$user' AND FlightNo='$id'";
+$query2="SELECT * FROM contact WHERE user_name='$user' AND FlightNo='$id' AND Bookeddatetime='$bookeddatetime'";
 $result2=mysqli_query($conn,$query2);
 $row2=mysqli_fetch_assoc($result2);
 $seats=$row2['Seats'];
@@ -142,7 +145,7 @@ $seats=$row2['Seats'];
 
 $pdf->Output();
 
-session_destroy();
+
 
 
 ?>

@@ -80,6 +80,11 @@
 				  
 
     			<li><a class="nav-link" href="index.php">Home</a></li>
+				</a>
+				
+				
+        
+    			<li><a class="nav-link" href="flightdetail.php">Flight Details </a></li>
     			
     			<li><a class="nav-link" href="aboutus.php">About Us</a></li>
 			
