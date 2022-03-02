@@ -1,5 +1,6 @@
 <link rel="stylesheet" href="partials/style.css ?<?php echo time(); ?>" type="">
 <link rel="stylesheet" href="partials/footer.css ?<?php echo time(); ?>" />
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 <?php
 
 include('partials/navbar.php');
@@ -13,6 +14,9 @@ include('partials/navbar.php');
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <style>
         a{
             color: white;
@@ -40,6 +44,7 @@ margin-left: 200px;
             margin-bottom: 40px;
         }
     </style>
+    
 </head>
 
 <body><center>
@@ -72,6 +77,26 @@ margin-left: 200px;
         On 11 October 1997, Captain RK Sharma and American Pilot Captain Kevin St. Germain in an unprecedented flight, flew Buddha Air’s first batch of 16 passengers on flight BHA 100 onboard the Beech craft 1900 D. With the call sign 9N-AEE from Kathmandu’s domestic airport, flight BHA 100 took its hour-long flight to Mt Everest and back – an achievement no airlines had done in its maiden flight. This helped to set confidence in NEPA Air in motion and the rest is history.
 
     </article>
+    
+    </div>
+    <div class="card">
+        <div class="row">
+            <div class="col-md-4">
+                <img scr="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYryX9RjlbCbGGXy7kCMN4T_Gu8_bpxCbQEjYr8MXr8XmDy_3WzidSc2xHjilxR9mRBnw&usqp=CAU" class="img-fluid">
+            </div>
+            <div class ="col-md-8">
+                <h2>heloo</h2>
+                <p>para</p>
+                <button class ="btn btn- danger">read mode</button>
+                <br>
+                <h2 color="black"><h2>hello</h2>
+                <br>
+            </div>
+     
+
+
+    </div>
+
     </div>
 </body>
 
@@ -80,6 +105,6 @@ margin-left: 200px;
 
 
 <?php
-
+echo"<br>";echo"<br>";echo"<br>";
 include('partials/footer.php');
 ?>
