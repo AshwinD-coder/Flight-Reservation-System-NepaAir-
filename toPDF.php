@@ -13,7 +13,7 @@ class PDF extends FPDF
   {
 
     // Add logo to page
-    //$this->Image('gfg1.png',10,8,33);
+    // $this->Image('https://localhost/fosp/github/project5sem/img/logo.png',5,4,20);
 
     // Set font family to Arial bold 
 

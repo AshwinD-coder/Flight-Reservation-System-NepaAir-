@@ -9,6 +9,28 @@ include('partials/delectflight.php');
 <link rel="stylesheet" href="partials/style.css?<?php echo time(); ?>" type="">
 
 <head>
+	<style>
+		.card {
+
+			border-radius: 25px;
+		
+		
+			
+
+		}
+ .card-text{
+font-family: sans-serif;
+text-align: justify;
+font-size: larger;
+ }
+		.card img {
+			border-radius: 15px;
+		}
+		/* .container-card{
+			background-image: url(https://wallpapercave.com/wp/wp6903618.jpg);
+			background-size: 100%;
+		} */
+	</style>
 	<script src="
 https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js">
 	</script>
@@ -218,40 +240,36 @@ https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js">
 		</div>
 	</div>
 </div>
-<!-- <div class="container">
-<div class="row  ">
-<div class="col-md-4">
-<div class="card" style="width: 20rem;">
+<hr>
+<div class="container-card">
+	<div class="row  ">
+		<div class="col-md-4">
+			<div class="card" >
+				<img src="img/mountain.jpg" class="card-img-top" alt="...">
+				<div class="card-body">
+					<p class="card-text">Get a beautiful and stunning views of most of the mountains here in Nepal as you fly with us including mountains higher than 8,000m and the world's highest peak Mt.Everest.</p>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-4">
+			<div class="card" >
+				<img src="http://ghumante.com/wp-content/uploads/2021/03/72879400_3594431213904214_4152555221370798080_o-1080x675.jpg" class="card-img-top"  alt="...">
+				<div class="card-body">
+					<p class="card-text">Just book a flight with us and get a headstart to travel places around Nepal that make you feel like you are in a Paradise. </p>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-4">
+			<div class="card" >
+				<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Nepali_dal-bhat-tarkari.jpg/1024px-Nepali_dal-bhat-tarkari.jpg" class="card-img-top " alt="..." >
+				<div class="card-body">
+					<p class="card-text">Enjoy various Nepali dishes and Khaja sets by booking and flying with us.</p>
 
-  <img src="img/mountain.jpg" class="card-img-top" alt="...">
-  <div class="card-body">
-    <p class="card-text">Get a beautiful and stunning views of mountains here in Nepal as you fly with us .</p>
-  </div></div>
-</div>
-  <div class="col-md-4">
-  <div class="card" style="width: 20rem; ">
-  <img src="img/khaja.jpg" class="card-img-top" alt="..." style="height:-20px;">
-  <div class="card-body">
-    <p class="card-text">Exclusively,Enjoy various Nepali Dishes and Khaja Sets.</p>
-  </div>
-</div>
-</div>
-<div class="col-md-4">
-  <div class="card" style="width: 20rem; ">
- 
-  <a  data-bs-toggle="collapse" href="#collapseExample"  aria-expanded="false" aria-controls="collapseExample" style="text-decoration:none;" >
-  <img src="img/khaja.jpg" class="card-img-top "  alt="..." style="height:-20px;">
-  </a>
-<div class="collapse" id="collapseExample">
-  
-  <div class="card-body">
-    <p class="card-text">Exclusively,Enjoy various Nepali Dishes and Khaja Sets.</p>
-	
-  </div>
-</div>
-</div>
-</div>
-</div> -->
+				</div>
+
+			</div>
+		</div>
+	</div>
 </div>
 <?php
 

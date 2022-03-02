@@ -165,7 +165,7 @@ Flight List :</center></h3>";
     if (mysqli_num_rows($result) > 0) {
 
         echo "<div class='container'>";
-        echo "<table class='table table-hover table-bordered'><tr class='table table-primary'><th>Flight No</th><th>From</th><th>To</th><th>Departure Date</th><th>Departure Time</th><th>Cabin</th><th>Seats available</th><th>PassengerCount</th><th>Price Per Ticket</th><th>Status</th><th>Seats</th><th colspan=2><center>Action</center></th>";
+        echo "<table class='table table-hover table-bordered'><tr class='table table-primary'><th>Flight No</th><th>From</th><th>To</th><th>Departure Date</th><th>Departure Time</th><th>Cabin</th><th>Seats available</th><th>PassengerCount</th><th>Price Per Ticket</th><th>Status</th><th style='padding:40px; '>Seats</th><th colspan=2><center>Action</center></th>";
 
         while (($row = mysqli_fetch_row($result)) != null) {
             $row[6] = $row[6] - $row[4];

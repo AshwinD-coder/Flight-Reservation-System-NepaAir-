@@ -49,7 +49,7 @@ $result=mysqli_query($conn,$query);
         <th>Passengers</th>
         <th>Cabin</th>
         <th>Booked(Date/Time)</th>
-        <th colspan=2'>Manage Flight</th>
+        <th style='text-align:center; '  colspan=2'>Manage Flight</th>
 
 
         
@@ -70,7 +70,7 @@ $result=mysqli_query($conn,$query);
   $bookeddatetime=$row[13];
   $nop=$row[12];
     if($row[0]=='Booked')
-    {echo "<td><a href='cancel.php?id=$id&bookeddatetime=$bookeddatetime'><button type='button' class='btn btn-danger' data-toggle='modal' data-target='#exampleModalCenter'>
+    {echo "<td><a href='cancel.php?id=$id&&bookeddatetime=$bookeddatetime'><button type='button' class='btn btn-danger' data-toggle='modal' data-target='#exampleModalCenter'>
    Cancel Flight
   </button></a></td>
   <td><a href='toPDF.php?id=$id&&bookeddatetime=$bookeddatetime&&nop=$nop'><button type='button' class='btn btn-success' >

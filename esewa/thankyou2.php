@@ -3,13 +3,41 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
 
 
-<?php
 
-echo "<div class='alert alert-success' role='alert'>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank you !!!</title>
+    <style>
+        .container{
+            margin-top:40px;
+        }
+        a{
+            font-size: larger;
+            color: black;
+        }
+        
+    </style>
+</head>
+<body>
+<div class='container'><div class='alert alert-success' role='alert'>
 Thank you ! Please check your contact email for ticket details or <strong>Download it from Flight info section of the website.</strong>
+<u><a href='../index.php' style='text-decoration:none; margin-left:20px;'>Go to Homepage</a>
 
-</div>";
+    </u>
+<br><br>
+</div></div>
+<center>
+<embed src="../partials/thankyou.gif" type="" height="500" width="1200">
+s
+</center>
 
 
-echo "<br><a href='../index.php' style='text-decoration:none; margin-left:20px;'>Go to Homepage</a>";
-?>
+
+</body>
+</html>
+

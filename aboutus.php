@@ -34,6 +34,7 @@ margin-left: 200px;
             margin: 50px;
             font-family: sans-serif;
             font-size: larger;
+            text-align: justify;
             
         }
         .container{

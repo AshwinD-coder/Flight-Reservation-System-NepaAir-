@@ -96,9 +96,10 @@ if (isset($_GET['cancel']) && isset($_GET['bookeddatetime'])) {
 
         $p = $pass * ($p - (0.11 * $p));
         mysqli_query($conn, "UPDATE contact SET Refundcash='$p' WHERE user_name='$user' AND FlightNO='$id' AND Bookeddatetime='$b'");
-        echo "<script> alert('Flight  cancelled before 11 hrs of the flight.11% fare is levied.
-        Please mail us your Esewa ID and FlightNo at nepaairltd@gmail.com for refund cash.!! ');
-        window.location='flightinfo.php';</script>;";
+        echo "<script>
+        alert('Flight  cancelled before 11 hrs of the flight.11% fare is levied.Please mail us your Esewa ID and FlightNo at nepaairltd@gmail.com for refund cash.!! ');
+        window.location='flightinfo.php';
+        </script>;";
     }
 }
 ?>
@@ -161,7 +162,7 @@ font-style: oblique;
     
     <h2>Do you want to cancel the flight?</h2>
     <div class=" btn col-md-1">
-        <a href="cancel.php?cancel=<?php echo $id ?>&bookeddatetime=<?php echo $b ?>"><button type='button' class='btn btn-success'>
+        <a href="cancel.php?cancel=<?php echo $id ?>&&bookeddatetime=<?php echo $b ?>"><button type='button' class='btn btn-success'>
                 Proceed
             </button></a>
     </div>
