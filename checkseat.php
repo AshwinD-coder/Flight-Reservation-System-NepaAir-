@@ -30,7 +30,7 @@ if (isset($_POST['form'])); {
         echo "<script>alert('Please select seats for $pass passengers!');window.location='seat.php';</script>";
     }
     if ($length == $pass) {
-        mysqli_query($conn, "UPDATE contact SET seats='$select' WHERE user_name='$user' AND FlightNO='$id'");
+        mysqli_query($conn, "UPDATE contact SET seats='$select' WHERE user_name='$user' AND FlightNO='$id' AND BookingStatus=''");
         $result = mysqli_query($conn, "SELECT Seatsbooked FROM availableflights WHERE id='$trim'");
         $result = $result->fetch_assoc();
         $result = $result['Seatsbooked'];

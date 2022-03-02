@@ -14,9 +14,4 @@ echo"<script>window.location='contactinfo.php'</script>";
 else{
     echo "<script> window.location='login.php'</script>";
 }
-
-
-
-
-
 ?>

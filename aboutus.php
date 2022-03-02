@@ -79,19 +79,7 @@ margin-left: 200px;
     </article>
     
     </div>
-    <div class="card">
-        <div class="row">
-            <div class="col-md-4">
-                <img scr="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYryX9RjlbCbGGXy7kCMN4T_Gu8_bpxCbQEjYr8MXr8XmDy_3WzidSc2xHjilxR9mRBnw&usqp=CAU" class="img-fluid">
-            </div>
-            <div class ="col-md-8">
-                <h2>heloo</h2>
-                <p>para</p>
-                <button class ="btn btn- danger">read mode</button>
-                <br>
-                <h2 color="black"><h2>hello</h2>
-                <br>
-            </div>
+   
      
 
 
