@@ -22,17 +22,22 @@ $totalseats=$row['Totalseats'];
 $user=$_SESSION['username'];
     $price=$price*$nop;
 $pass=$pass+$nop;
+$flightno='NA-'.$id;
 if($pass>0){
     mysqli_query($conn, "UPDATE availableflights SET status='Booking In Progress' WHERE id='$id'");
     }
 mysqli_query($conn, "UPDATE availableflights SET passenger_s='$pass' WHERE id='$id'");
 date_default_timezone_set("Asia/Kathmandu");
 $sDate=date("Y-m-d H:i:s");
-$up="UPDATE contact SET Bookeddatetime ='$sDate' WHERE  user_name='$user' AND BookingStatus='' ";
+$up="UPDATE contact SET Bookeddatetime ='$sDate' WHERE  user_name='$user' AND BookingStatus=''  AND FlightNO='$flightno' ";
 mysqli_query($conn,$up)
 or die (mysqli_error($conn));
-$query="UPDATE contact SET BookingStatus='Booked' where user_name='$user' AND Passengercount='$nop'";
-$query2="UPDATE contact SET Passengercount='$nop' where user_name='$user' AND BookingStatus=''";
+$fetchbookeddatetime=mysqli_query($conn,"SELECT Bookeddatetime FROM contact WHERE user_name='$user' AND BookingStatus='' AND FlightNO='$flightno'");
+$fetch=$fetchbookeddatetime->fetch_assoc();
+$bookeddatetime=$fetch['Bookeddatetime'];
+$query2="UPDATE contact SET Passengercount='$nop' where user_name='$user' AND BookingStatus='' AND Bookeddatetime='$bookeddatetime' AND FlightNO='$flightno'";
+$query="UPDATE contact SET BookingStatus='Booked' where user_name='$user' AND Passengercount='$nop' AND Bookeddatetime='$bookeddatetime' AND  FlightNO='$flightno'";
+
 mysqli_query($conn,$query2)
 or die (mysqli_error($conn));
    mysqli_query($conn,$query)
@@ -68,22 +73,15 @@ $flightinfo="Greetings $user,
 ";
         mail($email,'NEPAAIR FLIGHT DETAILS',$flightinfo,'From: nepairltd@gmail.com');
         $_SESSION['bookeddatetime']=$sDate;
-        echo "
-<script type='text/javascript'>
-function load()
-{
-window.open('https://localhost/fosp/github/project5sem/esewa/thankyou2.php','_blank');
-}
-</script>
-</head>
-<body onload='load()'>";
-        echo "<script>window.location='https://localhost/fosp/github/project5sem/toPDF.php';
-       </script> 
+ 
+        echo "<script>window.location='thankyou2.php'</script>";
+      
 
- ";
+
+ session_destroy();
 }
 else{
-    header('Location:index.php');
+    header('Location:../index.php');
   }
 ?>
 

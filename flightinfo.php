@@ -68,11 +68,12 @@ $result=mysqli_query($conn,$query);
 {   echo "<td> $row2[1] </td><td> $row2[2] </td><td> $row2[3] </td><td> $row2[9] </td><td> $row[12] </td><td> $row2[5] </td><td>$row[13]</td>";
     $id=$row[11];
   $bookeddatetime=$row[13];
+  $nop=$row[12];
     if($row[0]=='Booked')
     {echo "<td><a href='cancel.php?id=$id&bookeddatetime=$bookeddatetime'><button type='button' class='btn btn-danger' data-toggle='modal' data-target='#exampleModalCenter'>
    Cancel Flight
   </button></a></td>
-  <td><a href='toPDF.php'><button type='button' class='btn btn-success' >
+  <td><a href='toPDF.php?id=$id&&bookeddatetime=$bookeddatetime&&nop=$nop'><button type='button' class='btn btn-success' >
   E-ticket
  </button></a></td>
   ";
@@ -85,7 +86,8 @@ $result=mysqli_query($conn,$query);
 
 }}}}
 else{
-    echo "Please book a flight to view your flight information.";
+    echo "<center>Please book a flight to view your flight information.<br>
+    <a href='index.php' style='text-decoration:none; color:Blue;'>BOOK HERE</a></center>";
 }
 ?>
 
